@@ -1,0 +1,238 @@
+---
+// Sponsors.astro
+const officialSponsors = [
+  {
+    name: "LINUXENIC CORP.",
+    tier: "OFFICIAL SPONSOR",
+    tierColor: "text-amber-300 bg-amber-400/10 border-amber-400/30",
+    desc: "Platform pembelajaran dan pelatihan cybersecurity berbasis hands-on lab pertama di Indonesia dengan 7 learning path praktis langsung di browser (SOC Analyst, Web Pentesting, DevSecOps, dll).",
+    benefits: [
+      { rank: "Juara 1", prize: "Akses 1 Bulan", badge: "🥇" },
+      { rank: "Juara 2", prize: "Akses 14 Hari", badge: "🥈" },
+      { rank: "Juara 3", prize: "Akses 7 Hari", badge: "🥉" },
+    ],
+    note: "*Voucher akses platform diberikan untuk pemenang Track Mahasiswa & Track Umum",
+  },
+];
+
+// Media Partners & Community Supporters Placeholder
+const mediaPartners = [
+  { name: "NXCTF Media", logo: "/nxctf-logo.png", tag: "Media Partner" },
+  { name: "CyberSec Media", logo: "/nxctf-logo.png", tag: "Media Partner" },
+  { name: "InfoSec Kampus", logo: "/nxctf-logo.png", tag: "Community Partner" },
+  { name: "CTF Indonesia", logo: "/nxctf-logo.png", tag: "Media Partner" },
+  { name: "IndoHacker Network", logo: "/nxctf-logo.png", tag: "Community Partner" },
+  { name: "TechSecurity ID", logo: "/nxctf-logo.png", tag: "Media Partner" },
+];
+---
+
+<section id="sponsors" class="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 relative z-10" data-reveal>
+  <div class="max-w-5xl mx-auto space-y-6">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-2">
+      <div class="inline-flex items-center gap-2 font-mono text-xs text-amber-400 tracking-widest uppercase mb-1.5">
+        <span>// SPONSORSHIP & PARTNERS //</span>
+      </div>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-tight mb-2">
+        Sponsor & Partner Resmi
+      </h2>
+      <p class="text-xs sm:text-sm text-text-secondary">
+        Didukung oleh platform edukasi cybersecurity, ekosistem open-source, dan institusi akademik nasional.
+      </p>
+    </div>
+
+    <!-- 1. Official Sponsors Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 w-full items-stretch" data-reveal-group data-reveal-stagger="120">
+      <!-- Active Sponsor: LINUXENIC -->
+      {officialSponsors.map((sponsor) => (
+        <div data-reveal-child class="p-5 sm:p-6 rounded-2xl bg-surface/85 border border-amber-400/30 backdrop-blur-xl shadow-lg flex flex-col justify-between motion-card">
+          <div>
+            <div class="flex items-center gap-4 mb-4 pb-3.5 border-b border-white/5">
+              <img
+                src="/linuxenic-logo.png"
+                alt={`${sponsor.name} Logo`}
+                class="size-14 sm:size-16 rounded-2xl object-contain bg-black border border-white/10 p-2 shadow-lg shrink-0"
+              />
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class={`font-mono text-[0.62rem] font-bold px-2 py-0.5 rounded-full border ${sponsor.tierColor}`}>
+                    ⭐ {sponsor.tier}
+                  </span>
+                </div>
+                <h3 class="font-display font-bold text-lg sm:text-xl text-white leading-tight">
+                  {sponsor.name}
+                </h3>
+                <a href="https://linuxenic.com" target="_blank" rel="noopener noreferrer" class="font-mono text-[0.68rem] text-nx-cyan hover:underline inline-block mt-0.5">
+                  linuxenic.com ↗
+                </a>
+              </div>
+            </div>
+
+            <p class="text-text-secondary text-xs sm:text-sm leading-relaxed mb-4">
+              {sponsor.desc}
+            </p>
+
+            <!-- Rewards Grid -->
+            <div class="p-3 rounded-xl bg-background/80 border border-white/5 mb-2.5">
+              <div class="font-mono text-[0.65rem] text-amber-300 font-semibold uppercase mb-1.5">
+                VOUCHER REWARDS:
+              </div>
+              <div class="grid grid-cols-3 gap-2">
+                {sponsor.benefits.map((b) => (
+                  <div class="p-1.5 sm:p-2 rounded-lg bg-surface border border-white/5 text-center">
+                    <span class="text-xs sm:text-sm block">{b.badge}</span>
+                    <span class="font-display font-bold text-[0.7rem] text-white block mt-0.5">{b.rank}</span>
+                    <span class="font-mono text-[0.65rem] text-amber-300 font-medium block mt-0.5">{b.prize}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-white/5">
+            <span class="font-mono text-[0.65rem] text-text-muted block">{sponsor.note}</span>
+          </div>
+        </div>
+      ))}
+
+      <!-- Open Sponsor Slot Card -->
+      <div data-reveal-child class="p-5 sm:p-6 rounded-2xl bg-surface/40 border border-dashed border-white/15 backdrop-blur-xl flex flex-col justify-between text-center motion-card">
+        <div>
+          <div class="flex items-center justify-center mb-3.5 pb-3 border-b border-white/5">
+            <span class="font-mono text-[0.62rem] font-bold px-2.5 py-0.5 rounded-full bg-nx-cyan/10 border border-nx-cyan/20 text-nx-cyan uppercase">
+              🤝 OPEN FOR SPONSORSHIP
+            </span>
+          </div>
+
+          <h3 class="font-display font-bold text-lg sm:text-xl text-white mb-1.5">
+            Ingin Menjadi Sponsor?
+          </h3>
+          <p class="text-text-secondary text-xs sm:text-sm leading-relaxed mb-3.5 max-w-md mx-auto">
+            Dukung talenta keamanan siber muda Indonesia dan jangkau ratusan peserta mahasiswa serta praktisi cybersecurity se-Indonesia.
+          </p>
+
+          <div class="p-3 rounded-xl bg-surface/80 border border-white/5 font-mono text-[0.68rem] text-text-muted space-y-1 mb-4 text-left max-w-sm mx-auto">
+            <div class="flex items-center gap-2 text-text-secondary">
+              <span class="text-emerald-400">✓</span>
+              <span>Penempatan Logo di Website & Banner</span>
+            </div>
+            <div class="flex items-center gap-2 text-text-secondary">
+              <span class="text-emerald-400">✓</span>
+              <span>Brand Mention di Pembukaan & Awarding</span>
+            </div>
+            <div class="flex items-center gap-2 text-text-secondary">
+              <span class="text-emerald-400">✓</span>
+              <span>Alokasi Hadiah Khusus Kategori Sponsor</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <a
+            href="mailto:nfcc@nurulfikri.ac.id?subject=Inquiry%20Sponsorship%20NFX%20CTF%202026"
+            class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-xl font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors"
+          >
+            <span>📧 Ajukan Proposal Sponsorship</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Organized & Supported By Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 w-full items-stretch" data-reveal-group data-reveal-stagger="120">
+      <!-- Organized by: UKM NFCC & NXCTF -->
+      <div data-reveal-child class="p-5 sm:p-6 rounded-2xl bg-surface/80 border border-white/10 backdrop-blur-xl text-center flex flex-col justify-between motion-card">
+        <div class="font-mono text-[0.65rem] text-text-muted uppercase tracking-widest mb-3">
+          ORGANIZED BY (PENYELENGGARA UTAMA)
+        </div>
+        <div class="flex items-center justify-center gap-6 sm:gap-8 my-auto py-2">
+          <div class="flex flex-col items-center gap-1.5">
+            <img
+              src="/nfcc_black.png"
+              alt="UKM NFCC Logo"
+              class="size-16 sm:size-18 rounded-2xl object-contain shadow-xl shadow-black/80"
+            />
+            <span class="font-display font-bold text-xs text-white">UKM NFCC</span>
+          </div>
+
+          <span class="font-mono text-lg font-bold text-nx-purple">✕</span>
+
+          <div class="flex flex-col items-center gap-1.5">
+            <img
+              src="/nxctf-logo.png"
+              alt="NXCTF Logo"
+              class="size-16 sm:size-18 rounded-2xl object-contain shadow-xl shadow-black/80"
+            />
+            <span class="font-display font-bold text-xs text-white">NXCTF Community</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supported by: STT Terpadu Nurul Fikri -->
+      <div data-reveal-child class="p-5 sm:p-6 rounded-2xl bg-surface/80 border border-white/10 backdrop-blur-xl text-center flex flex-col justify-between motion-card">
+        <div class="font-mono text-[0.65rem] text-text-muted uppercase tracking-widest mb-3">
+          SUPPORTED BY (ACADEMIC SUPPORTER)
+        </div>
+        <div class="flex flex-col items-center gap-1.5 my-auto py-2">
+          <div class="size-16 sm:size-18 rounded-2xl bg-white p-2 flex items-center justify-center shadow-xl shrink-0">
+            <img
+              src="/sttnf-logo.png"
+              alt="STT Terpadu Nurul Fikri Logo"
+              class="size-full object-contain"
+            />
+          </div>
+          <div class="text-center">
+            <span class="font-display font-bold text-xs sm:text-sm text-white block">
+              STT Terpadu Nurul Fikri
+            </span>
+            <span class="font-mono text-[0.65rem] text-text-muted block">
+              Institusi Pendidikan Tinggi Teknologi
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Media Partners & Community Supporters -->
+    <div class="w-full p-5 sm:p-6 rounded-2xl bg-surface/60 border border-white/10 backdrop-blur-xl" data-reveal>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-5 pb-3.5 border-b border-white/10">
+        <div>
+          <div class="font-mono text-[0.65rem] text-nx-cyan font-bold tracking-widest uppercase mb-0.5">
+            // MEDIA & COMMUNITY NETWORK //
+          </div>
+          <h3 class="font-display font-bold text-base sm:text-lg text-white">
+            Media Partners & Komunitas Pendukung
+          </h3>
+        </div>
+        <a
+          href="mailto:nfcc@nurulfikri.ac.id?subject=Inquiry%20Media%20Partner%20NFX%20CTF%202026"
+          class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold bg-white/5 border border-white/10 text-text-secondary hover:text-nx-cyan hover:border-nx-cyan/40 hover:bg-white/10 transition-all shrink-0"
+        >
+          <span>🤝 Gabung Media Partner</span>
+          <span>↗</span>
+        </a>
+      </div>
+
+      <!-- Media Partner Cards Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" data-reveal-group data-reveal-stagger="50">
+        {mediaPartners.map((partner) => (
+          <div data-reveal-child class="p-3 rounded-xl bg-surface-elevated/70 border border-white/5 hover:border-nx-cyan/30 flex flex-col items-center justify-center text-center gap-1.5 group motion-card shadow-sm">
+            <img
+              src={partner.logo}
+              alt={partner.name}
+              class="size-10 sm:size-11 rounded-lg object-contain shadow-md group-hover:scale-105 transition-transform"
+            />
+            <div>
+              <span class="font-display font-bold text-[0.72rem] text-white block truncate max-w-[110px]">
+                {partner.name}
+              </span>
+              <span class="font-mono text-[0.58rem] text-text-muted block">
+                {partner.tag}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

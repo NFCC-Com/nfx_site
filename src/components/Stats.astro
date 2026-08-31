@@ -1,0 +1,29 @@
+---
+// Stats.astro
+const metrics = [
+  { value: "48 JAM", label: "DURASI LOMBA", sub: "07 – 09 Nov 2026", color: "text-nx-cyan" },
+  { value: "7 KATEGORI", label: "KATEGORI SOAL", sub: "Web, Pwn, Rev, Crypto, dll", color: "text-nf-orange-bright" },
+  { value: "SOLO", label: "FORMAT PESERTA", sub: "Individu Mahasiswa & Umum", color: "text-nx-purple" },
+  { value: "90% POOL", label: "DYNAMIC PRIZE POOL", sub: "Track Umum + Sponsor", color: "text-emerald-400" },
+];
+---
+
+<section class="py-6 px-4 sm:px-6 lg:px-8 relative z-10 border-y border-white/10 bg-surface/50 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+      {metrics.map((item, idx) => (
+        <div class={`p-3 sm:p-4 text-center flex flex-col items-center justify-center ${idx % 2 === 0 ? '' : 'pl-4'}`}>
+          <div class={`font-display font-black text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-none ${item.color}`}>
+            {item.value}
+          </div>
+          <div class="font-mono font-bold text-xs text-white uppercase tracking-wider mt-1.5">
+            {item.label}
+          </div>
+          <div class="font-mono text-[0.68rem] text-text-muted mt-0.5">
+            {item.sub}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackgroundCanvas from "../components/BackgroundCanvas";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Stats from "../components/Stats.astro";
+import AboutCollab from "../components/AboutCollab.astro";
+import Tracks from "../components/Tracks.astro";
+import Categories from "../components/Categories.astro";
+import Timeline from "../components/Timeline.astro";
+import Rules from "../components/Rules.astro";
+import Sponsors from "../components/Sponsors.astro";
+import Faq from "../components/Faq.astro";
+import Footer from "../components/Footer.astro";
+import GuidebookModal from "../components/GuidebookModal";
+import RegisterModal from "../components/RegisterModal";
+import DiscordNfxModal from "../components/DiscordNfxModal";
+---
+
+<Layout>
+  <!-- Background Animated Cyber Canvas -->
+  <BackgroundCanvas client:load />
+
+  <!-- Fixed Glassmorphic Navigation -->
+  <Header />
+
+  <!-- Main Content Flow -->
+  <main class="relative z-10">
+    <Hero />
+    <Stats />
+    <AboutCollab />
+    <Tracks />
+    <Categories />
+    <Timeline />
+    <Rules />
+    <Sponsors />
+    <Faq />
+  </main>
+
+  <!-- Cyber Footer -->
+  <Footer />
+
+  <!-- Interactive Modals -->
+  <GuidebookModal client:idle />
+  <RegisterModal client:idle />
+  <DiscordNfxModal client:idle />
+</Layout>

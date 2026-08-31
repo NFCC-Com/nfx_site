@@ -1,0 +1,72 @@
+---
+import Countdown from "./Countdown";
+---
+
+<section class="relative min-h-[85vh] flex items-center justify-center pt-24 pb-14 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <!-- Centered Ambient Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[420px] bg-gradient-to-tr from-nx-cyan/15 via-nx-purple/15 to-nf-orange/20 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+  <div class="absolute top-12 left-1/2 -translate-x-1/2 w-96 h-40 bg-nx-cyan/15 blur-[90px] rounded-full pointer-events-none -z-10"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+    <!-- Live Badge -->
+    <div class="hero-enter inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-elevated/80 border border-nx-cyan/30 text-nx-cyan font-mono text-[0.72rem] shadow-[0_0_15px_rgba(34,211,238,0.15)] mb-3">
+      <span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>07 – 09 NOVEMBER 2026 // 48 JAM JEOPARDY CTF</span>
+    </div>
+
+    <!-- Dual Collab Identifier -->
+    <div class="hero-enter flex items-center gap-2 font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase mb-2">
+      <span class="text-nf-orange-bright">NFCTF (UKM NFCC)</span>
+      <span class="text-nx-purple font-bold">✕</span>
+      <span class="text-nx-cyan">NXCTF COMMUNITY</span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="hero-enter-delay-1 font-display font-extrabold text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[1.08] mb-3.5">
+      NFX CTF <span class="text-nf-orange-bright drop-shadow-[0_0_30px_rgba(255,122,0,0.35)]">2026</span>
+    </h1>
+
+    <!-- Subtitle Description -->
+    <p class="hero-enter-delay-1 text-sm sm:text-base md:text-lg text-text-secondary max-w-2xl leading-relaxed mb-6">
+      Kompetisi <strong class="text-white">Capture The Flag (Individu)</strong> kolaborasi resmi antara <strong class="text-nf-orange-bright">NFCTF (UKM NFCC)</strong> dan <strong class="text-nx-cyan">NXCTF Community</strong>. Jalur pembinaan mahasiswa kampus STT-NF dan ajang persaingan terbuka tingkat nasional.
+    </p>
+
+    <!-- 48-Hour Live Countdown -->
+    <div class="hero-enter-delay-2 w-full mb-6 max-w-2xl mx-auto">
+      <Countdown client:load />
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="hero-enter-delay-3 flex flex-wrap items-center justify-center gap-3 w-full max-w-xl mx-auto mb-5">
+      <button
+        onclick="window.dispatchEvent(new CustomEvent('open-register-modal'))"
+        class="w-full sm:w-auto px-6 py-3 rounded-xl font-display font-bold text-xs bg-gradient-to-r from-nx-cyan via-nx-purple to-nf-orange text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:scale-[1.02] transition-all cursor-pointer"
+      >
+        🚀 Daftar Kompetisi (Solo)
+      </button>
+
+      <a
+        href="/guidebook"
+        class="w-full sm:w-auto px-5 py-3 rounded-xl font-display font-semibold text-xs bg-white/5 border border-white/15 text-text-primary hover:border-nx-cyan/50 hover:text-nx-cyan hover:bg-white/10 transition-all backdrop-blur-md text-center"
+      >
+        📖 Guidebook & Aturan
+      </a>
+
+      <button
+        onclick="window.dispatchEvent(new CustomEvent('open-discord-nfx-modal'))"
+        class="w-full sm:w-auto px-4 py-3 rounded-xl font-mono text-xs font-semibold bg-[#5865F2]/15 border border-[#5865F2]/30 text-[#8ea1e1] hover:bg-[#5865F2] hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+      >
+        <span>💬 Discord NFX CTF</span>
+      </button>
+    </div>
+
+    <!-- Telemetry Badges Bar -->
+    <div class="hero-enter-delay-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 font-mono text-[0.68rem] text-text-muted">
+      <div>FORMAT: <strong class="text-text-secondary">INDIVIDU (SOLO)</strong></div>
+      <span>•</span>
+      <div>SCORING: <strong class="text-emerald-400">DYNAMIC DECAY</strong></div>
+      <span>•</span>
+      <div>PLATFORM: <a href="https://ctf.nfx.my.id" target="_blank" rel="noopener noreferrer" class="text-nx-cyan hover:underline">ctf.nfx.my.id ↗</a></div>
+    </div>
+  </div>
+</section>

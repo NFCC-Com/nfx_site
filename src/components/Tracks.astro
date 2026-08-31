@@ -1,0 +1,150 @@
+---
+// Tracks.astro
+import PrizeCalculator from "./PrizeCalculator";
+---
+
+<section id="tracks" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-2" data-reveal>
+      <div class="inline-flex items-center gap-2 font-mono text-xs text-nf-orange tracking-widest uppercase mb-1.5">
+        <span class="size-1.5 rounded-full bg-nf-orange"></span>
+        <span>// TRACK & HADIAH //</span>
+      </div>
+      <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight mb-2">
+        Track Partisipasi & Alokasi Hadiah
+      </h2>
+      <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
+        Pilih jalur pendaftaran sesuai status Anda. Dapatkan pembekalan workshop intensif atau bersaing di level nasional.
+      </p>
+    </div>
+
+    <!-- 2 Symmetrical Track Consoles -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch" data-reveal-group data-reveal-stagger="120">
+      <!-- Track Mahasiswa NF -->
+      <div data-reveal-child class="p-6 sm:p-7 rounded-2xl bg-surface/90 border border-white/10 hover:border-nf-orange/40 backdrop-blur-xl motion-card shadow-xl flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
+            <span class="font-mono text-[0.68rem] text-nf-orange-bright font-bold uppercase tracking-wider">
+              [TRACK MAHASISWA NF]
+            </span>
+            <span class="font-mono text-[0.62rem] font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+              100% GRATIS
+            </span>
+          </div>
+
+          <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2">
+            Track Mahasiswa NF
+          </h3>
+          <p class="text-text-secondary text-xs sm:text-sm leading-relaxed mb-4">
+            Khusus mahasiswa aktif STT Terpadu Nurul Fikri. Jalur pembinaan intensif persiapan kompetisi cybersecurity.
+          </p>
+
+          <!-- Price & Prize Mini Bar -->
+          <div class="p-3 rounded-xl bg-background/80 border border-white/5 flex items-center justify-between mb-4 font-mono text-xs">
+            <div>
+              <span class="text-text-muted text-[0.62rem] uppercase block">BIAYA (HTM):</span>
+              <strong class="text-emerald-400 font-bold text-sm sm:text-base">Rp 0,- (Free)</strong>
+            </div>
+            <div class="text-right">
+              <span class="text-text-muted text-[0.62rem] uppercase block">TOTAL CASH POOL:</span>
+              <strong class="text-white font-bold text-sm sm:text-base">Rp 400.000</strong>
+            </div>
+          </div>
+
+          <!-- Benefits List (Compact Font) -->
+          <ul class="space-y-1.5 font-mono text-[0.72rem] text-text-secondary mb-5">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span><strong>4x Workshop Online:</strong> Pembekalan intensif dari UKM NFCC.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span><strong>Fixed Cash Top 5:</strong> J1 (150k), J2 (100k), J3 (50k), J4-5 (@50k).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span><strong>Voucher LINUXENIC:</strong> Akses 1 Bulan (J1), 14 Hari (J2), 7 Hari (J3).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span><strong>E-Certificate:</strong> Otomatis tanpa syarat kumpul writeup.</span>
+            </li>
+          </ul>
+        </div>
+
+        <button
+          onclick="window.dispatchEvent(new CustomEvent('open-register-modal'))"
+          class="w-full py-3 rounded-xl font-display font-bold text-xs bg-nf-orange hover:bg-nf-orange-deep text-white shadow-md shadow-nf-orange/20 transition-all text-center cursor-pointer"
+        >
+          Daftar Track Mahasiswa (Free) →
+        </button>
+      </div>
+
+      <!-- Track Umum (Nasional) -->
+      <div data-reveal-child class="p-6 sm:p-7 rounded-2xl bg-surface/90 border border-white/10 hover:border-nx-cyan/40 backdrop-blur-xl motion-card shadow-xl flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
+            <span class="font-mono text-[0.68rem] text-nx-cyan font-bold uppercase tracking-wider">
+              [TRACK UMUM NASIONAL]
+            </span>
+            <span class="font-mono text-[0.62rem] font-bold px-2 py-0.5 rounded bg-nx-cyan/15 text-nx-cyan border border-nx-cyan/30">
+              OPEN NASIONAL
+            </span>
+          </div>
+
+          <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2">
+            Track Umum (Nasional)
+          </h3>
+          <p class="text-text-secondary text-xs sm:text-sm leading-relaxed mb-4">
+            Terbuka untuk pelajar, mahasiswa luar kampus, praktisi, & publik se-Indonesia. Bersaing memperebutkan dynamic prize pool.
+          </p>
+
+          <!-- Price & Prize Mini Bar -->
+          <div class="p-3 rounded-xl bg-background/80 border border-white/5 flex items-center justify-between mb-4 font-mono text-xs">
+            <div>
+              <span class="text-text-muted text-[0.62rem] uppercase block">BIAYA (HTM):</span>
+              <strong class="text-nx-cyan font-bold text-sm sm:text-base">10k / 15k</strong>
+            </div>
+            <div class="text-right">
+              <span class="text-text-muted text-[0.62rem] uppercase block">SKEMA HADIAH:</span>
+              <strong class="text-emerald-400 font-bold text-sm sm:text-base">90% Pool + Sponsor</strong>
+            </div>
+          </div>
+
+          <!-- Benefits List (Compact Font) -->
+          <ul class="space-y-1.5 font-mono text-[0.72rem] text-text-secondary mb-5">
+            <li class="flex items-start gap-2">
+              <span class="text-nx-cyan font-bold">✓</span>
+              <span><strong>90% Dynamic Prize Pool:</strong> Akumulasi tiket pendaftaran peserta.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-nx-cyan font-bold">✓</span>
+              <span><strong>Voucher LINUXENIC:</strong> Akses 1 Bulan (J1), 14 Hari (J2), 7 Hari (J3).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-nx-cyan font-bold">✓</span>
+              <span><strong>Apresiasi Best Writeup:</strong> E-Certificate of Best WU & merchandise.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-nx-cyan font-bold">✓</span>
+              <span><strong>E-Certificate:</strong> Diberikan kepada peserta yang submit writeup.</span>
+            </li>
+          </ul>
+        </div>
+
+        <button
+          onclick="window.dispatchEvent(new CustomEvent('open-register-modal'))"
+          class="w-full py-3 rounded-xl font-display font-bold text-xs bg-gradient-to-r from-nx-cyan to-nx-purple text-slate-950 shadow-md shadow-nx-cyan/20 transition-all text-center cursor-pointer"
+        >
+          Daftar Track Umum (Early Bird) →
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Dynamic Prize Calculator (With Clear Ample Spacing Gap) -->
+    <div class="pt-2">
+      <PrizeCalculator client:visible />
+    </div>
+  </div>
+</section>

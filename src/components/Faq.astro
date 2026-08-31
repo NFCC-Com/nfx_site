@@ -1,0 +1,86 @@
+---
+// Faq.astro
+const faqs = [
+  {
+    q: "Siapa saja yang berhak mendaftar di Track Mahasiswa NF?",
+    a: "Seluruh mahasiswa aktif STT Terpadu Nurul Fikri (termasuk anggota internal NFCC, kecuali problem setter). Pendaftaran 100% GRATIS dan mendapatkan fasilitas 4x workshop persiapan online.",
+  },
+  {
+    q: "Apakah pemula di bidang Cybersecurity & CTF boleh ikut?",
+    a: "Sangat boleh! Tantangan dirancang bertahap dari tingkat pemula (Beginner) hingga mahir. Khusus mahasiswa NF, disediakan 4x sesi workshop persiapan sebelum hari lomba.",
+  },
+  {
+    q: "Apakah diperbolehkan menggunakan AI seperti ChatGPT atau GitHub Copilot?",
+    a: "Ya, penggunaan tools Artificial Intelligence (LLM / Copilot / ChatGPT dsb.) diperbolehkan (AI Allowed) sebagai instrumen riset dan analisis pemecahan masalah.",
+  },
+  {
+    q: "Apa syarat untuk mendapatkan E-Certificate of Participation?",
+    a: "Untuk Track Mahasiswa NF, sertifikat diberikan kepada seluruh peserta tanpa kewajiban mengumpulkan writeup. Untuk Track Umum, peserta WAJIB mengumpulkan Writeup (WU) untuk klaim e-certificate.",
+  },
+  {
+    q: "Bagaimana cara kerja Dynamic Prize Pool pada Track Umum?",
+    a: "90% dari total biaya registrasi tiket masuk peserta umum akan langsung dialokasikan ke Prize Pool pemenang, ditambah alokasi dana dan benefit sponsorship yang bersifat dinamis (hadiah akan terus bertambah dan diumumkan seiring bertambahnya sponsor partner).",
+  },
+  {
+    q: "Berapa lama durasi perlombaan dan apa formatnya?",
+    a: "Kompetisi berlangsung selama 48 Jam Non-stop (7 November 2026 pukul 14:00 WIB hingga 9 November 2026 pukul 14:00 WIB) dengan format Jeopardy CTF di platform ctf.nfx.my.id.",
+  },
+];
+---
+
+<section id="faq" class="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 relative z-10" data-reveal>
+  <div class="max-w-4xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <div class="inline-flex items-center gap-2 font-mono text-xs text-nx-cyan tracking-widest uppercase mb-1.5">
+        <span>// FAQ //</span>
+      </div>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-tight mb-2">
+        Pertanyaan Umum (FAQ)
+      </h2>
+      <p class="text-xs sm:text-sm text-text-secondary">
+        Jawaban ringkas seputar mekanisme perlombaan, aturan main, dan registrasi NFX CTF 2026.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion List Compact -->
+    <div class="space-y-2.5" data-reveal-group data-reveal-stagger="70">
+      {faqs.map((faq) => (
+        <div data-reveal-child class="faq-item p-4 sm:p-4.5 rounded-xl bg-surface/80 border border-white/10 backdrop-blur-xl transition-all duration-200">
+          <button
+            type="button"
+            class="faq-btn w-full flex items-center justify-between gap-4 text-left font-display font-bold text-sm sm:text-base text-white hover:text-nx-cyan transition-colors"
+          >
+            <span>{faq.q}</span>
+            <span class="faq-icon font-mono text-lg text-nx-cyan shrink-0 transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-content hidden pt-3 mt-2.5 border-t border-white/5 text-xs sm:text-sm text-text-secondary leading-relaxed">
+            {faq.a}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-btn');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    btn?.addEventListener('click', () => {
+      const isHidden = content.classList.contains('hidden');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.innerText = '−';
+        item.classList.add('border-nx-cyan/40');
+      } else {
+        content.classList.add('hidden');
+        icon.innerText = '+';
+        item.classList.remove('border-nx-cyan/40');
+      }
+    });
+  });
+</script>

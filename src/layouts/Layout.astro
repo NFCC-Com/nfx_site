@@ -1,0 +1,120 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "NFX CTF 2026 — NFCTF × NXCTF | Hybrid National & Campus CTF Competition",
+  description = "Official Portal NFX CTF 2026. Kolaborasi resmi antara NFCTF (divisi CTF UKM NFCC) dan NXCTF Community. Kompetisi Capture The Flag tingkat nasional dan internal kampus.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="reveal-ready">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo2.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/logo2.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/logo2.png" />
+    <meta name="theme-color" content="#020617" />
+  </head>
+  <body class="bg-background text-text-primary antialiased selection:bg-nf-orange/35 selection:text-white font-sans">
+    <slot />
+
+    <!-- Bidirectional Smooth Scroll Reveal System (Exact NXCTF Architecture) -->
+    <script is:inline>
+      (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const revealTargets = Array.from(document.querySelectorAll("[data-reveal]"));
+        const revealGroups = Array.from(document.querySelectorAll("[data-reveal-group]"));
+
+        const show = (element) => element.classList.add("is-visible");
+        const hide = (element) => element.classList.remove("is-visible");
+
+        const prepareGroup = (group) => {
+          const children = Array.from(group.querySelectorAll("[data-reveal-child]"));
+          const baseDelay = Number(group.getAttribute("data-reveal-delay") || 0);
+          const stagger = Number(group.getAttribute("data-reveal-stagger") || 90);
+
+          children.forEach((child, index) => {
+            child.style.setProperty("--reveal-delay", `${baseDelay + index * stagger}ms`);
+          });
+
+          return children;
+        };
+
+        const revealGroup = (group) => {
+          prepareGroup(group).forEach(show);
+        };
+
+        const resetGroup = (group) => {
+          group.querySelectorAll("[data-reveal-child]").forEach((child) => {
+            child.style.setProperty("--reveal-delay", "0ms");
+            hide(child);
+          });
+        };
+
+        const revealTarget = (target) => {
+          if (target.hasAttribute("data-reveal-group")) {
+            revealGroup(target);
+            return;
+          }
+          show(target);
+        };
+
+        const resetTarget = (target) => {
+          if (target.hasAttribute("data-reveal-group")) {
+            resetGroup(target);
+            return;
+          }
+          hide(target);
+        };
+
+        revealGroups.forEach(prepareGroup);
+
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          revealTargets.forEach(show);
+          revealGroups.forEach(revealGroup);
+          return;
+        }
+
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                revealTarget(entry.target);
+              } else {
+                // Bidirectional: reset when scrolled out of viewport
+                resetTarget(entry.target);
+              }
+            });
+          },
+          {
+            rootMargin: "0px 0px -10% 0px",
+            threshold: 0.12,
+          }
+        );
+
+        revealTargets.forEach((target) => {
+          revealObserver.observe(target);
+        });
+
+        revealGroups.forEach((group) => {
+          revealObserver.observe(group);
+        });
+      })();
+    </script>
+  </body>
+</html>

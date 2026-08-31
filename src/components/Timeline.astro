@@ -1,0 +1,124 @@
+---
+// Timeline.astro
+const steps = [
+  {
+    phase: "01",
+    date: "07 Oktober – 03 November 2026",
+    title: "Periode Pendaftaran",
+    desc: "Early Bird 1 (Rp10k): 07 – 14 Oktober 2026. Early Bird 2 (Rp15k): 15 Oktober – 03 November 2026. Track Mahasiswa NF gratis 100%.",
+    badge: "REGISTRATION",
+    badgeColor: "text-nx-cyan border-nx-cyan/30 bg-nx-cyan/10",
+    dotColor: "border-nx-cyan bg-nx-cyan shadow-[0_0_15px_rgba(34,211,238,0.5)]",
+  },
+  {
+    phase: "02",
+    date: "Oktober – Awal November 2026",
+    title: "4x Workshop Online Intensif",
+    desc: "Sesi pembekalan hands-on bagi peserta Mahasiswa NF yang dipandu oleh UKM NFCC sebelum hari pelaksanaan kompetisi.",
+    badge: "WORKSHOP (NFCC)",
+    badgeColor: "text-nf-orange-bright border-nf-orange/30 bg-nf-orange/10",
+    dotColor: "border-nf-orange bg-nf-orange shadow-[0_0_15px_rgba(255,122,0,0.5)]",
+  },
+  {
+    phase: "03",
+    date: "04 November 2026",
+    title: "Technical Meeting (TM)",
+    desc: "Pengenalan platform ctf.nfx.my.id, aturan main, panduan akun & koneksi, dan sesi tanya jawab teknis bersama panitia.",
+    badge: "BRIEFING",
+    badgeColor: "text-nx-purple border-nx-purple/30 bg-nx-purple/10",
+    dotColor: "border-nx-purple bg-nx-purple shadow-[0_0_15px_rgba(168,85,247,0.5)]",
+  },
+  {
+    phase: "04",
+    date: "07 – 09 November 2026",
+    title: "Kompetisi 48 Jam Live",
+    desc: "Kompetisi Jeopardy CTF dimulai pukul 14:00 WIB (7 Nov) dan berlangsung nonstop selama 48 jam hingga pukul 14:00 WIB (9 Nov).",
+    badge: "MAIN EVENT",
+    badgeColor: "text-emerald-400 border-emerald-400/30 bg-emerald-500/10",
+    dotColor: "border-emerald-400 bg-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.5)]",
+  },
+  {
+    phase: "05",
+    date: "10 – 13 November 2026",
+    title: "Writeup Submission & Review",
+    desc: "Pengumpulan Writeup untuk verifikasi integritas skor, validasi flag juara, penilaian Best Writeup, dan klaim E-Certificate peserta umum.",
+    badge: "VERIFICATION",
+    badgeColor: "text-amber-400 border-amber-400/30 bg-amber-400/10",
+    dotColor: "border-amber-400 bg-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.5)]",
+  },
+  {
+    phase: "06",
+    date: "15 November 2026",
+    title: "Pengumuman Juara & Awarding",
+    desc: "Pengumuman resmi pemenang seluruh kategori, penyerahan hadiah uang tunai, voucher platform LINUXENIC CORP, serta distribusi E-Certificate.",
+    badge: "WINNERS",
+    badgeColor: "text-rose-400 border-rose-400/30 bg-rose-400/10",
+    dotColor: "border-rose-400 bg-rose-400 shadow-[0_0_15px_rgba(251,113,133,0.5)]",
+  },
+];
+---
+
+<section id="timeline" class="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="max-w-5xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-10" data-reveal>
+      <div class="inline-flex items-center gap-2 font-mono text-xs text-nx-purple tracking-widest uppercase mb-1.5">
+        <span>// ROADMAP //</span>
+      </div>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-tight mb-2">
+        Timeline Pelaksanaan Event
+      </h2>
+      <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
+        Rangkaian jadwal lengkap dari fase pendaftaran early bird, workshop pembekalan, pelaksanaan lomba 48 jam, hingga pengumuman juara.
+      </p>
+    </div>
+
+    <!-- Alternating Stepper Circuit with Individual Staggered 1-by-1 Motion -->
+    <div class="relative" data-reveal-group data-reveal-stagger="120">
+      <!-- Vertical Central Line (Desktop) -->
+      <div class="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-gradient-to-b from-nx-cyan via-nx-purple to-nf-orange"></div>
+      <!-- Vertical Left Line (Mobile) -->
+      <div class="md:hidden absolute top-0 bottom-0 left-6 w-0.5 bg-gradient-to-b from-nx-cyan via-nx-purple to-nf-orange"></div>
+
+      <div class="space-y-6 sm:space-y-8">
+        {steps.map((step, idx) => (
+          <div
+            data-reveal-child
+            class={`relative flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+          >
+            <!-- Content Box -->
+            <div class={`w-full md:w-1/2 pl-14 md:pl-0 ${idx % 2 === 0 ? 'md:pl-8 text-left' : 'md:pr-8 md:text-right text-left'}`}>
+              <div class="p-5 rounded-2xl bg-surface/85 border border-white/10 hover:border-white/20 backdrop-blur-xl motion-card group shadow-lg transition-all">
+                <div class={`flex items-center gap-2 mb-2 ${idx % 2 === 0 ? 'justify-start' : 'md:justify-end justify-start'}`}>
+                  <span class={`font-mono text-[0.65rem] font-bold px-2.5 py-0.5 rounded-full border ${step.badgeColor}`}>
+                    {step.badge}
+                  </span>
+                  <span class="font-mono text-[0.68rem] text-text-muted">
+                    PHASE {step.phase}
+                  </span>
+                </div>
+
+                <div class="font-mono text-xs font-semibold text-nx-cyan mb-1">
+                  📅 {step.date}
+                </div>
+
+                <h3 class="font-display font-bold text-lg text-white mb-1 group-hover:text-nx-cyan transition-colors">
+                  {step.title}
+                </h3>
+
+                <p class="text-text-secondary text-xs leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+
+            <!-- Central Step Node / Dot -->
+            <div class={`absolute left-6 md:left-1/2 -translate-x-1/2 flex items-center justify-center size-8 rounded-full bg-background border-2 z-20 transition-transform group-hover:scale-110 ${step.dotColor}`}>
+              <div class="size-2.5 rounded-full bg-white animate-pulse"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
