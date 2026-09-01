@@ -82,7 +82,7 @@ export default function RegisterModal() {
             </div>
 
             <a
-              href="https://forms.gle/sampleMahasiswaForm"
+              href="https://forms.gle/2w81FH7tfUMjEN2G7"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-2.5 rounded-lg font-display font-bold text-xs bg-nf-orange hover:bg-nf-orange-deep text-white shadow-sm transition-all text-center block"
@@ -124,7 +124,7 @@ export default function RegisterModal() {
             </div>
 
             <a
-              href="https://forms.gle/sampleUmumForm"
+              href="https://forms.gle/LbFzf35d9dcLWV8T9"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-2.5 rounded-lg font-display font-bold text-xs bg-gradient-to-r from-nx-cyan to-nx-purple text-slate-950 shadow-sm hover:opacity-95 transition-all text-center block"
