@@ -158,9 +158,9 @@ import Footer from "../components/Footer.astro";
                   <td class="p-3">Technical Meeting & Community Helpdesk</td>
                 </tr>
                 <tr>
-                  <td class="p-3 font-semibold text-white">Syarat Sertifikat</td>
-                  <td class="p-3 text-emerald-400">Otomatis E-Certificate</td>
-                  <td class="p-3 text-amber-300">Wajib Submit Writeup Terverifikasi</td>
+                  <td class="p-3 font-semibold text-white">Sertifikat Peserta</td>
+                  <td class="p-3 text-emerald-400">E-Certificate untuk Seluruh Peserta</td>
+                  <td class="p-3 text-nx-cyan">E-Certificate untuk Seluruh Peserta (Validasi WU)</td>
                 </tr>
                 <tr>
                   <td class="p-3 font-semibold text-white">Alokasi Hadiah</td>
@@ -264,31 +264,40 @@ import Footer from "../components/Footer.astro";
                 <tr>
                   <td class="p-2.5 font-bold text-amber-400">🥇 Juara 1</td>
                   <td class="p-2.5">Rp 150.000 + Voucher LINUXENIC 1 Bulan</td>
-                  <td class="p-2.5">50% Prize Pool + Voucher LINUXENIC 1 Bulan</td>
+                  <td class="p-2.5">45% Prize Pool + Voucher LINUXENIC 1 Bulan</td>
                 </tr>
                 <tr>
                   <td class="p-2.5 font-bold text-slate-300">🥈 Juara 2</td>
                   <td class="p-2.5">Rp 100.000 + Voucher LINUXENIC 14 Hari</td>
-                  <td class="p-2.5">30% Prize Pool + Voucher LINUXENIC 14 Hari</td>
+                  <td class="p-2.5">25% Prize Pool + Voucher LINUXENIC 14 Hari</td>
                 </tr>
                 <tr>
                   <td class="p-2.5 font-bold text-amber-600">🥉 Juara 3</td>
                   <td class="p-2.5">Rp 50.000 + Voucher LINUXENIC 7 Hari</td>
-                  <td class="p-2.5">20% Prize Pool + Voucher LINUXENIC 7 Hari</td>
+                  <td class="p-2.5">15% Prize Pool + Voucher LINUXENIC 7 Hari</td>
                 </tr>
                 <tr>
-                  <td class="p-2.5 font-bold text-text-muted">🎖️ Juara 4 & 5</td>
-                  <td class="p-2.5">@Rp 50.000 + E-Certificate</td>
+                  <td class="p-2.5 font-bold text-slate-400">🎖️ Juara 4</td>
+                  <td class="p-2.5">Rp 50.000</td>
+                  <td class="p-2.5 text-text-dim">—</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-slate-400">🎖️ Juara 5</td>
+                  <td class="p-2.5">Rp 50.000</td>
                   <td class="p-2.5 text-text-dim">—</td>
                 </tr>
                 <tr>
                   <td class="p-2.5 font-bold text-nx-purple">📝 Best Writeup</td>
                   <td class="p-2.5 text-text-dim">—</td>
-                  <td class="p-2.5 text-nx-cyan">E-Certificate Kehormatan & Merchandise</td>
+                  <td class="p-2.5 text-nx-cyan">15% Prize Pool + E-Certif of Best WU</td>
                 </tr>
               </tbody>
             </table>
           </div>
+
+          <p class="text-[0.68rem] text-text-muted font-mono pt-1">
+            *Seluruh peserta di kedua track (Mahasiswa NF & Umum) berhak mendapatkan E-Certificate resmi NFX CTF 2026.
+          </p>
         </section>
 
         <hr class="border-white/10" />
@@ -296,22 +305,25 @@ import Footer from "../components/Footer.astro";
         <!-- 7. Kode Etik & AI -->
         <section id="kode-etik" class="scroll-mt-24 space-y-4">
           <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            7. Kode Etik & Kebijakan AI
+            7. Kode Etik, Kebijakan AI, & Integritas
           </h2>
 
           <div class="space-y-3 font-mono text-xs">
-            <div class="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 space-y-1">
+            <div class="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 space-y-1.5">
               <span class="text-emerald-400 font-bold block">✓ Hal yang Diperbolehkan:</span>
               <p class="text-text-secondary leading-relaxed">
-                Penggunaan asisten AI (ChatGPT, Claude, Gemini) untuk scripting, debugging, atau eksplorasi konsep. Penggunaan tools open-source (Burp Suite, Ghidra, GDB, Wireshark, sqlmap, pwntools).
+                Penggunaan asisten AI & AI agent (ChatGPT, Claude, Gemini, Copilot) untuk scripting, debugging kode, analisis algoritma, atau eksplorasi konsep. Penggunaan tools pentest open-source standar (Burp Suite, Ghidra, GDB, Wireshark, sqlmap, pwntools).
               </p>
             </div>
 
-            <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-1">
+            <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-1.5">
               <span class="text-rose-400 font-bold block">✗ Larangan Keras (Diskualifikasi Langsung):</span>
-              <p class="text-text-secondary leading-relaxed">
-                Penyerangan Denial of Service (DoS/DDoS) terhadap server platform atau challenge box. Berbagi flag atau bertukar solver antar peserta selama kompetisi aktif. Merusak container peserta lain.
-              </p>
+              <ul class="list-disc list-inside space-y-1 text-text-secondary leading-relaxed">
+                <li>Melakukan penyerangan Denial of Service (DoS/DDoS) terhadap server platform atau challenge container.</li>
+                <li>Berbagi flag, payload solver, atau bekerja sama antar peserta selama kompetisi aktif.</li>
+                <li>Meminta bantuan orang lain / joki / pihak ketiga (kompetisi bersifat <strong>individu</strong>, wajib dikerjakan mandiri).</li>
+                <li>Merusak, memodifikasi, atau membobol container challenge milik peserta lain.</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -321,23 +333,33 @@ import Footer from "../components/Footer.astro";
         <!-- 8. Helpdesk -->
         <section id="helpdesk" class="scroll-mt-24 space-y-4">
           <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            8. Narahubung & Bantuan Resmi
+            8. Narahubung & Bantuan Resmi (Open Ticket)
           </h2>
           <p>
-            Untuk kendala teknis, pertanyaan registrasi, dan bantuan operasional:
+            Jika menemukan kendala teknis pada challenge container, platform error, atau pertanyaan operasional perlombaan:
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
+          <div class="p-4 rounded-xl bg-surface border border-nx-cyan/30 font-mono text-xs space-y-2">
+            <div class="flex items-center gap-2 text-nx-cyan font-bold">
+              <span>🎫</span>
+              <span>Sistem Open Ticket di Discord Resmi NFX:</span>
+            </div>
+            <p class="text-text-secondary text-xs leading-relaxed">
+              Silakan bergabung ke Discord NFX CTF 2026 dan gunakan channel <code class="text-white bg-black px-1.5 py-0.5 rounded border border-white/10">#open-ticket</code> untuk menghubungi tim panitia secara privat dan responsif.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs pt-1">
             <div class="p-3.5 rounded-xl bg-surface border border-white/10 space-y-1">
-              <span class="text-white font-bold block">Helpdesk UKM NFCC:</span>
-              <p class="text-text-muted">Track Mahasiswa & Workshop</p>
+              <span class="text-white font-bold block">Komunitas UKM NFCC:</span>
+              <p class="text-text-muted">Track Mahasiswa & Info Workshop</p>
               <a href="https://discord.gg/q8gxeYZgMC" target="_blank" rel="noopener noreferrer" class="text-nx-cyan hover:underline block">
                 discord.gg/q8gxeYZgMC ↗
               </a>
             </div>
 
             <div class="p-3.5 rounded-xl bg-surface border border-white/10 space-y-1">
-              <span class="text-white font-bold block">Helpdesk NXCTF Community:</span>
+              <span class="text-white font-bold block">Komunitas NXCTF:</span>
               <p class="text-text-muted">Platform NXCTF & Track Umum</p>
               <a href="https://discord.gg/5etKks6aQQ" target="_blank" rel="noopener noreferrer" class="text-nx-cyan hover:underline block">
                 discord.gg/5etKks6aQQ ↗

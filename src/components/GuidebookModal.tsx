@@ -79,8 +79,8 @@ export default function GuidebookModal() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={`px-3 py-1.5 rounded-lg whitespace-nowrap transition-all ${activeTab === tab.id
-                  ? "bg-nx-cyan text-slate-950 font-bold shadow-md shadow-nx-cyan/20"
-                  : "text-text-muted hover:text-white hover:bg-white/5"
+                ? "bg-nx-cyan text-slate-950 font-bold shadow-md shadow-nx-cyan/20"
+                : "text-text-muted hover:text-white hover:bg-white/5"
                 }`}
             >
               {tab.label}
@@ -225,21 +225,24 @@ export default function GuidebookModal() {
                 <div className="p-3.5 rounded-xl bg-surface border border-white/10">
                   <strong className="text-nf-orange block mb-1">🎓 Hadiah Track Mahasiswa NF (Fixed Cash Rp400k):</strong>
                   <ul className="space-y-1 text-text-secondary">
-                    <li>🥇 Juara 1: Rp150.000 + Voucher LINUXENIC 1 Bulan + E-Certificate</li>
-                    <li>🥈 Juara 2: Rp100.000 + Voucher LINUXENIC 14 Hari + E-Certificate</li>
-                    <li>🥉 Juara 3: Rp50.000 + Voucher LINUXENIC 7 Hari + E-Certificate</li>
-                    <li>4️⃣ & 5️⃣ Juara 4 & 5: @Rp50.000 + E-Certificate</li>
+                    <li>🥇 Juara 1: Rp150.000 + Voucher LINUXENIC 1 Bulan</li>
+                    <li>🥈 Juara 2: Rp100.000 + Voucher LINUXENIC 14 Hari</li>
+                    <li>🥉 Juara 3: Rp50.000 + Voucher LINUXENIC 7 Hari</li>
+                    <li>🎖️ Juara 4: Rp50.000</li>
+                    <li>🎖️ Juara 5: Rp50.000</li>
                   </ul>
+                  <span className="text-[0.68rem] text-text-muted mt-2 block">*Seluruh peserta mendapatkan E-Certificate resmi.</span>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-surface border border-white/10">
                   <strong className="text-nx-cyan block mb-1">🌐 Hadiah Track Umum (90% Dynamic Prize Pool + Sponsor):</strong>
                   <ul className="space-y-1 text-text-secondary">
-                    <li>🥇 Juara 1: 50% Dynamic Prize Pool + Voucher LINUXENIC 1 Bulan + E-Certificate</li>
-                    <li>🥈 Juara 2: 30% Dynamic Prize Pool + Voucher LINUXENIC 14 Hari + E-Certificate</li>
-                    <li>🥉 Juara 3: 20% Dynamic Prize Pool + Voucher LINUXENIC 7 Hari + E-Certificate</li>
-                    <li>📝 Best Writeup: E-Certificate of Best WU & Penghargaan Khusus</li>
+                    <li>🥇 Juara 1: 45% Dynamic Prize Pool + Voucher LINUXENIC 1 Bulan</li>
+                    <li>🥈 Juara 2: 25% Dynamic Prize Pool + Voucher LINUXENIC 14 Hari</li>
+                    <li>🥉 Juara 3: 15% Dynamic Prize Pool + Voucher LINUXENIC 7 Hari</li>
+                    <li>📝 Best Writeup: 15% Dynamic Prize Pool + E-Certif of Best WU</li>
                   </ul>
+                  <span className="text-[0.68rem] text-text-muted mt-2 block">*Seluruh peserta mendapatkan E-Certificate resmi.</span>
                 </div>
               </div>
             </div>
@@ -255,8 +258,8 @@ export default function GuidebookModal() {
               <div className="p-4 rounded-xl bg-surface border border-white/10 text-xs space-y-2">
                 <strong className="text-emerald-400 block mb-1">✓ Diperbolehkan (Allowed):</strong>
                 <ul className="list-disc list-inside space-y-1 text-text-secondary">
-                  <li>Penggunaan AI / LLM (ChatGPT, GitHub Copilot, Claude) sebagai alat bantu analisis & scripting.</li>
-                  <li>Penggunaan automated scanner tools (Burp Suite, Nmap, Ghidra, Volatility) selama tidak merusak infrastruktur.</li>
+                  <li>Penggunaan asisten AI & AI agent (ChatGPT, Gemini, Claude, Copilot) sebagai alat bantu analisis kode & scripting.</li>
+                  <li>Penggunaan automated scanner & tools pentest (Burp Suite, Nmap, Ghidra, Volatility) selama wajar.</li>
                 </ul>
               </div>
 
@@ -264,11 +267,12 @@ export default function GuidebookModal() {
                 <strong className="text-red-400 block mb-1">✗ Dilarang Keras (Strictly Prohibited):</strong>
                 <ul className="list-disc list-inside space-y-1 text-text-secondary">
                   <li>Melakukan penyerangan Denial of Service (DoS/DDoS) ke platform NXCTF ataupun challenge server.</li>
-                  <li>Berbagi flag, jawaban, atau bekerja sama antar peserta selama perlombaan aktif.</li>
+                  <li>Berbagi flag, jawaban solver, atau bekerja sama antar peserta selama perlombaan aktif.</li>
+                  <li>Meminta bantuan orang lain / joki (kompetisi individu, peserta wajib mengerjakan sendiri).</li>
                   <li>Membobol atau merusak container challenge milik peserta lain.</li>
                 </ul>
                 <p className="text-[0.7rem] text-red-300 font-mono mt-2">
-                  *Pelanggaran aturan di atas akan berakibat langsung pada diskualifikasi permanen tanpa pengembalian biaya pendaftaran.
+                  *Pelanggaran aturan di atas akan berakibat langsung pada diskualifikasi permanen.
                 </p>
               </div>
             </div>
