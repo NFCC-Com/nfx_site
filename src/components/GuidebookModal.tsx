@@ -92,32 +92,62 @@ export default function GuidebookModal() {
         <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-sm text-text-secondary leading-relaxed">
           {/* TAB 1: OVERVIEW */}
           {activeTab === "overview" && (
-            <div className="space-y-4 animate-in fade-in duration-200">
-              <div className="p-4 rounded-xl bg-surface border border-white/10">
-                <h4 className="font-display font-bold text-base text-white mb-1">
-                  Tentang NFX CTF 2026
-                </h4>
+            <div className="space-y-3.5 animate-in fade-in duration-200">
+              <div className="p-4 rounded-xl bg-surface border border-white/10 space-y-2">
+                <div className="flex items-center justify-between">
+                  <h4 className="font-display font-bold text-sm text-white flex items-center gap-1.5">
+                    <span>🚀</span>
+                    <span>Tentang NFX CTF 2026</span>
+                  </h4>
+                  <span className="font-mono text-[0.58rem] font-bold px-2 py-0.5 rounded bg-nf-orange/15 text-nf-orange-bright border border-nf-orange/30">
+                    NFCTF S1 ➔ NFX CTF
+                  </span>
+                </div>
                 <p className="text-xs text-text-secondary leading-relaxed">
-                  <strong>NFX CTF 2026</strong> adalah kompetisi <em>Capture The Flag</em> (CTF) berformat <strong>Jeopardy</strong> yang diselenggarakan oleh <strong>UKM NFCC (Nurul Fikri Cyber Security Community)</strong> berkolaborasi dengan <strong>NXCTF Community</strong>, serta didukung oleh institusi <strong>STT Terpadu Nurul Fikri</strong>.
+                  Bermula dari program kerja internal UKM NFCC bernama <strong>NFCTF Season 1</strong> sebagai wadah latihan praktis mahasiswa STT-NF, konsep ini kemudian dimekarkan menjadi <strong>NFX CTF 2026</strong> lewat kolaborasi bersama <strong>NXCTF Community</strong> serta dukungan Main Sponsor <strong>LINUXENIC CORP.</strong>
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 font-mono text-xs">
-                <div className="p-3.5 rounded-xl bg-background/80 border border-white/5">
-                  <span className="text-text-muted block mb-1">Format Kompetisi:</span>
-                  <strong className="text-white text-sm">Jeopardy CTF (48 Jam Non-stop)</strong>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-mono text-xs">
+                <div className="p-3 rounded-xl bg-background/80 border border-white/5 space-y-0.5">
+                  <span className="text-text-muted text-[0.62rem] uppercase block">Format & Durasi:</span>
+                  <strong className="text-white text-xs">Jeopardy CTF (48 Jam Non-stop)</strong>
                 </div>
-                <div className="p-3.5 rounded-xl bg-background/80 border border-white/5">
-                  <span className="text-text-muted block mb-1">Jadwal Utama Lomba:</span>
-                  <strong className="text-nx-cyan text-sm">7 – 9 November 2026 (Mulai 14:00 WIB)</strong>
+                <div className="p-3 rounded-xl bg-background/80 border border-white/5 space-y-0.5">
+                  <span className="text-text-muted text-[0.62rem] uppercase block">Waktu Pelaksanaan:</span>
+                  <strong className="text-nx-cyan text-xs">07 – 09 Nov 2026 (14:00 WIB)</strong>
                 </div>
-                <div className="p-3.5 rounded-xl bg-background/80 border border-white/5">
-                  <span className="text-text-muted block mb-1">Platform Resmi:</span>
-                  <strong className="text-emerald-400 text-sm">https://ctf.nfx.my.id</strong>
+                <div className="p-3 rounded-xl bg-background/80 border border-white/5 space-y-0.5">
+                  <span className="text-text-muted text-[0.62rem] uppercase block">Platform Resmi:</span>
+                  <strong className="text-emerald-400 text-xs">https://ctf.nfx.my.id ↗</strong>
                 </div>
-                <div className="p-3.5 rounded-xl bg-background/80 border border-white/5">
-                  <span className="text-text-muted block mb-1">Kategori Tantangan:</span>
-                  <strong className="text-white text-sm">7 Bidang (Web, Pwn, Rev, Crypto, Foren, OSINT, Misc)</strong>
+                <div className="p-3 rounded-xl bg-background/80 border border-white/5 space-y-0.5">
+                  <span className="text-text-muted text-[0.62rem] uppercase block">Penyelenggara:</span>
+                  <strong className="text-white text-xs">UKM NFCC × NXCTF Community</strong>
+                </div>
+              </div>
+
+              {/* 8 Kategori Soal Mini Grid */}
+              <div className="space-y-2 pt-1">
+                <span className="font-mono text-xs text-white font-bold block">
+                  // 8 KATEGORI TANTANGAN RESMI //
+                </span>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-[0.68rem]">
+                  {[
+                    { icon: "🌐", name: "Web Exploitation" },
+                    { icon: "⚙️", name: "Binary Exploit (Pwn)" },
+                    { icon: "🔄", name: "Reverse Engineering" },
+                    { icon: "🔐", name: "Cryptography" },
+                    { icon: "🔍", name: "Digital Forensics" },
+                    { icon: "🛰️", name: "OSINT" },
+                    { icon: "💻", name: "Boot to Root" },
+                    { icon: "🧩", name: "Miscellaneous" },
+                  ].map((cat, i) => (
+                    <div key={i} className="p-2 rounded-lg bg-surface border border-white/5 flex items-center gap-1.5 hover:border-nx-cyan/30 transition-colors">
+                      <span className="text-sm">{cat.icon}</span>
+                      <span className="text-white font-medium truncate">{cat.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -125,124 +155,238 @@ export default function GuidebookModal() {
 
           {/* TAB 2: TRACKS */}
           {activeTab === "tracks" && (
-            <div className="space-y-4 animate-in fade-in duration-200">
-              <div className="p-4 rounded-xl bg-surface border border-nf-orange/30">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">🎓</span>
-                  <h4 className="font-display font-bold text-base text-white">Track Mahasiswa NF (Internal)</h4>
-                </div>
-                <ul className="list-disc list-inside space-y-1 text-xs text-text-secondary">
-                  <li><strong>Syarat:</strong> Mahasiswa aktif STT Terpadu Nurul Fikri (anggota internal NFCC boleh mendaftar, kecuali problem setter).</li>
-                  <li><strong>Biaya Pendaftaran:</strong> 100% GRATIS (Free).</li>
-                  <li><strong>Fasilitas:</strong> 4x Workshop Online Intensif oleh tim NFCC sebelum hari H perlombaan.</li>
-                  <li><strong>Sertifikat:</strong> Seluruh peserta mahasiswa mendapatkan E-Certificate of Participation tanpa syarat mengumpulkan writeup.</li>
-                </ul>
-              </div>
+            <div className="space-y-3.5 animate-in fade-in duration-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                {/* Track Mahasiswa NF */}
+                <div className="p-4 rounded-xl bg-surface border border-nf-orange/30 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-white/5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">🎓</span>
+                        <h4 className="font-display font-bold text-sm text-white">Track Mahasiswa NF</h4>
+                      </div>
+                      <span className="font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                        GRATIS
+                      </span>
+                    </div>
 
-              <div className="p-4 rounded-xl bg-surface border border-nx-cyan/30">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">🌐</span>
-                  <h4 className="font-display font-bold text-base text-white">Track Umum (Nasional)</h4>
+                    <div className="space-y-1.5 font-mono text-[0.7rem] text-text-secondary">
+                      <div className="flex justify-between py-1 border-b border-white/5">
+                        <span className="text-text-muted">Target:</span>
+                        <span className="text-white font-medium">Mahasiswa Aktif STT-NF</span>
+                      </div>
+                      <div className="flex justify-between py-1 border-b border-white/5">
+                        <span className="text-text-muted">Fasilitas:</span>
+                        <span className="text-white">2x Workshop (Online/Offline)</span>
+                      </div>
+                      <div className="flex justify-between py-1 border-b border-white/5">
+                        <span className="text-text-muted">Sertifikat:</span>
+                        <span className="text-emerald-400">E-Cert (Tanpa Wajib WU)</span>
+                      </div>
+                      <div className="flex justify-between py-1">
+                        <span className="text-text-muted">Hadiah:</span>
+                        <span className="text-amber-300 font-bold">Fixed Cash Rp 400k (Top 5)</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <ul className="list-disc list-inside space-y-1 text-xs text-text-secondary">
-                  <li><strong>Syarat:</strong> Terbuka untuk umum siapa saja se-Indonesia (pelajar, mahasiswa luar, praktisi, security enthusiast).</li>
-                  <li><strong>Biaya:</strong> Early Bird 1 (Rp10.000) / Early Bird 2 (Rp15.000).</li>
-                  <li><strong>Prize Pool:</strong> 90% dari total pendaftaran + Alokasi dana sponsor.</li>
-                  <li><strong>Sertifikat:</strong> Peserta umum WAJIB mengumpulkan Writeup untuk klaim E-Certificate & validasi juara.</li>
-                </ul>
+
+                {/* Track Umum */}
+                <div className="p-4 rounded-xl bg-surface border border-nx-cyan/30 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-white/5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">🌐</span>
+                        <h4 className="font-display font-bold text-sm text-white">Track Umum (Nasional)</h4>
+                      </div>
+                      <span className="font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded bg-nx-cyan/15 text-nx-cyan border border-nx-cyan/30">
+                        RP 10.000 (FLAT)
+                      </span>
+                    </div>
+
+                    <div className="space-y-1.5 font-mono text-[0.7rem] text-text-secondary">
+                      <div className="flex justify-between py-1 border-b border-white/5">
+                        <span className="text-text-muted">Target:</span>
+                        <span className="text-white font-medium">Nasional (Mhs/Siswa/Praktisi)</span>
+                      </div>
+                      <div className="flex justify-between py-1 border-b border-white/5">
+                        <span className="text-text-muted">Fasilitas:</span>
+                        <span className="text-white">TM & Komunitas Discord</span>
+                      </div>
+                      <div className="flex justify-between py-1 border-b border-white/5">
+                        <span className="text-text-muted">Sertifikat:</span>
+                        <span className="text-nx-cyan">E-Cert (Wajib Submit WU)</span>
+                      </div>
+                      <div className="flex justify-between py-1">
+                        <span className="text-text-muted">Hadiah:</span>
+                        <span className="text-emerald-400 font-bold">Rp 1 Jt + 90% Pool</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
 
           {/* TAB 3: PLATFORM & SCORING */}
           {activeTab === "platform" && (
-            <div className="space-y-4 animate-in fade-in duration-200">
-              <h4 className="font-display font-bold text-base text-white">
-                Platform NXCTF, Distribusi Akun & Format Flag
-              </h4>
-              <p className="text-xs text-text-secondary leading-relaxed">
-                Kompetisi menggunakan sistem <strong>Dynamic Scoring</strong> pada platform NXCTF: nilai soal awalnya bernilai 500 poin dan akan menurun secara dinamis seiring bertambahnya jumlah peserta yang berhasil menyelesaikan challenge tersebut.
-              </p>
-
-              <div className="p-3.5 rounded-xl bg-surface border border-nx-cyan/30 text-xs font-mono space-y-1.5">
-                <div className="text-nx-cyan font-bold flex items-center gap-1.5">
-                  <span>📩</span>
-                  <span>Distribusi Kredensial via Email:</span>
-                </div>
-                <p className="text-text-secondary text-[0.72rem] leading-relaxed">
-                  Username, password sementara akun peserta di platform NXCTF (ctf.nfx.my.id), serta link invite Discord NFX CTF akan dikirimkan otomatis ke <strong>Email Terdaftar</strong> paling lambat pada H-1 Technical Meeting (03 Nov 2026).
+            <div className="space-y-3.5 animate-in fade-in duration-200">
+              <div className="p-4 rounded-xl bg-surface border border-white/10 space-y-2">
+                <h4 className="font-display font-bold text-sm text-white">
+                  Dynamic Scoring Engine (NXCTF Platform)
+                </h4>
+                <p className="text-xs text-text-secondary leading-relaxed">
+                  Platform NXCTF menggunakan mekanisme <strong>Dynamic Scoring</strong>: nilai soal dibuka maksimal 500 poin dan meluruh dinamis (decay: 20 solver) menuju batas minimum 100 poin. Tie-breaker ditentukan oleh waktu submit flag tercepat.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-background/80 border border-nx-cyan/30 font-mono text-xs space-y-2">
-                <span className="text-text-muted block font-semibold">Format Flag Resmi:</span>
-                <div className="text-sm font-bold text-nx-cyan select-all bg-surface p-2 rounded border border-white/5">
-                  NFX&#123;your_flag_here&#125;
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="p-3.5 rounded-xl bg-background/80 border border-white/5 font-mono text-xs space-y-1.5">
+                  <div className="flex items-center gap-1.5 text-nx-cyan font-bold">
+                    <span>📩</span>
+                    <span>Distribusi Akun:</span>
+                  </div>
+                  <p className="text-text-secondary text-[0.72rem] leading-relaxed">
+                    Kredensial login & link Discord dikirim otomatis ke <strong>Email Terdaftar</strong> pada H-1 TM / H-1 Lomba.
+                  </p>
                 </div>
-                <p className="text-[0.7rem] text-text-muted">
-                  *Perhatikan case-sensitive huruf besar/kecil dan karakter khusus pada flag.
-                </p>
+
+                <div className="p-3.5 rounded-xl bg-background/80 border border-nx-cyan/30 font-mono text-xs space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-text-muted text-[0.68rem] font-semibold">Format Flag:</span>
+                    <span className="text-[0.6rem] font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20">CASE-SENSITIVE</span>
+                  </div>
+                  <div className="text-xs font-bold text-nx-cyan select-all bg-black/70 p-1.5 rounded border border-white/5 text-center">
+                    NFX&#123;your_flag_here&#125;
+                  </div>
+                </div>
               </div>
             </div>
           )}
 
           {/* TAB 4: WRITEUP */}
           {activeTab === "writeup" && (
-            <div className="space-y-4 animate-in fade-in duration-200">
-              <h4 className="font-display font-bold text-base text-white">
-                Pedoman & Template Penulisan Writeup (WU)
-              </h4>
-              <p className="text-xs text-text-secondary leading-relaxed">
-                Writeup adalah dokumentasi langkah teknis bagaimana Anda menyelesaikan challenge. Format file yang diterima adalah <strong>PDF</strong> atau <strong>Markdown/GitHub link</strong>.
-              </p>
-
-              <div className="p-4 rounded-xl bg-surface border border-white/10 font-mono text-xs space-y-2">
-                <strong className="text-white block mb-2">Struktur Wajib Writeup:</strong>
-                <ol className="list-decimal list-inside space-y-1.5 text-text-secondary">
-                  <li><strong>Identitas:</strong> Nama Lengkap Peserta, Kategori Track (Umum / Mahasiswa), Kontak Email.</li>
-                  <li><strong>Informasi Challenge:</strong> Nama Soal, Kategori (Web/Pwn/Crypto/dll), dan Poin.</li>
-                  <li><strong>Analisis Kerentanan (Vulnerability Analysis):</strong> Penjelasan letak celah keamanan.</li>
-                  <li><strong>Langkah Eksploitasi (Proof of Concept):</strong> Script solver / command exploit bertahap.</li>
-                  <li><strong>Flag Capture:</strong> Screenshot bukti flag yang didapatkan.</li>
-                  <li><strong>Mitigasi / Remediasi:</strong> Saran perbaikan kode/sistem (nilai tambah Best WU).</li>
-                </ol>
+            <div className="space-y-3.5 animate-in fade-in duration-200">
+              <div className="p-4 rounded-xl bg-surface border border-white/10 space-y-2">
+                <h4 className="font-display font-bold text-sm text-white">
+                  Pedoman & Standar Writeup (WU)
+                </h4>
+                <p className="text-xs text-text-secondary leading-relaxed">
+                  Writeup adalah dokumentasi teknis langkah penyelesaian challenge dalam format <strong>PDF</strong> atau <strong>GitHub Repository / Markdown</strong> (maksimal H+1 setelah kompetisi).
+                </p>
               </div>
 
-              <div className="p-3 rounded-lg bg-amber-400/10 border border-amber-400/25 font-mono text-xs text-amber-300">
-                ⏰ <strong>Batas Akhir Pengumpulan Writeup:</strong> 13 November 2026 pukul 23:59 WIB via form pengumpulan yang disediakan.
+              <div className="p-4 rounded-xl bg-surface border border-white/10 space-y-2.5">
+                <span className="font-mono text-xs text-nx-cyan font-bold block">// 5 POIN STRUKTUR LAPORAN //</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-xs text-text-secondary">
+                  <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2">
+                    <span className="text-emerald-400 font-bold shrink-0">01.</span>
+                    <div>
+                      <strong className="text-white block text-xs">Username & Akun CTF</strong>
+                      <span className="text-text-muted text-[0.65rem]">Nama & username platform CTF</span>
+                    </div>
+                  </div>
+                  <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2">
+                    <span className="text-emerald-400 font-bold shrink-0">02.</span>
+                    <div>
+                      <strong className="text-white block text-xs">Foto Scoreboard</strong>
+                      <span className="text-text-muted text-[0.65rem]">Screenshot ranking & total poin</span>
+                    </div>
+                  </div>
+                  <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2">
+                    <span className="text-emerald-400 font-bold shrink-0">03.</span>
+                    <div>
+                      <strong className="text-white block text-xs">Analisa Solver & PoC</strong>
+                      <span className="text-text-muted text-[0.65rem]">Langkah exploit, script & command</span>
+                    </div>
+                  </div>
+                  <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2">
+                    <span className="text-emerald-400 font-bold shrink-0">04.</span>
+                    <div>
+                      <strong className="text-white block text-xs">Flag</strong>
+                      <span className="text-text-muted text-[0.65rem]">String flag lengkap (NFX&#123;...&#125;)</span>
+                    </div>
+                  </div>
+                  <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2 sm:col-span-2">
+                    <span className="text-emerald-400 font-bold shrink-0">05.</span>
+                    <div>
+                      <strong className="text-white block text-xs">Transparansi AI</strong>
+                      <span className="text-text-muted text-[0.65rem]">Keterangan terbuka jika/bagaimana tools/asisten AI digunakan</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-lg bg-amber-400/10 border border-amber-400/25 font-mono text-xs text-amber-300 flex items-center gap-2">
+                <span>⏰</span>
+                <span><strong>Batas Pengumpulan:</strong> 13 November 2026 pukul 23:59 WIB via form resmi.</span>
               </div>
             </div>
           )}
 
           {/* TAB 5: PRIZES */}
           {activeTab === "prizes" && (
-            <div className="space-y-4 animate-in fade-in duration-200">
-              <h4 className="font-display font-bold text-base text-white">
-                Rincian Hadiah & Voucher Sponsor
-              </h4>
-
-              <div className="space-y-3 font-mono text-xs">
-                <div className="p-3.5 rounded-xl bg-surface border border-white/10">
-                  <strong className="text-nf-orange block mb-1">🎓 Hadiah Track Mahasiswa NF (Fixed Cash Rp400k):</strong>
-                  <ul className="space-y-1 text-text-secondary">
-                    <li>🥇 Juara 1: Rp150.000 + Voucher LINUXENIC 1 Bulan</li>
-                    <li>🥈 Juara 2: Rp100.000 + Voucher LINUXENIC 14 Hari</li>
-                    <li>🥉 Juara 3: Rp50.000 + Voucher LINUXENIC 7 Hari</li>
-                    <li>🎖️ Juara 4: Rp50.000</li>
-                    <li>🎖️ Juara 5: Rp50.000</li>
+            <div className="space-y-3.5 animate-in fade-in duration-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                {/* Track Mahasiswa */}
+                <div className="p-3.5 rounded-xl bg-surface border border-nf-orange/30 space-y-2">
+                  <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
+                    <strong className="text-nf-orange font-display text-xs">🎓 Track Mahasiswa NF</strong>
+                    <span className="font-mono text-[0.6rem] font-bold text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25">
+                      FIXED CASH RP 400K
+                    </span>
+                  </div>
+                  <ul className="space-y-1 font-mono text-xs text-text-secondary">
+                    <li className="flex justify-between">
+                      <span className="text-amber-300 font-bold">🥇 Juara 1:</span>
+                      <span className="text-white">Rp 150k + Voucher Lab</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-slate-300 font-bold">🥈 Juara 2:</span>
+                      <span className="text-white">Rp 100.000</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-amber-600 font-bold">🥉 Juara 3:</span>
+                      <span className="text-white">Rp 50.000</span>
+                    </li>
+                    <li className="flex justify-between text-text-muted">
+                      <span>🎖️ Juara 4 - 5:</span>
+                      <span>@Rp 50.000</span>
+                    </li>
                   </ul>
-                  <span className="text-[0.68rem] text-text-muted mt-2 block">*Seluruh peserta mendapatkan E-Certificate resmi.</span>
+                  <span className="text-[0.62rem] text-text-muted block pt-1 border-t border-white/5 font-mono">
+                    E-Certificate otomatis tanpa wajib writeup.
+                  </span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-surface border border-white/10">
-                  <strong className="text-nx-cyan block mb-1">🌐 Hadiah Track Umum (90% Dynamic Prize Pool + Sponsor):</strong>
-                  <ul className="space-y-1 text-text-secondary">
-                    <li>🥇 Juara 1: 45% Dynamic Prize Pool + Voucher LINUXENIC 1 Bulan</li>
-                    <li>🥈 Juara 2: 25% Dynamic Prize Pool + Voucher LINUXENIC 14 Hari</li>
-                    <li>🥉 Juara 3: 15% Dynamic Prize Pool + Voucher LINUXENIC 7 Hari</li>
-                    <li>📝 Best Writeup: 15% Dynamic Prize Pool + E-Certif of Best WU</li>
+                {/* Track Umum */}
+                <div className="p-3.5 rounded-xl bg-surface border border-nx-cyan/30 space-y-2">
+                  <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
+                    <strong className="text-nx-cyan font-display text-xs">🌐 Track Umum (Nasional)</strong>
+                    <span className="font-mono text-[0.6rem] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25">
+                      RP 1 JT + 90% POOL
+                    </span>
+                  </div>
+                  <div className="p-1.5 px-2 rounded bg-black/50 border border-white/5 text-[0.65rem] text-emerald-400 font-mono font-semibold text-center">
+                    Total = Rp 1.000.000 + (Peserta × Rp 9.000)
+                  </div>
+                  <ul className="space-y-1 font-mono text-xs text-text-secondary">
+                    <li className="flex justify-between">
+                      <span className="text-amber-300 font-bold">🥇 Juara 1:</span>
+                      <span className="text-white">50% Pool + Voucher Lab</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-slate-300 font-bold">🥈 Juara 2:</span>
+                      <span className="text-white">30% Total Pool</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-amber-600 font-bold">🥉 Juara 3:</span>
+                      <span className="text-white">20% Total Pool</span>
+                    </li>
                   </ul>
-                  <span className="text-[0.68rem] text-text-muted mt-2 block">*Seluruh peserta mendapatkan E-Certificate resmi.</span>
+                  <span className="text-[0.62rem] text-text-muted block pt-1 border-t border-white/5 font-mono">
+                    Wajib submit Writeup untuk klaim hadiah & E-Cert.
+                  </span>
                 </div>
               </div>
             </div>
@@ -259,20 +403,20 @@ export default function GuidebookModal() {
                 <strong className="text-emerald-400 block mb-1">✓ Diperbolehkan (Allowed):</strong>
                 <ul className="list-disc list-inside space-y-1 text-text-secondary">
                   <li>Penggunaan asisten AI & AI agent (ChatGPT, Gemini, Claude, Copilot) sebagai alat bantu analisis kode & scripting.</li>
-                  <li>Penggunaan automated scanner & tools pentest (Burp Suite, Nmap, Ghidra, Volatility) selama wajar.</li>
+                  <li>Penggunaan tools pentest standar (Burp Suite, Ghidra, Nmap, sqlmap) serta teknik bruteforce/fuzzing pada target container challenge.</li>
                 </ul>
               </div>
 
               <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/25 text-xs space-y-2">
                 <strong className="text-red-400 block mb-1">✗ Dilarang Keras (Strictly Prohibited):</strong>
                 <ul className="list-disc list-inside space-y-1 text-text-secondary">
-                  <li>Melakukan penyerangan Denial of Service (DoS/DDoS) ke platform NXCTF ataupun challenge server.</li>
-                  <li>Berbagi flag, jawaban solver, atau bekerja sama antar peserta selama perlombaan aktif.</li>
-                  <li>Meminta bantuan orang lain / joki (kompetisi individu, peserta wajib mengerjakan sendiri).</li>
-                  <li>Membobol atau merusak container challenge milik peserta lain.</li>
+                  <li>Melakukan penyerangan Denial of Service (DoS/DDoS) ke website/platform utama kompetisi (<code>ctf.nfx.my.id</code>) ataupun server host.</li>
+                  <li>Merusak, memodifikasi sistem, menghapus file challenge, atau spam restart container (karena container bersifat sharing bersama peserta lain).</li>
+                  <li>Berbagi flag, jawaban solver, atau bekerja sama antar peserta selama perlombaan aktif (kompetisi wajib solo).</li>
+                  <li>Meminta bantuan orang lain / joki pihak ketiga.</li>
                 </ul>
                 <p className="text-[0.7rem] text-red-300 font-mono mt-2">
-                  *Pelanggaran aturan di atas akan berakibat langsung pada diskualifikasi permanen.
+                  Pelanggaran aturan di atas berakibat langsung pada sanksi diskualifikasi permanen.
                 </p>
               </div>
             </div>

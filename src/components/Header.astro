@@ -3,9 +3,9 @@
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 h-[72px] bg-background/80 backdrop-blur-xl border-b border-white/[0.08] transition-all duration-300 boot-navbar">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-    <!-- Dual Brand Logo Lockup: NFCTF & NXCTF -->
-    <a href="/" class="flex items-center gap-2.5 sm:gap-3 group">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between relative">
+    <!-- Dual Brand Logo Lockup: NFCTF & NXCTF (Clean & Compact on the Left) -->
+    <a href="/" class="flex items-center gap-2 sm:gap-2.5 group shrink-0 z-10">
       <div class="flex items-center gap-1.5 p-1 rounded-xl bg-surface-elevated/90 border border-white/10 shadow-sm group-hover:border-nx-cyan/40 transition-colors">
         <img
           src="/nfctf-bgb.png"
@@ -19,55 +19,63 @@
           class="size-6 sm:size-7 rounded-lg object-contain"
         />
       </div>
-      <div class="flex items-center gap-1.5 font-display font-black text-sm sm:text-base tracking-tight">
+      <div class="flex items-center gap-1.5 font-display font-black text-sm sm:text-base tracking-tight whitespace-nowrap">
         <span class="text-nf-orange-bright">NFCTF</span>
         <span class="text-nx-purple font-mono text-xs font-bold">✕</span>
         <span class="text-nx-cyan">NXCTF</span>
       </div>
     </a>
 
-    <!-- Desktop Navigation Menu -->
-    <nav class="hidden md:flex items-center gap-1 p-1 rounded-full bg-surface-elevated/60 border border-white/[0.06] backdrop-blur-md">
-      <a href="/#about" class="px-3.5 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all">Tentang</a>
-      <a href="/#tracks" class="px-3.5 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all">Track & Hadiah</a>
-      <a href="/#categories" class="px-3.5 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all">Kategori</a>
-      <a href="/#timeline" class="px-3.5 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all">Timeline</a>
-      <a href="/#rules" class="px-3.5 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all">Rules</a>
-      <a href="/#sponsors" class="px-3.5 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all">Sponsor & Media</a>
-      <a href="/#faq" class="px-3.5 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all">FAQ</a>
-      <a href="/guidebook" class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-nx-cyan hover:bg-nx-cyan/10 transition-all border border-nx-cyan/20">Guidebook</a>
+    <!-- Desktop Navigation Menu (Dead-Center Aligned & Streamlined) -->
+    <nav class="hidden xl:flex items-center gap-0.5 p-1 rounded-full bg-surface-elevated/70 border border-white/[0.08] backdrop-blur-md absolute left-1/2 -translate-x-1/2 shrink-0 z-20 shadow-sm">
+      <a href="/#tracks" class="px-3 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Track & Hadiah</a>
+      <a href="/#timeline" class="px-3 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Timeline</a>
+      <a href="/#rules" class="px-3 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Rules</a>
+      <a href="/#sponsors" class="px-3 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Sponsor</a>
+      <a href="/#faq" class="px-3 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">FAQ</a>
+      <a href="/guidebook" class="px-3 py-1.5 rounded-full text-xs font-semibold text-nx-cyan hover:bg-nx-cyan/10 transition-all border border-nx-cyan/20 whitespace-nowrap">Guidebook</a>
     </nav>
 
-    <!-- Header Actions -->
-    <div class="flex items-center gap-3">
-      <a
-        href="https://ctf.nfx.my.id"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl font-mono text-xs font-semibold bg-surface-elevated text-text-primary border border-white/10 hover:border-nx-cyan/50 hover:text-nx-cyan hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-200"
-      >
-        <span class="size-1.5 rounded-full bg-emerald-400"></span>
-        <span>ctf.nfx.my.id</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-      </a>
+    <!-- Header Actions (Sponsored by LINUXENIC on the Right + Mobile Burger) -->
+    <div class="flex items-center gap-2.5 sm:gap-3 shrink-0 z-10">
+      <!-- Navbar Sponsor Badge (Prominent on Right Side) -->
+      <div class="hidden sm:inline-flex items-center gap-2">
+        <span class="font-mono text-[0.62rem] text-text-muted uppercase tracking-wider whitespace-nowrap select-none">Sponsored by</span>
+        <a
+          href="https://linuxenic.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-elevated/90 border border-amber-400/35 hover:border-amber-400 text-amber-300 hover:text-amber-200 transition-all text-xs font-display font-bold shadow-[0_0_12px_rgba(251,191,36,0.12)] whitespace-nowrap shrink-0 group leading-none"
+          title="Official Main Sponsor: LINUXENIC CORP."
+        >
+          <img
+            src="/linuxenic-logo.png"
+            alt="LINUXENIC"
+            class="w-4 h-4 rounded object-contain bg-black border border-white/10 shrink-0"
+            style="width: 16px; height: 16px; min-width: 16px; max-width: 16px; max-height: 16px;"
+          />
+          <span class="tracking-wide whitespace-nowrap text-xs font-bold">LINUXENIC</span>
+          <span class="text-[0.6rem] text-text-muted group-hover:text-amber-300 transition-colors">↗</span>
+        </a>
+      </div>
 
-      <!-- Mobile Hamburger Button -->
+      <!-- Mobile Hamburger Button (Prominent on Mobile/Phone) -->
       <button
         id="mobile-menu-btn"
         aria-label="Toggle Navigation Menu"
-        class="md:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-text-secondary hover:text-white transition-colors"
+        class="xl:hidden p-2.5 rounded-xl bg-surface-elevated border border-white/10 text-text-secondary hover:text-white hover:border-nx-cyan/40 transition-colors cursor-pointer"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon-open"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="menu-icon-close"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon-open"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="menu-icon-close"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
     </div>
   </div>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu-drawer" class="hidden md:hidden fixed top-[72px] left-0 right-0 bottom-0 bg-background/95 backdrop-blur-2xl border-t border-white/10 p-6 overflow-y-auto flex flex-col gap-4">
+  <div id="mobile-menu-drawer" class="hidden xl:hidden fixed top-[72px] left-0 right-0 bottom-0 bg-background/95 backdrop-blur-2xl border-t border-white/10 p-6 overflow-y-auto flex flex-col gap-4">
     <a href="/#about" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Tentang Kolaborasi</a>
     <a href="/#tracks" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Track & Hadiah</a>
-    <a href="/#categories" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">7 Kategori Soal</a>
+    <a href="/#categories" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">8 Kategori Soal</a>
     <a href="/#timeline" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Timeline Lomba</a>
     <a href="/#rules" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Rules & Writeup</a>
     <a href="/#sponsors" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Sponsor & Partner</a>
@@ -86,6 +94,18 @@
       <p class="text-center font-mono text-[0.7rem] text-text-muted">
         Diselenggarakan oleh UKM NFCC × NXCTF
       </p>
+      <div class="flex items-center justify-center gap-2 pt-2 border-t border-white/5">
+        <span class="font-mono text-[0.65rem] text-text-muted">Main Sponsor:</span>
+        <a href="https://linuxenic.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-amber-300 font-bold text-xs hover:underline">
+          <img
+            src="/linuxenic-logo.png"
+            alt="LINUXENIC"
+            class="w-4 h-4 object-contain rounded"
+            style="width: 16px; height: 16px;"
+          />
+          <span>LINUXENIC CORP.</span>
+        </a>
+      </div>
     </div>
   </div>
 </header>

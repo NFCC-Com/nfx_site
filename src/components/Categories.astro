@@ -1,59 +1,112 @@
 ---
 // Categories.astro
 const disciplines = [
-  { id: "01", name: "Web Exploitation", icon: "🌐", desc: "Eksplorasi celah keamanan aplikasi web, form login, & manipulasi input data.", tags: ["Web Security", "SQL Injection", "XSS"] },
-  { id: "02", name: "Binary Exploitation (Pwn)", icon: "💥", desc: "Analisis logika program biner, alur eksekusi memori, & pemahaman dasar exploit.", tags: ["Buffer Overflow", "GDB Debugger", "Memory Security"] },
-  { id: "03", name: "Reverse Engineering", icon: "🔍", desc: "Membongkar alur kerja file program biner, logika algoritma, & analisa kode.", tags: ["Ghidra", "Decompilation", "Logic Analysis"] },
-  { id: "04", name: "Cryptography", icon: "🔐", desc: "Menganalisis sistem enkripsi, memecahkan sandi klasik, cipher, & kunci tersembunyi.", tags: ["Classic Cipher", "RSA Encryption", "Hash Decoding"] },
-  { id: "05", name: "Digital Forensics", icon: "🕵️‍♂️", desc: "Investigasi file gambar, jejak paket jaringan internet, & inspeksi artefak sistem.", tags: ["Steganografi", "Wireshark PCAP", "File Analysis"] },
-  { id: "06", name: "OSINT (Intelligence)", icon: "🌍", desc: "Pencarian informasi berbasis sumber publik, geolokasi foto, & jejak digital profil.", tags: ["Geolocation Foto", "Jejak Digital", "Investigasi Web"] },
-  { id: "07", name: "Misc & Logic", icon: "🧩", desc: "Teka-teki logika programming, scripting sederhana, & pemecahan problem kreatif.", tags: ["Logic Puzzle", "Python Script", "Trivia & Coding"] },
+  {
+    id: "01",
+    name: "Web Exploitation",
+    icon: "🌐",
+    desc: "Eksplorasi celah keamanan aplikasi web modern, manipulasi input pengguna, form login, dan bypass otentikasi server.",
+    tags: ["Web", "SQLi", "XSS"]
+  },
+  {
+    id: "02",
+    name: "Binary Exploitation",
+    icon: "💥",
+    desc: "Analisis eksekusi biner memori, pembajakan flow program, serta eksploitasi celah arsitektur sistem operasi.",
+    tags: ["Pwn", "Overflow", "ROP"]
+  },
+  {
+    id: "03",
+    name: "Reverse Engineering",
+    icon: "🔍",
+    desc: "Membongkar alur logika file biner yang terenkripsi, dekompilasi bytecode, serta audit mekanisme validasi kode.",
+    tags: ["Ghidra", "Decompile", "x86"]
+  },
+  {
+    id: "04",
+    name: "Cryptography",
+    icon: "🔐",
+    desc: "Menganalisis sistem enkripsi modern dan klasik, memecahkan sandi cipher, serta eksploitasi kunci matematis.",
+    tags: ["Cipher", "RSA", "Hash"]
+  },
+  {
+    id: "05",
+    name: "Digital Forensics",
+    icon: "🕵️‍♂️",
+    desc: "Investigasi artefak sistem digital, inspeksi lalu lintas paket PCAP jaringan, serta pelacakan jejak steganografi.",
+    tags: ["Stegano", "PCAP", "Memory"]
+  },
+  {
+    id: "06",
+    name: "OSINT (Intelligence)",
+    icon: "🌍",
+    desc: "Penelusuran informasi berbasis sumber publik terbuka, geolokasi citra satelit, serta analisis jejak digital profil.",
+    tags: ["Geoloc", "Profil", "Intel"]
+  },
+  {
+    id: "07",
+    name: "Boot to Root",
+    icon: "💻",
+    desc: "Akses mesin target via SSH dengan port forwarding. Eksplorasi vulnerability internal hingga meraih akses root.",
+    tags: ["SSH", "Forwarding", "Privesc"]
+  },
+  {
+    id: "08",
+    name: "Misc & Logic",
+    icon: "🧩",
+    desc: "Tantangan teka-teki logika pemrograman, escape sandbox/jail, scripting Python, serta pemecahan problem kreatif.",
+    tags: ["Python", "Logic", "Jailbreak"]
+  },
 ];
 ---
 
 <section id="categories" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative z-10">
   <div class="max-w-6xl mx-auto space-y-6">
     <!-- Section Header -->
-    <div class="text-center max-w-2xl mx-auto mb-4" data-reveal>
+    <div class="text-center max-w-2xl mx-auto mb-6" data-reveal>
       <div class="inline-flex items-center gap-2 font-mono text-xs text-nx-cyan tracking-widest uppercase mb-1.5">
         <span class="size-1.5 rounded-full bg-nx-cyan"></span>
-        <span>// 7 KATEGORI SOAL //</span>
+        <span>// 8 KATEGORI TANTANGAN //</span>
       </div>
       <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight mb-2">
-        Matriks 7 Kategori Tantangan
+        8 Kategori Soal CTF
       </h2>
       <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
-        Tantangan dirancang bertingkat dan ramah pemula dengan dynamic scoring decay dari level dasar hingga mahir.
+        Variasi soal dirancang bertingkat dengan dynamic scoring decay, dari level fundamental ramah pemula hingga tantangan kompetitif nasional.
       </p>
     </div>
 
-    <!-- 7 Disciplines Grid (Row 1: 3 cards, Row 2: 3 cards, Row 3: 1 centered card) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-reveal-group data-reveal-stagger="70">
-      {disciplines.map((cat, idx) => (
+    <!-- 8 Categories Grid (Symmetrical 4-col desktop, 2-col tablet, 1-col mobile) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" data-reveal-group data-reveal-stagger="60">
+      {disciplines.map((cat) => (
         <div
           data-reveal-child
-          class={`p-5 rounded-2xl bg-surface/85 border border-white/10 hover:border-white/20 backdrop-blur-xl motion-card shadow-lg flex flex-col justify-between group ${idx === 6 ? 'sm:col-span-2 sm:max-w-md sm:mx-auto sm:w-full lg:col-span-1 lg:col-start-2 lg:max-w-none' : ''}`}
+          class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-white/10 hover:border-nx-cyan/40 backdrop-blur-xl motion-card shadow-lg flex flex-col justify-between group transition-all"
         >
           <div>
-            <div class="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/5">
-              <span class="font-mono text-[0.68rem] font-bold text-text-muted">
-                DISCIPLINE [CAT.{cat.id}]
+            <!-- Card Header: Clean Number Badge + Big Emoji Icon -->
+            <div class="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-white/5">
+              <span class="font-mono text-[0.68rem] font-bold text-nx-cyan bg-nx-cyan/10 border border-nx-cyan/25 px-2 py-0.5 rounded-md">
+                #{cat.id}
               </span>
               <span class="text-xl">{cat.icon}</span>
             </div>
 
-            <h3 class="font-display font-bold text-base sm:text-lg text-white mb-1.5 group-hover:text-nx-cyan transition-colors">
+            <!-- Title -->
+            <h3 class="font-display font-bold text-sm sm:text-base text-white mb-2 group-hover:text-nx-cyan transition-colors leading-snug">
               {cat.name}
             </h3>
 
-            <p class="text-text-secondary text-xs leading-relaxed mb-4">
+            <!-- Uniform 3-line Description -->
+            <p class="text-text-secondary text-xs leading-relaxed min-h-[4rem] line-clamp-3 mb-3">
               {cat.desc}
             </p>
           </div>
 
-          <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+          <!-- Single-line Clean Tags Bar (Never Wraps) -->
+          <div class="flex items-center gap-1.5 pt-2.5 border-t border-white/5 whitespace-nowrap overflow-hidden">
             {cat.tags.map((tag) => (
-              <span class="font-mono text-[0.62rem] font-medium px-2 py-0.5 rounded-md bg-black/80 border border-white/10 text-text-secondary">
+              <span class="font-mono text-[0.62rem] font-medium px-2 py-0.5 rounded-md bg-black/60 border border-white/10 text-text-muted shrink-0">
                 {tag}
               </span>
             ))}

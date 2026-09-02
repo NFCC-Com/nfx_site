@@ -1,13 +1,9 @@
 /**
  * NFX CTF 2026 — Interactive Dynamic Prize Pool Calculator
  * Formula:
- * - Average HTM: Rp11.500 (Early Bird 1: 10k, Early Bird 2: 15k)
+ * - HTM: Rp10.000 (Flat)
  * - Prize Pool: 90% of Total Revenue
  * - Operational & Server: 10% of Total Revenue
- *
- * Schemes:
- * - Option 1 (Top 5): J1 (40%), J2 (25%), J3 (15%), J4 (10%), J5 (10%)
- * - Option 2 (Top 3 + Best WU): J1 (45%), J2 (25%), J3 (15%), Best WU (15%)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const prizeGridContainer = document.getElementById('prize-grid-output');
 
   let currentScheme = 'option1'; // 'option1' or 'option2'
-  const AVG_HTM = 11500;
+  const AVG_HTM = 10000;
+  const BASE_SPONSOR = 1000000; // Rp 1.000.000 Cash Sponsorship dari LINUXENIC CORP.
 
   const formatRupiah = (num) => {
     return new Intl.NumberFormat('id-ID', {
@@ -39,15 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
       participantCountEl.innerText = `${count} Peserta`;
     }
 
-    const totalRevenue = count * AVG_HTM;
-    const prizePool = totalRevenue * 0.90;
-    const opsCost = totalRevenue * 0.10;
+    const ticketRevenue = count * AVG_HTM;
+    const ticketPool = ticketRevenue * 0.90;
+    const totalPrizePool = BASE_SPONSOR + ticketPool;
+    const opsCost = ticketRevenue * 0.10;
 
-    if (totalRevenueEl) totalRevenueEl.innerText = formatRupiah(totalRevenue);
-    if (prizePoolEl) prizePoolEl.innerText = formatRupiah(prizePool);
+    if (totalRevenueEl) totalRevenueEl.innerText = formatRupiah(ticketRevenue);
+    if (prizePoolEl) prizePoolEl.innerText = formatRupiah(totalPrizePool);
     if (opsCostEl) opsCostEl.innerText = formatRupiah(opsCost);
 
-    renderPrizes(prizePool);
+    renderPrizes(totalPrizePool);
   }
 
   function renderPrizes(prizePool) {
@@ -93,35 +91,28 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
     } else {
-      const j1 = prizePool * 0.45;
-      const j2 = prizePool * 0.25;
-      const j3 = prizePool * 0.15;
-      const bestWu = prizePool * 0.15;
+      const j1 = prizePool * 0.50;
+      const j2 = prizePool * 0.30;
+      const j3 = prizePool * 0.20;
 
       prizeGridContainer.innerHTML = `
         <div class="prize-rank-card rank-1">
           <div class="prize-medal">🥇</div>
           <div class="prize-rank-title">Juara 1</div>
-          <div class="prize-percentage">45% Prize Pool</div>
+          <div class="prize-percentage">50% Prize Pool</div>
           <div class="prize-amount">${formatRupiah(j1)}</div>
         </div>
         <div class="prize-rank-card rank-2">
           <div class="prize-medal">🥈</div>
           <div class="prize-rank-title">Juara 2</div>
-          <div class="prize-percentage">25% Prize Pool</div>
+          <div class="prize-percentage">30% Prize Pool</div>
           <div class="prize-amount">${formatRupiah(j2)}</div>
         </div>
         <div class="prize-rank-card rank-3">
           <div class="prize-medal">🥉</div>
           <div class="prize-rank-title">Juara 3</div>
-          <div class="prize-percentage">15% Prize Pool</div>
+          <div class="prize-percentage">20% Prize Pool</div>
           <div class="prize-amount">${formatRupiah(j3)}</div>
-        </div>
-        <div class="prize-rank-card rank-wu">
-          <div class="prize-medal">📝</div>
-          <div class="prize-rank-title">Best Writeup</div>
-          <div class="prize-percentage">15% Prize Pool</div>
-          <div class="prize-amount">${formatRupiah(bestWu)}</div>
         </div>
       `;
     }

@@ -2,136 +2,160 @@
 // Rules.astro
 ---
 
-<section id="rules" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative z-10">
-  <div class="max-w-5xl mx-auto space-y-6">
-    <!-- Section Header -->
-    <div class="text-center max-w-2xl mx-auto mb-2" data-reveal>
-      <div class="inline-flex items-center gap-2 font-mono text-xs text-rose-400 tracking-widest uppercase mb-1.5">
-        <span class="size-1.5 rounded-full bg-rose-400"></span>
+<section id="rules" class="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="max-w-5xl mx-auto space-y-4 sm:space-y-5">
+    <!-- Section Header (Compact) -->
+    <div class="text-center max-w-2xl mx-auto mb-1" data-reveal>
+      <div class="inline-flex items-center gap-1.5 font-mono text-[0.68rem] text-rose-400 tracking-widest uppercase mb-1">
         <span>// REGULASI //</span>
       </div>
-      <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight mb-2">
+      <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white tracking-tight leading-tight mb-1">
         Regulasi & Format Kompetisi
       </h2>
-      <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
-        Standarisasi format flag, kebijakan writeup per track, dan etika integritas perlombaan.
+      <p class="text-xs text-text-secondary">
+        Ketentuan writeup per track, aturan integritas sportivitas, dan standarisasi submission flag.
       </p>
     </div>
 
-    <!-- 2 Symmetrical Power Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch" data-reveal-group data-reveal-stagger="120">
+    <!-- 3 Ultra-Compact Cards Grid with Uniform Headers & Footers -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-3.5 items-stretch" data-reveal-group data-reveal-stagger="60">
 
-      <!-- Left Card: Flag Format & Platform Specs -->
-      <div data-reveal-child class="p-6 sm:p-7 rounded-2xl bg-surface/90 border border-white/10 hover:border-nx-cyan/40 backdrop-blur-xl motion-card shadow-xl flex flex-col justify-between group">
+      <!-- Card 1: Kebijakan Writeup -->
+      <div data-reveal-child class="p-3.5 sm:p-4 rounded-xl bg-surface/85 border border-white/10 hover:border-nx-cyan/40 backdrop-blur-xl shadow-md flex flex-col justify-between motion-card">
         <div>
-          <div class="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
-            <span class="font-mono text-[0.68rem] font-bold text-nx-cyan uppercase tracking-wider">
-              🚩 FORMAT FLAG & PLATFORM
-            </span>
-            <span class="font-mono text-[0.62rem] text-text-muted px-2 py-0.5 rounded bg-black/80 border border-white/10">
-              ctf.nfx.my.id
-            </span>
-          </div>
-
-          <h3 class="font-display font-bold text-xl text-white mb-2">
-            Standar Submission Flag
-          </h3>
-
-          <p class="text-xs text-text-secondary leading-relaxed mb-4">
-            Jawaban challenge di-submit pada platform NXCTF dengan format pembungkus resmi:
-          </p>
-
-          <!-- Terminal Flag Box -->
-          <div class="p-3 rounded-xl bg-black border border-nx-cyan/30 text-nx-cyan font-mono font-bold text-xs sm:text-sm text-center select-all tracking-wider mb-4 shadow-inner">
-            NFX&#123;your_flag_here&#125;
-          </div>
-
-          <div class="space-y-2 font-mono text-[0.72rem] text-text-secondary">
-            <div class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold shrink-0">✓</span>
-              <span><strong>Case-Sensitive:</strong> Huruf kapital & simbol wajib persis.</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold shrink-0">✓</span>
-              <span><strong>Dynamic Decay:</strong> Poin 500 meluruh dinamis sesuai solver.</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold shrink-0">✓</span>
-              <span><strong>Tie-Breaker:</strong> Berdasarkan waktu submit flag tercepat.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-3 mt-4 border-t border-white/5 font-mono text-[0.68rem] text-text-muted">
-          *Kredensial akun individu dikirimkan via email H-1 TM / H-1 Lomba.
-        </div>
-      </div>
-
-      <!-- Right Card: Writeup Policy & Integrity -->
-      <div data-reveal-child class="p-6 sm:p-7 rounded-2xl bg-surface/90 border border-white/10 hover:border-nf-orange/40 backdrop-blur-xl motion-card shadow-xl flex flex-col justify-between group">
-        <div>
-          <div class="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
-            <span class="font-mono text-[0.68rem] font-bold text-nf-orange-bright uppercase tracking-wider">
-              📝 WRITEUP & INTEGRITAS
-            </span>
-            <span class="font-mono text-[0.62rem] text-text-muted px-2 py-0.5 rounded bg-black/80 border border-white/10">
-              KODE ETIK
+          <!-- Header (Uniform Height) -->
+          <div class="flex items-center justify-between gap-2 mb-2.5 pb-2 border-b border-white/5 min-h-[2rem]">
+            <h3 class="font-display font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
+              <span>📝</span>
+              <span>Ketentuan Writeup</span>
+            </h3>
+            <span class="font-mono text-[0.58rem] font-bold px-1.5 py-0.5 rounded bg-nx-cyan/10 text-nx-cyan border border-nx-cyan/25 uppercase shrink-0">
+              WU POLICY
             </span>
           </div>
 
-          <h3 class="font-display font-bold text-xl text-white mb-2">
-            Ketentuan Writeup & Sportivitas
-          </h3>
-
-          <!-- Track Policy Blocks -->
-          <div class="space-y-2.5 font-mono text-xs mb-4">
-            <div class="p-2.5 rounded-xl bg-background/80 border border-nx-cyan/25 flex items-center justify-between gap-3">
-              <div>
-                <span class="font-bold text-nx-cyan text-[0.72rem] block">Track Umum (Nasional)</span>
-                <span class="text-[0.65rem] text-text-muted">Wajib submit WU untuk validasi juara & E-Cert.</span>
-              </div>
-              <span class="text-[0.6rem] font-bold px-2 py-0.5 rounded-full bg-red-500/15 text-red-400 border border-red-500/30 shrink-0">
-                WAJIB WU
+          <!-- Body -->
+          <div class="space-y-1.5 font-mono text-[0.68rem]">
+            <div class="p-1.5 rounded-lg bg-black/60 border border-white/5 flex items-center justify-between gap-2">
+              <span class="text-text-secondary">Track Umum</span>
+              <span class="text-[0.58rem] font-bold px-2 py-0.5 rounded bg-rose-500/15 text-rose-400 border border-rose-500/30">
+                WAJIB
               </span>
             </div>
-
-            <div class="p-2.5 rounded-xl bg-background/80 border border-nf-orange/25 flex items-center justify-between gap-3">
-              <div>
-                <span class="font-bold text-nf-orange-bright text-[0.72rem] block">Track Mahasiswa NF</span>
-                <span class="text-[0.65rem] text-text-muted">Otomatis sertifikat (WU untuk Best WU Award).</span>
-              </div>
-              <span class="text-[0.6rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shrink-0">
+            <div class="p-1.5 rounded-lg bg-black/60 border border-white/5 flex items-center justify-between gap-2">
+              <span class="text-text-secondary">Track Mahasiswa</span>
+              <span class="text-[0.58rem] font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                 OPSIONAL
               </span>
             </div>
-          </div>
-
-          <!-- Code of Conduct summary -->
-          <div class="space-y-1.5 font-mono text-[0.72rem]">
-            <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 flex items-start gap-1.5">
-              <span class="font-bold shrink-0">✓</span>
-              <span><strong>Boleh:</strong> AI Assistant & AI Agent (ChatGPT/Gemini) & tools pentest standar.</span>
-            </div>
-            <div class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-300 flex items-start gap-1.5">
-              <span class="font-bold shrink-0">✗</span>
-              <span><strong>Dilarang:</strong> DoS server, sharing flag, & joki (wajib dikerjakan mandiri).</span>
+            <div class="flex items-center justify-between text-[0.62rem] text-text-secondary px-0.5 pt-0.5">
+              <span class="text-text-muted">Format Laporan:</span>
+              <span class="text-white font-medium">PDF / GitHub Link</span>
             </div>
           </div>
         </div>
 
-        <div class="pt-3 mt-4 border-t border-white/5 font-mono text-[0.68rem] text-text-muted">
-          *Pelanggaran integritas berakibat diskualifikasi permanen dari lomba.
+        <!-- Footer (Uniform Height) -->
+        <div class="pt-2 mt-2.5 border-t border-white/5 min-h-[2.25rem] flex items-center font-mono text-[0.62rem] text-text-muted leading-tight">
+          <span>Umum wajib kumpul WU untuk validasi hadiah & sertifikat.</span>
         </div>
       </div>
+
+      <!-- Card 2: Integritas & Fairplay -->
+      <div data-reveal-child class="p-3.5 sm:p-4 rounded-xl bg-surface/85 border border-white/10 hover:border-amber-400/40 backdrop-blur-xl shadow-md flex flex-col justify-between motion-card">
+        <div>
+          <!-- Header (Uniform Height) -->
+          <div class="flex items-center justify-between gap-2 mb-2.5 pb-2 border-b border-white/5 min-h-[2rem]">
+            <h3 class="font-display font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
+              <span>⚖️</span>
+              <span>Integritas & Kode Etik</span>
+            </h3>
+            <span class="font-mono text-[0.58rem] font-bold px-1.5 py-0.5 rounded bg-amber-400/10 text-amber-300 border border-amber-400/25 uppercase shrink-0">
+              FAIRPLAY
+            </span>
+          </div>
+
+          <!-- Body -->
+          <div class="space-y-1.5 font-mono text-[0.68rem]">
+            <div class="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-start gap-1.5 text-emerald-400">
+              <span class="font-bold shrink-0">✓</span>
+              <span class="text-text-secondary leading-tight"><strong class="text-emerald-400">Boleh:</strong> AI tools, bruteforce soal, & tools pentest.</span>
+            </div>
+            <div class="p-1.5 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-start gap-1.5 text-rose-400">
+              <span class="font-bold shrink-0">✗</span>
+              <span class="text-text-secondary leading-tight"><strong class="text-rose-400">Dilarang:</strong> Sharing flag, DoS web, & spam restart container.</span>
+            </div>
+            <div class="flex items-center justify-between text-[0.62rem] text-text-secondary px-0.5 pt-0.5">
+              <span class="text-text-muted">Sifat Lomba:</span>
+              <span class="text-white font-medium">Solo / Individu (Mandiri)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer (Uniform Height) -->
+        <div class="pt-2 mt-2.5 border-t border-white/5 min-h-[2.25rem] flex items-center font-mono text-[0.62rem] text-text-muted leading-tight">
+          <span>Pelanggaran aturan berakibat sanksi diskualifikasi permanen.</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Format Flag & Skor -->
+      <div data-reveal-child class="p-3.5 sm:p-4 rounded-xl bg-surface/85 border border-white/10 hover:border-nf-orange/40 backdrop-blur-xl shadow-md flex flex-col justify-between motion-card">
+        <div>
+          <!-- Header (Uniform Height) -->
+          <div class="flex items-center justify-between gap-2 mb-2.5 pb-2 border-b border-white/5 min-h-[2rem]">
+            <h3 class="font-display font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
+              <span>🚩</span>
+              <span>Format Flag & Skor</span>
+            </h3>
+            <span class="font-mono text-[0.58rem] font-bold px-1.5 py-0.5 rounded bg-nf-orange/10 text-nf-orange-bright border border-nf-orange/25 uppercase shrink-0">
+              SCORING
+            </span>
+          </div>
+
+          <!-- Body -->
+          <div class="space-y-1.5 font-mono text-[0.68rem]">
+            <div class="p-1.5 rounded-lg bg-black/60 border border-white/5 flex items-center justify-between">
+              <span class="text-text-muted text-[0.62rem]">Flag:</span>
+              <code class="text-nx-cyan font-bold text-xs">NFX&#123;...&#125;</code>
+              <span class="text-[0.52rem] text-text-muted px-1 rounded bg-white/5 border border-white/5">CASE-SENSITIVE</span>
+            </div>
+            <!-- Complete Dynamic Scoring: Max 500, Decay 20, Min 100 -->
+            <div class="grid grid-cols-3 gap-1 text-center font-mono">
+              <div class="p-1 rounded bg-black/40 border border-white/5">
+                <span class="text-text-muted text-[0.52rem] block uppercase">MAX</span>
+                <strong class="text-emerald-400 text-xs">500</strong>
+              </div>
+              <div class="p-1 rounded bg-black/40 border border-white/5">
+                <span class="text-text-muted text-[0.52rem] block uppercase">DECAY</span>
+                <strong class="text-amber-300 text-xs">20</strong>
+              </div>
+              <div class="p-1 rounded bg-black/40 border border-white/5">
+                <span class="text-text-muted text-[0.52rem] block uppercase">MIN</span>
+                <strong class="text-nx-cyan text-xs">100</strong>
+              </div>
+            </div>
+            <div class="flex items-center justify-between text-[0.62rem] text-text-secondary px-0.5 pt-0.5">
+              <span class="text-text-muted">Tie-Breaker:</span>
+              <span class="text-white font-medium">Submit Tercepat ⏱</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer (Uniform Height) -->
+        <div class="pt-2 mt-2.5 border-t border-white/5 min-h-[2.25rem] flex items-center font-mono text-[0.62rem] text-text-muted leading-tight">
+          <span>Kredensial akun dikirimkan via email H-1 lomba.</span>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Bottom Action Link -->
-    <div data-reveal class="text-center pt-2">
+    <!-- Bottom Action Link (Compact) -->
+    <div data-reveal class="text-center">
       <a
         href="/guidebook"
-        class="inline-flex items-center gap-1.5 font-mono text-xs text-text-secondary hover:text-nx-cyan transition-colors"
+        class="inline-flex items-center gap-1.5 font-mono text-[0.68rem] text-text-secondary hover:text-nx-cyan transition-colors"
       >
-        <span>📖 Baca struktur writeup & panduan lengkap di Official Guidebook</span>
+        <span>📖 Pelajari struktur writeup & panduan lengkap di Official Guidebook</span>
         <span>→</span>
       </a>
     </div>

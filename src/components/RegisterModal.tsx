@@ -70,7 +70,7 @@ export default function RegisterModal() {
                 Mahasiswa NF
               </h4>
               <p className="text-[0.72rem] text-text-secondary leading-snug mb-3">
-                Khusus mahasiswa aktif STT Terpadu Nurul Fikri. Termasuk 4x Workshop Online & E-Certificate.
+                Khusus mahasiswa aktif STT Terpadu Nurul Fikri. Termasuk 2x Workshop (1 Online, 1 Offline) & E-Certificate.
               </p>
 
               {/* Price Box */}
@@ -106,20 +106,17 @@ export default function RegisterModal() {
                 Track Umum
               </h4>
               <p className="text-[0.72rem] text-text-secondary leading-snug mb-3">
-                Terbuka untuk pelajar, mahasiswa luar, & umum se-Indonesia. 90% Dynamic Prize Pool.
+                Terbuka untuk umum se-Indonesia. Eksplorasi 8 kategori soal, asah skill & rebut total prize pool.
               </p>
 
               {/* Price Box */}
-              <div className="p-2.5 rounded-lg bg-background/80 border border-white/5 font-mono text-[0.68rem] mb-3.5 space-y-1">
+              <div className="p-2.5 rounded-lg bg-background/80 border border-white/5 font-mono text-[0.68rem] mb-3.5 space-y-0.5">
                 <div className="text-text-muted text-[0.62rem] uppercase font-bold">BIAYA REGISTRASI (HTM):</div>
-                <div className="flex items-center justify-between text-nx-cyan font-bold text-[0.68rem]">
-                  <span>Early Bird 1 (7-14 Okt)</span>
-                  <span>: Rp 10.000</span>
+                <div className="flex items-center justify-between text-nx-cyan font-bold text-xs">
+                  <span>Track Umum (Nasional)</span>
+                  <span>: Rp 10.000 (Flat)</span>
                 </div>
-                <div className="flex items-center justify-between text-text-secondary text-[0.68rem]">
-                  <span>Early Bird 2 (15 Okt-3 Nov)</span>
-                  <span>: Rp 15.000</span>
-                </div>
+                <div className="text-text-dim text-[0.62rem]">90% Masuk Dynamic Prize Pool</div>
               </div>
             </div>
 
