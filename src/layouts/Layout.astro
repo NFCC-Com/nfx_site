@@ -4,12 +4,18 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
 const {
-  title = "NFX CTF 2026 — NFCTF × NXCTF | Hybrid National & Campus CTF Competition",
-  description = "Official Portal NFX CTF 2026. Kolaborasi resmi antara NFCTF (divisi CTF UKM NFCC) dan NXCTF Community. Kompetisi Capture The Flag tingkat nasional dan internal kampus.",
+  title = "NFX CTF 2026 — Sponsored by Linuxenic | National & Campus CTF Competition",
+  description = "Portal Resmi NFX CTF 2026 — Kompetisi Capture The Flag nasional & internal kampus (NFCTF × NXCTF). Sponsored by Linuxenic Corp. Total Prize Pool Rp 1.000.000 + Voucher Platform Lab.",
+  image = "/og-image.png",
 } = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://nfx.my.id";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageURL = image.startsWith("http") ? image : `${siteUrl}${image.startsWith("/") ? "" : "/"}${image}`;
 ---
 
 <!doctype html>
@@ -20,15 +26,45 @@ const {
     <link rel="icon" type="image/png" href="/logo2.png" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary SEO Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="NFX CTF 2026, CTF Indonesia, Capture The Flag, Linuxenic, Linuxenic Corp, NFCTF, NXCTF, UKM NFCC, STT Terpadu Nurul Fikri, Kompetisi Cyber Security, Ethical Hacking"
+    />
+    <meta name="author" content="UKM NFCC & NXCTF Community" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook / WhatsApp / Telegram / LinkedIn / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/logo2.png" />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:secure_url" content={ogImageURL} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NFX CTF 2026 — Sponsored by Linuxenic Corp." />
+    <meta property="og:site_name" content="NFX CTF 2026" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/logo2.png" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image:alt" content="NFX CTF 2026 — Sponsored by Linuxenic Corp." />
+
+    <!-- Browser & Theme Styling -->
     <meta name="theme-color" content="#020617" />
+    <meta name="color-scheme" content="dark" />
   </head>
   <body class="bg-background text-text-primary antialiased selection:bg-nf-orange/35 selection:text-white font-sans">
     <slot />
