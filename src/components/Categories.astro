@@ -1,61 +1,80 @@
 ---
 // Categories.astro
+import {
+  Globe,
+  Cpu,
+  Binary,
+  KeyRound,
+  Search,
+  Compass,
+  Terminal,
+  Puzzle,
+} from "lucide-react";
+
 const disciplines = [
   {
     id: "01",
     name: "Web Exploitation",
-    icon: "🌐",
+    Icon: Globe,
+    color: "text-nx-cyan bg-nx-cyan/10 border-nx-cyan/30 group-hover:border-nx-cyan/60 group-hover:bg-nx-cyan/20",
     desc: "Eksplorasi celah keamanan aplikasi web modern, manipulasi input pengguna, form login, dan bypass otentikasi server.",
-    tags: ["Web", "SQLi", "XSS"]
+    tags: ["Web", "SQLi", "XSS"],
   },
   {
     id: "02",
     name: "Binary Exploitation",
-    icon: "💥",
+    Icon: Cpu,
+    color: "text-rose-400 bg-rose-500/10 border-rose-500/30 group-hover:border-rose-400/60 group-hover:bg-rose-500/20",
     desc: "Analisis eksekusi biner memori, pembajakan flow program, serta eksploitasi celah arsitektur sistem operasi.",
-    tags: ["Pwn", "Overflow", "ROP"]
+    tags: ["Pwn", "Overflow", "ROP"],
   },
   {
     id: "03",
     name: "Reverse Engineering",
-    icon: "🔍",
+    Icon: Binary,
+    color: "text-nx-purple bg-nx-purple/10 border-nx-purple/30 group-hover:border-nx-purple/60 group-hover:bg-nx-purple/20",
     desc: "Membongkar alur logika file biner yang terenkripsi, dekompilasi bytecode, serta audit mekanisme validasi kode.",
-    tags: ["Ghidra", "Decompile", "x86"]
+    tags: ["Ghidra", "Decompile", "x86"],
   },
   {
     id: "04",
     name: "Cryptography",
-    icon: "🔐",
+    Icon: KeyRound,
+    color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30 group-hover:border-emerald-400/60 group-hover:bg-emerald-500/20",
     desc: "Menganalisis sistem enkripsi modern dan klasik, memecahkan sandi cipher, serta eksploitasi kunci matematis.",
-    tags: ["Cipher", "RSA", "Hash"]
+    tags: ["Cipher", "RSA", "Hash"],
   },
   {
     id: "05",
     name: "Digital Forensics",
-    icon: "🕵️‍♂️",
+    Icon: Search,
+    color: "text-blue-400 bg-blue-500/10 border-blue-500/30 group-hover:border-blue-400/60 group-hover:bg-blue-500/20",
     desc: "Investigasi artefak sistem digital, inspeksi lalu lintas paket PCAP jaringan, serta pelacakan jejak steganografi.",
-    tags: ["Stegano", "PCAP", "Memory"]
+    tags: ["Stegano", "PCAP", "Memory"],
   },
   {
     id: "06",
     name: "OSINT (Intelligence)",
-    icon: "🌍",
+    Icon: Compass,
+    color: "text-amber-400 bg-amber-500/10 border-amber-400/30 group-hover:border-amber-400/60 group-hover:bg-amber-500/20",
     desc: "Penelusuran informasi berbasis sumber publik terbuka, geolokasi citra satelit, serta analisis jejak digital profil.",
-    tags: ["Geoloc", "Profil", "Intel"]
+    tags: ["Geoloc", "Profil", "Intel"],
   },
   {
     id: "07",
     name: "Boot to Root",
-    icon: "💻",
+    Icon: Terminal,
+    color: "text-nf-orange-bright bg-nf-orange/10 border-nf-orange/30 group-hover:border-nf-orange/60 group-hover:bg-nf-orange/20",
     desc: "Akses mesin target via SSH dengan port forwarding. Eksplorasi vulnerability internal hingga meraih akses root.",
-    tags: ["SSH", "Forwarding", "Privesc"]
+    tags: ["SSH", "Forwarding", "Privesc"],
   },
   {
     id: "08",
     name: "Misc & Logic",
-    icon: "🧩",
+    Icon: Puzzle,
+    color: "text-pink-400 bg-pink-500/10 border-pink-500/30 group-hover:border-pink-400/60 group-hover:bg-pink-500/20",
     desc: "Tantangan teka-teki logika pemrograman, escape sandbox/jail, scripting Python, serta pemecahan problem kreatif.",
-    tags: ["Python", "Logic", "Jailbreak"]
+    tags: ["Python", "Logic", "Jailbreak"],
   },
 ];
 ---
@@ -84,12 +103,14 @@ const disciplines = [
           class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-white/10 hover:border-nx-cyan/40 backdrop-blur-xl motion-card shadow-lg flex flex-col justify-between group transition-all"
         >
           <div>
-            <!-- Card Header: Clean Number Badge + Big Emoji Icon -->
-            <div class="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-white/5">
+            <!-- Card Header: Clean Number Badge + Lucide Vector Icon -->
+            <div class="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/5">
               <span class="font-mono text-[0.68rem] font-bold text-nx-cyan bg-nx-cyan/10 border border-nx-cyan/25 px-2 py-0.5 rounded-md">
                 #{cat.id}
               </span>
-              <span class="text-xl">{cat.icon}</span>
+              <div class={`size-8 rounded-lg flex items-center justify-center border transition-all ${cat.color}`}>
+                <cat.Icon className="size-4 shrink-0" />
+              </div>
             </div>
 
             <!-- Title -->

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BookOpen, X } from "lucide-react";
 
 export default function GuidebookModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,8 +44,8 @@ export default function GuidebookModal() {
         {/* Header */}
         <div className="flex items-center justify-between p-5 sm:p-6 border-b border-white/10 bg-surface/95 sticky top-0 z-20">
           <div className="flex items-center gap-3">
-            <div className="size-10 rounded-xl bg-nx-cyan/10 border border-nx-cyan/30 flex items-center justify-center text-xl text-nx-cyan">
-              📖
+            <div className="size-10 rounded-xl bg-nx-cyan/10 border border-nx-cyan/30 flex items-center justify-center text-nx-cyan">
+              <BookOpen className="size-5 text-nx-cyan" />
             </div>
             <div>
               <h3 className="font-display font-bold text-lg sm:text-xl text-white">
@@ -60,7 +61,7 @@ export default function GuidebookModal() {
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-xl bg-white/5 border border-white/10 text-text-secondary hover:text-white hover:bg-white/10 transition-colors"
           >
-            ✕
+            <X className="size-4" />
           </button>
         </div>
 

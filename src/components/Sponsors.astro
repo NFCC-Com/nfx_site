@@ -1,5 +1,7 @@
 ---
 // Sponsors.astro
+import { Star, Coins, Trophy, Handshake, Mail, Check } from "lucide-react";
+
 const officialSponsors = [
   {
     name: "LINUXENIC CORP.",
@@ -50,8 +52,9 @@ const mediaPartners = [
               />
               <div class="min-w-0 flex-1">
                 <div class="flex items-center justify-between gap-2 mb-1">
-                  <span class={`font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded-full border ${sponsor.tierColor}`}>
-                    ⭐ {sponsor.tier}
+                  <span class={`font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded-full border flex items-center gap-1 ${sponsor.tierColor}`}>
+                    <Star className="size-3 text-amber-300 fill-amber-300/30 shrink-0" />
+                    <span>{sponsor.tier}</span>
                   </span>
                   <a
                     href="https://linuxenic.com"
@@ -76,7 +79,7 @@ const mediaPartners = [
             <div class="space-y-1.5 mb-2.5">
               <div class="p-2 rounded-lg bg-surface-elevated/80 border border-amber-400/25 flex items-center justify-between gap-2">
                 <div class="flex items-center gap-2 min-w-0">
-                  <span class="text-base shrink-0">💰</span>
+                  <Coins className="size-4 text-emerald-400 shrink-0" />
                   <span class="font-display font-bold text-[0.72rem] text-white truncate">Sponsorship Cash Prize Pool</span>
                 </div>
                 <span class="font-mono text-[0.65rem] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25 shrink-0">
@@ -85,7 +88,7 @@ const mediaPartners = [
               </div>
               <div class="p-2 rounded-lg bg-surface-elevated/80 border border-amber-400/20 flex items-center justify-between gap-2">
                 <div class="flex items-center gap-2 min-w-0">
-                  <span class="text-base shrink-0">🥇</span>
+                  <Trophy className="size-4 text-amber-300 shrink-0" />
                   <span class="font-display font-bold text-[0.72rem] text-white truncate">Voucher Lab Platform Juara 1</span>
                 </div>
                 <span class="font-mono text-[0.65rem] font-bold text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25 shrink-0">
@@ -105,8 +108,9 @@ const mediaPartners = [
       <div data-reveal-child class="p-4 sm:p-5 rounded-xl bg-surface/40 border border-dashed border-white/15 backdrop-blur-xl flex flex-col justify-between motion-card">
         <div>
           <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-white/5">
-            <span class="font-mono text-[0.58rem] font-bold px-2 py-0.5 rounded-full bg-nx-cyan/10 border border-nx-cyan/20 text-nx-cyan uppercase">
-              🤝 OPEN FOR SPONSORSHIP
+            <span class="font-mono text-[0.58rem] font-bold px-2 py-0.5 rounded-full bg-nx-cyan/10 border border-nx-cyan/20 text-nx-cyan uppercase flex items-center gap-1">
+              <Handshake className="size-3 text-nx-cyan" />
+              <span>OPEN FOR SPONSORSHIP</span>
             </span>
             <span class="font-mono text-[0.6rem] text-text-muted">Slot Terbuka</span>
           </div>
@@ -120,19 +124,19 @@ const mediaPartners = [
 
           <div class="grid grid-cols-2 gap-1.5 p-2.5 rounded-lg bg-surface/80 border border-white/5 font-mono text-[0.62rem] text-text-muted mb-3">
             <div class="flex items-center gap-1.5 text-text-secondary">
-              <span class="text-emerald-400 font-bold">✓</span>
+              <Check className="size-3 text-emerald-400 font-bold shrink-0" />
               <span class="truncate">Logo di Web NFX CTF</span>
             </div>
             <div class="flex items-center gap-1.5 text-text-secondary">
-              <span class="text-emerald-400 font-bold">✓</span>
+              <Check className="size-3 text-emerald-400 font-bold shrink-0" />
               <span class="truncate">Mention Live TM & Media</span>
             </div>
             <div class="flex items-center gap-1.5 text-text-secondary">
-              <span class="text-emerald-400 font-bold">✓</span>
+              <Check className="size-3 text-emerald-400 font-bold shrink-0" />
               <span class="truncate">Channel Discord NFX</span>
             </div>
             <div class="flex items-center gap-1.5 text-text-secondary">
-              <span class="text-emerald-400 font-bold">✓</span>
+              <Check className="size-3 text-emerald-400 font-bold shrink-0" />
               <span class="truncate">Eksposur Komunitas Cyber</span>
             </div>
           </div>
@@ -143,7 +147,8 @@ const mediaPartners = [
             href="mailto:nfcc@nurulfikri.ac.id?subject=Inquiry%20Sponsorship%20NFX%20CTF%202026"
             class="inline-flex items-center justify-center gap-1.5 w-full py-2 px-4 rounded-lg font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors"
           >
-            <span>📧 Ajukan Proposal Sponsorship ↗</span>
+            <Mail className="size-3.5" />
+            <span>Ajukan Proposal Sponsorship ↗</span>
           </a>
         </div>
       </div>
@@ -225,8 +230,8 @@ const mediaPartners = [
           href="mailto:nfcc@nurulfikri.ac.id?subject=Inquiry%20Media%20Partner%20NFX%20CTF%202026"
           class="inline-flex items-center gap-1 px-3 py-1 rounded-lg font-mono text-[0.68rem] font-semibold bg-white/5 border border-white/10 text-text-secondary hover:text-nx-cyan hover:border-nx-cyan/40 hover:bg-white/10 transition-all shrink-0"
         >
-          <span>🤝 Gabung Media Partner</span>
-          <span>↗</span>
+          <Handshake className="size-3 text-nx-cyan" />
+          <span>Gabung Media Partner ↗</span>
         </a>
       </div>
 

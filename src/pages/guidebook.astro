@@ -3,518 +3,606 @@ import Layout from "../layouts/Layout.astro";
 import BackgroundCanvas from "../components/BackgroundCanvas";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import DiscordNfxModal from "../components/DiscordNfxModal";
+import RegisterModal from "../components/RegisterModal";
+import {
+  Globe,
+  Cpu,
+  Binary,
+  KeyRound,
+  Search,
+  Compass,
+  Terminal,
+  Puzzle,
+  FileText,
+  Scale,
+  Flag,
+  Trophy,
+  Coins,
+  Check,
+  X,
+  Clock,
+  ExternalLink,
+  MessageSquare,
+  Ticket,
+  BookOpen,
+  ArrowRight,
+  List,
+} from "lucide-react";
+
+const disciplines = [
+  {
+    name: "Web Exploitation",
+    Icon: Globe,
+    color: "text-nx-cyan bg-nx-cyan/10 border-nx-cyan/25",
+    desc: "SQLi, XSS, SSRF, IDOR, bypass otentikasi server",
+  },
+  {
+    name: "Binary Exploit (Pwn)",
+    Icon: Cpu,
+    color: "text-rose-400 bg-rose-500/10 border-rose-500/25",
+    desc: "Buffer overflow, ROP chain, format string, shellcoding",
+  },
+  {
+    name: "Reverse Engineering",
+    Icon: Binary,
+    color: "text-nx-purple bg-nx-purple/10 border-nx-purple/25",
+    desc: "Decompilation biner, x86/ARM assembly, bypass logic",
+  },
+  {
+    name: "Cryptography",
+    Icon: KeyRound,
+    color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/25",
+    desc: "RSA math exploit, classical cipher, hash collision, ECC",
+  },
+  {
+    name: "Digital Forensics",
+    Icon: Search,
+    color: "text-blue-400 bg-blue-500/10 border-blue-500/25",
+    desc: "Analisis PCAP network, memory dump, steganografi, disk",
+  },
+  {
+    name: "OSINT (Intelligence)",
+    Icon: Compass,
+    color: "text-amber-400 bg-amber-500/10 border-amber-400/25",
+    desc: "Geolocation, SOCMINT, public footprinting, intel analysis",
+  },
+  {
+    name: "Boot to Root",
+    Icon: Terminal,
+    color: "text-nf-orange-bright bg-nf-orange/10 border-nf-orange/25",
+    desc: "SSH port-forwarding, Linux/Windows privilege escalation",
+  },
+  {
+    name: "Miscellaneous & Logic",
+    Icon: Puzzle,
+    color: "text-pink-400 bg-pink-500/10 border-pink-500/25",
+    desc: "Python scripting, sandbox escape, esoteric code, logika",
+  },
+];
+
+const tocItems = [
+  { id: "informasi-umum", num: "01", title: "Informasi & Format" },
+  { id: "kategori-soal", num: "02", title: "8 Kategori Soal" },
+  { id: "track-biaya", num: "03", title: "Jalur & Biaya" },
+  { id: "platform-scoring", num: "04", title: "Platform & Scoring" },
+  { id: "format-flag", num: "05", title: "Format Flag" },
+  { id: "pedoman-writeup", num: "06", title: "Panduan Writeup" },
+  { id: "hadiah-sponsor", num: "07", title: "Hadiah & Sponsor" },
+  { id: "kode-etik", num: "08", title: "Kode Etik & AI" },
+  { id: "helpdesk", num: "09", title: "Narahubung & Bantuan" },
+];
 ---
 
 <Layout
   title="Guidebook Teknis — NFX CTF 2026 (Sponsored by Linuxenic) | Panduan Resmi"
-  description="Dokumentasi teknis, scoring platform NXCTF, regulasi, dan writeup NFX CTF 2026 kolaborasi UKM NFCC × NXCTF Community, sponsored by Linuxenic Corp."
+  description="Dokumentasi teknis, regulasi perlombaan, scoring platform NXCTF, serta pedoman penulisan writeup NFX CTF 2026."
 >
   <BackgroundCanvas client:load />
   <Header />
 
-  <main class="relative z-10 pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-    <!-- Top Doc Header -->
-    <div class="mb-10 pb-6 border-b border-white/10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-      <div>
-        <div class="flex items-center gap-2 font-mono text-xs text-text-muted mb-2">
-          <a href="/" class="hover:text-nx-cyan transition-colors">Portal Beranda</a>
-          <span>/</span>
-          <span class="text-white">Dokumentasi</span>
-          <span>/</span>
-          <span class="text-nx-cyan">Guidebook 2026</span>
-        </div>
-        <h1 class="font-display font-black text-2xl sm:text-4xl text-white tracking-tight">
-          Official Guidebook NFX CTF 2026
-        </h1>
-        <p class="text-sm text-text-secondary mt-1 max-w-2xl">
-          Dokumentasi teknis, regulasi perlombaan, scoring platform NXCTF, serta pedoman penulisan writeup.
-        </p>
-      </div>
-
-      <div class="flex items-center gap-3 shrink-0">
-        <a
-          href="https://ctf.nfx.my.id"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl font-mono text-xs font-bold bg-nx-cyan text-slate-950 hover:bg-cyan-300 transition-all shadow-md shadow-nx-cyan/20"
-        >
-          <span>Server Platform NXCTF</span>
-          <span>↗</span>
-        </a>
-      </div>
+  <main class="relative z-10 pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <!-- Mobile Table of Contents Dropdown (Convenient on Phones) -->
+    <div class="lg:hidden mb-6">
+      <details class="group p-3.5 rounded-2xl bg-surface-elevated/90 border border-white/10 backdrop-blur-md">
+        <summary class="flex items-center justify-between font-mono text-xs font-bold text-white cursor-pointer select-none">
+          <span class="flex items-center gap-2">
+            <List className="size-4 text-nx-cyan" />
+            <span>DAFTAR ISI GUIDEBOOK</span>
+          </span>
+          <span class="text-text-muted group-open:rotate-180 transition-transform text-xs">▼</span>
+        </summary>
+        <nav class="pt-2.5 mt-2.5 border-t border-white/5 flex flex-col gap-1 font-mono text-xs">
+          {tocItems.map((item) => (
+            <a
+              href={`#${item.id}`}
+              class="py-1.5 px-2 rounded-lg text-text-secondary hover:text-white hover:bg-white/5 transition-colors flex items-center justify-between"
+            >
+              <span>{item.num}. {item.title}</span>
+              <span class="text-text-muted text-[0.65rem]">→</span>
+            </a>
+          ))}
+        </nav>
+      </details>
     </div>
 
-    <!-- Docs Layout: Sticky Clean Nav + Reading Column -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-      <!-- Left Sidebar Navigation -->
-      <aside class="hidden lg:block lg:col-span-3">
-        <div class="sticky top-24 space-y-6">
-          <div>
-            <div class="font-mono text-[0.68rem] font-bold text-text-muted uppercase tracking-wider mb-2.5 px-2">
-              Daftar Isi
-            </div>
-            <nav class="space-y-0.5 font-mono text-xs text-text-secondary">
-              <a href="#informasi-umum" class="block py-1.5 px-2.5 rounded-lg hover:text-white hover:bg-white/5 transition-colors">
-                Informasi Umum
-              </a>
-              <a href="#track-biaya" class="block py-1.5 px-2.5 rounded-lg hover:text-white hover:bg-white/5 transition-colors">
-                Track & Biaya Registrasi
-              </a>
-              <a href="#platform-scoring" class="block py-1.5 px-2.5 rounded-lg hover:text-white hover:bg-white/5 transition-colors">
-                Platform & Scoring
-              </a>
-              <a href="#format-flag" class="block py-1.5 px-2.5 rounded-lg hover:text-white hover:bg-white/5 transition-colors">
-                Standar Format Flag
-              </a>
-              <a href="#pedoman-writeup" class="block py-1.5 px-2.5 rounded-lg hover:text-white hover:bg-white/5 transition-colors">
-                Pedoman Writeup (WU)
-              </a>
-              <a href="#hadiah-sponsor" class="block py-1.5 px-2.5 rounded-lg hover:text-white hover:bg-white/5 transition-colors">
-                Skema Hadiah & Sponsor
-              </a>
-              <a href="#kode-etik" class="block py-1.5 px-2.5 rounded-lg hover:text-white hover:bg-white/5 transition-colors">
-                Kode Etik & Kebijakan AI
-              </a>
-              <a href="#helpdesk" class="block py-1.5 px-2.5 rounded-lg hover:text-white hover:bg-white/5 transition-colors">
-                Narahubung Resmi
-              </a>
-            </nav>
-          </div>
+    <!-- 2-Column Layout: Permanent Sticky Sidebar (Left) + Guidebook Body (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
 
-          <div class="p-3.5 rounded-xl bg-surface border border-white/10 font-mono text-[0.72rem] space-y-2">
-            <span class="text-text-muted block text-[0.65rem] uppercase">Official Community:</span>
-            <a href="https://discord.gg/q8gxeYZgMC" target="_blank" rel="noopener noreferrer" class="text-nx-cyan hover:underline block">
-              💬 Discord UKM NFCC
-            </a>
-            <a href="https://discord.gg/5etKks6aQQ" target="_blank" rel="noopener noreferrer" class="text-nx-purple hover:underline block">
-              💬 Discord NXCTF
-            </a>
+      <!-- Permanent Sticky Desktop Table of Contents (Pure Guidebook Content) -->
+      <aside class="hidden lg:block lg:col-span-3 sticky top-24 self-start max-h-[calc(100vh-7rem)] overflow-y-auto no-scrollbar">
+        <div class="p-4 rounded-2xl bg-surface/80 border border-white/10 backdrop-blur-xl shadow-lg">
+          <div class="pb-2.5 border-b border-white/10 mb-2">
+            <span class="font-mono text-xs font-bold text-white flex items-center gap-1.5">
+              <List className="size-3.5 text-nx-cyan" />
+              <span>DAFTAR ISI</span>
+            </span>
           </div>
+          <nav class="space-y-0.5 font-mono text-xs" id="desktop-toc">
+            {tocItems.map((item) => (
+              <a
+                href={`#${item.id}`}
+                class="toc-link block py-1.5 px-2.5 rounded-lg text-text-secondary hover:text-white hover:bg-white/5 transition-all text-xs"
+              >
+                <span class="text-text-muted mr-1.5 text-[0.68rem]">{item.num}.</span>
+                <span>{item.title}</span>
+              </a>
+            ))}
+          </nav>
         </div>
       </aside>
 
-      <!-- Right Main Documentation Body (Clean Developer Prose) -->
-      <div class="lg:col-span-9 space-y-12 text-text-secondary text-sm leading-relaxed">
+      <!-- Main Reading Column (Clean Blog / Modern Technical Prose) -->
+      <div class="lg:col-span-9 space-y-14 text-text-secondary text-sm sm:text-base leading-relaxed">
 
-        <!-- 1. Informasi Umum -->
-        <section id="informasi-umum" class="scroll-mt-24 space-y-5">
-          <div class="flex items-center gap-2 text-white">
-            <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-              1. Informasi Umum, Latar Belakang & Format Kompetisi
+        <!-- 01. Informasi Umum -->
+        <section id="informasi-umum" class="scroll-mt-24 space-y-4">
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-nx-cyan tracking-widest uppercase block mb-1">01. OVERVIEW</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              Informasi Umum &amp; Format Kompetisi
             </h2>
           </div>
 
           <p>
-            <strong>NFX CTF 2026</strong> adalah ajang kompetisi keamanan siber (*Capture The Flag*) kolaborasi resmi antara divisi kompetisi <strong>UKM NFCC (Nurul Fikri Cyber Security Community)</strong> dan <strong>NXCTF Community</strong>, dengan dukungan penuh dari institusi perguruan tinggi <strong>STT Terpadu Nurul Fikri</strong>.
+            <strong class="text-white">NFX CTF 2026</strong> adalah kompetisi keamanan siber nasional dengan format <strong class="text-white">Jeopardy CTF</strong> yang diselenggarakan melalui kolaborasi resmi antara divisi kompetisi <strong class="text-nf-orange-bright">UKM NFCC (Nurul Fikri Cyber Security Community)</strong> dan <strong class="text-nx-cyan">NXCTF Community</strong>, dengan dukungan penuh dari institusi akademik <strong class="text-white">STT Terpadu Nurul Fikri</strong> serta sponsor utama reward <strong class="text-amber-300">LINUXENIC CORP.</strong>
           </p>
 
-          <!-- Story / Latar Belakang Inisiasi (Singkat & Ringkas) -->
-          <div class="p-3.5 sm:p-4 rounded-xl bg-surface/90 border border-white/10 space-y-2 shadow-md">
-            <div class="flex items-center justify-between pb-1.5 border-b border-white/5">
-              <div class="flex items-center gap-2">
-                <span class="text-sm">🚀</span>
-                <h3 class="font-display font-bold text-xs sm:text-sm text-white">
-                  Latar Belakang: NFCTF Season 1 ➔ NFX CTF 2026
-                </h3>
-              </div>
-              <span class="font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded bg-nf-orange/15 text-nf-orange-bright border border-nf-orange/30">
-                ASAL-USUL
-              </span>
-            </div>
+          <p>
+            Awalnya diinisiasi dari program kerja internal kampus bertajuk <em>NFCTF Season 1</em> untuk pembinaan mahasiswa, inisiatif ini dielevasi menjadi ajang kompetisi skala nasional terbuka yang memfasilitasi persaingan kompetitif independen sekaligus sarana pembinaan talenta muda cybersecurity Indonesia.
+          </p>
 
-            <p class="text-xs text-text-secondary leading-relaxed">
-              Kompetisi ini berawal dari program kerja internal divisi kompetisi UKM NFCC bernama <strong>NFCTF Season 1</strong> sebagai wadah latihan praktis mahasiswa STT-NF. Konsep ini kemudian dikembangkan lebih luas melalui kolaborasi bersama <strong>NXCTF Community</strong> menjadi ajang nasional <strong>NFX CTF 2026</strong> (Track Mahasiswa & Track Umum), serta didukung penuh oleh <strong>LINUXENIC CORP.</strong> sebagai sponsor utama reward.
-            </p>
-          </div>
-
-          <!-- Parameter Pelaksanaan & URL Platform -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="p-3.5 rounded-xl bg-surface border border-white/10 font-mono text-xs space-y-1">
-              <span class="text-text-muted block text-[0.65rem] uppercase">WAKTU & FORMAT:</span>
-              <strong class="text-white block text-sm">Jeopardy CTF (48 Jam Non-stop)</strong>
-              <span class="text-text-secondary text-[0.7rem] block">07 – 09 November 2026 (14:00 WIB – 14:00 WIB)</span>
+          <!-- Clean specs bar -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 font-mono text-xs">
+            <div class="p-3 rounded-xl bg-surface-elevated/70 border border-white/5">
+              <span class="text-text-muted text-[0.65rem] uppercase block mb-1">DURASI</span>
+              <strong class="text-white block text-sm">48 Jam Non-stop</strong>
+              <span class="text-text-muted text-[0.7rem]">07 Nov 14:00 – 09 Nov 14:00 WIB</span>
             </div>
-            <div class="p-3.5 rounded-xl bg-surface border border-nx-cyan/30 font-mono text-xs space-y-1">
-              <span class="text-text-muted block text-[0.65rem] uppercase">URL RESMI PLATFORM:</span>
-              <a href="https://ctf.nfx.my.id" target="_blank" rel="noopener noreferrer" class="text-nx-cyan font-bold block text-sm hover:underline">
-                https://ctf.nfx.my.id ↗
-              </a>
-              <span class="text-text-secondary text-[0.7rem] block">Dynamic Scoring & Automated Flag Validation</span>
+            <div class="p-3 rounded-xl bg-surface-elevated/70 border border-white/5">
+              <span class="text-text-muted text-[0.65rem] uppercase block mb-1">FORMAT PESERTA</span>
+              <strong class="text-white block text-sm">Individu (Solo)</strong>
+              <span class="text-text-muted text-[0.7rem]">Pengerjaan mandiri tanpa tim</span>
             </div>
-          </div>
-
-          <!-- 8 Kategori Soal (Desain Rapi & Grid Terstruktur) -->
-          <div class="space-y-2 pt-1">
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-xs text-white font-bold">// 8 KATEGORI TANTANGAN RESMI //</span>
-              <span class="font-mono text-[0.62rem] text-text-muted">Tingkat Kesulitan: Beginner s/d Intermediate</span>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
-              <div class="p-2.5 rounded-lg bg-surface border border-white/5 hover:border-nx-cyan/30 transition-colors">
-                <div class="text-base mb-1">🌐</div>
-                <strong class="text-white text-xs block">Web Exploitation</strong>
-                <span class="text-text-muted text-[0.62rem]">SQLi, XSS, SSRF, Auth Bypass</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-surface border border-white/5 hover:border-nx-cyan/30 transition-colors">
-                <div class="text-base mb-1">⚙️</div>
-                <strong class="text-white text-xs block">Binary Exploit (Pwn)</strong>
-                <span class="text-text-muted text-[0.62rem]">Buffer Overflow, ROP, Format Str</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-surface border border-white/5 hover:border-nx-cyan/30 transition-colors">
-                <div class="text-base mb-1">🔄</div>
-                <strong class="text-white text-xs block">Reverse Engineering</strong>
-                <span class="text-text-muted text-[0.62rem]">Decompilation, Assembly, Patching</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-surface border border-white/5 hover:border-nx-cyan/30 transition-colors">
-                <div class="text-base mb-1">🔐</div>
-                <strong class="text-white text-xs block">Cryptography</strong>
-                <span class="text-text-muted text-[0.62rem]">RSA, Classical Cipher, ECC, XOR</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-surface border border-white/5 hover:border-nx-cyan/30 transition-colors">
-                <div class="text-base mb-1">🔍</div>
-                <strong class="text-white text-xs block">Digital Forensics</strong>
-                <span class="text-text-muted text-[0.62rem]">PCAP, Memory Dump, Stego, Disk</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-surface border border-white/5 hover:border-nx-cyan/30 transition-colors">
-                <div class="text-base mb-1">🛰️</div>
-                <strong class="text-white text-xs block">OSINT</strong>
-                <span class="text-text-muted text-[0.62rem]">Geolocation, SOCMINT, Footprinting</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-surface border border-white/5 hover:border-nx-cyan/30 transition-colors">
-                <div class="text-base mb-1">💻</div>
-                <strong class="text-white text-xs block">Boot to Root</strong>
-                <span class="text-text-muted text-[0.62rem]">SSH Port-Forwarding, Priv-Esc</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-surface border border-white/5 hover:border-nx-cyan/30 transition-colors">
-                <div class="text-base mb-1">🧩</div>
-                <strong class="text-white text-xs block">Miscellaneous</strong>
-                <span class="text-text-muted text-[0.62rem]">Esoteric Lang, Logic, Jailbreak</span>
-              </div>
+            <div class="p-3 rounded-xl bg-surface-elevated/70 border border-white/5">
+              <span class="text-text-muted text-[0.65rem] uppercase block mb-1">PLATFORM ENGINE</span>
+              <strong class="text-nx-cyan block text-sm">ctf.nfx.my.id ↗</strong>
+              <span class="text-text-muted text-[0.7rem]">Dynamic Decay</span>
             </div>
           </div>
         </section>
 
-        <hr class="border-white/10" />
+        <!-- 02. 8 Kategori Soal (Clean Grid with Lucide Icons) -->
+        <section id="kategori-soal" class="scroll-mt-24 space-y-4">
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-nx-cyan tracking-widest uppercase block mb-1">02. CHALLENGES</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              8 Kategori Soal Tantangan
+            </h2>
+          </div>
 
-        <!-- 2. Track & Biaya Registrasi -->
-        <section id="track-biaya" class="scroll-mt-24 space-y-4">
-          <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            2. Jalur Partisipasi (Track) & Biaya Registrasi
-          </h2>
           <p>
-            Peserta dapat mendaftar melalui salah satu dari 2 jalur resmi:
+            Soal-soal dirancang dengan spektrum kesulitan bertingkat (Beginner hingga Intermediate/Advanced) untuk menguji pemahaman teknis di berbagai disiplin offensive security:
           </p>
 
-          <div class="overflow-x-auto rounded-xl border border-white/10 bg-surface shadow-md">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            {disciplines.map((item) => (
+              <div class="p-4 rounded-xl bg-surface-elevated/60 border border-white/5 hover:border-white/15 transition-colors flex items-start gap-3.5">
+                <div class={`size-9 rounded-lg flex items-center justify-center border shrink-0 ${item.color}`}>
+                  <item.Icon className="size-4" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="font-display font-bold text-sm text-white mb-0.5">
+                    {item.name}
+                  </h3>
+                  <p class="text-xs text-text-muted leading-relaxed font-mono">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- 03. Jalur & Biaya Registrasi -->
+        <section id="track-biaya" class="scroll-mt-24 space-y-4">
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-nf-orange tracking-widest uppercase block mb-1">03. TRACKS &amp; FEES</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              Jalur Partisipasi &amp; Biaya Registrasi
+            </h2>
+          </div>
+
+          <p>
+            Terdapat dua jalur pendaftaran yang dapat dipilih sesuai eligibilitas peserta:
+          </p>
+
+          <div class="overflow-x-auto rounded-xl border border-white/10 bg-surface-elevated/50">
             <table class="w-full text-left font-mono text-xs">
               <thead class="bg-white/5 border-b border-white/10 text-text-muted">
                 <tr>
-                  <th class="p-3 font-bold text-white">Parameter</th>
-                  <th class="p-3 text-nf-orange-bright font-bold">Track Mahasiswa NF</th>
-                  <th class="p-3 text-nx-cyan font-bold">Track Umum (Nasional)</th>
+                  <th class="p-3.5 font-bold text-white">Parameter</th>
+                  <th class="p-3.5 text-nf-orange-bright font-bold">Track Mahasiswa NF</th>
+                  <th class="p-3.5 text-nx-cyan font-bold">Track Umum (Nasional)</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-white/5">
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 font-semibold text-white">Eligibility</td>
-                  <td class="p-3 text-text-secondary">Mahasiswa Aktif STT-NF</td>
-                  <td class="p-3 text-text-secondary">Terbuka Nasional (Pelajar, Mahasiswa, Praktisi)</td>
+                <tr>
+                  <td class="p-3.5 font-semibold text-white">Eligibilitas</td>
+                  <td class="p-3.5 text-text-secondary">Mahasiswa aktif STT Terpadu Nurul Fikri</td>
+                  <td class="p-3.5 text-text-secondary">Terbuka Nasional (Pelajar, Mahasiswa, Praktisi)</td>
                 </tr>
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 font-semibold text-white">Biaya (HTM)</td>
-                  <td class="p-3"><span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 font-bold border border-emerald-500/30">100% Gratis</span></td>
-                  <td class="p-3"><span class="px-2 py-0.5 rounded bg-nx-cyan/15 text-nx-cyan font-bold border border-nx-cyan/30">Rp 10.000,- (Flat)</span></td>
+                <tr>
+                  <td class="p-3.5 font-semibold text-white">Biaya Registrasi</td>
+                  <td class="p-3.5"><span class="text-emerald-400 font-bold">100% Gratis (Rp 0,-)</span></td>
+                  <td class="p-3.5"><span class="text-nx-cyan font-bold">Rp 10.000 / Peserta (Flat)</span></td>
                 </tr>
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 font-semibold text-white">Workshop Tambahan</td>
-                  <td class="p-3 text-white font-medium">2x Workshop (1 Online, 1 Offline)</td>
-                  <td class="p-3 text-text-muted">Technical Meeting & Helpdesk</td>
+                <tr>
+                  <td class="p-3.5 font-semibold text-white">Fasilitas Khusus</td>
+                  <td class="p-3.5 text-white">2x Workshop Pembekalan (1 Online, 1 Offline)</td>
+                  <td class="p-3.5 text-text-muted">Technical Meeting Online &amp; Discord Support</td>
                 </tr>
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 font-semibold text-white">Sertifikat Peserta</td>
-                  <td class="p-3 text-emerald-400">E-Certificate Resmi (Otomatis)</td>
-                  <td class="p-3 text-nx-cyan">E-Certificate Resmi (Validasi Writeup)</td>
+                <tr>
+                  <td class="p-3.5 font-semibold text-white">E-Certificate</td>
+                  <td class="p-3.5 text-emerald-400">Otomatis diberikan ke seluruh peserta</td>
+                  <td class="p-3.5 text-nx-cyan">Diberikan bagi peserta yang submit Writeup</td>
                 </tr>
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 font-semibold text-white">Alokasi Hadiah</td>
-                  <td class="p-3 text-amber-300 font-semibold">Fixed Cash Rp 400.000 (Top 5) + Voucher</td>
-                  <td class="p-3 text-emerald-400 font-semibold">Rp 1 Juta (Sponsor) + 90% Pool + Voucher</td>
+                <tr>
+                  <td class="p-3.5 font-semibold text-white">Alokasi Hadiah</td>
+                  <td class="p-3.5 text-amber-300 font-semibold">Fixed Cash Rp 400.000 (Top 5) + Voucher</td>
+                  <td class="p-3.5 text-emerald-400 font-semibold">Rp 1 Juta (Sponsor) + 90% Pool Tiket + Voucher</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
 
-        <hr class="border-white/10" />
-
-        <!-- 3. Platform & Scoring -->
+        <!-- 04. Platform & Scoring -->
         <section id="platform-scoring" class="scroll-mt-24 space-y-4">
-          <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            3. Platform NXCTF & Mekanisme Scoring
-          </h2>
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-nx-cyan tracking-widest uppercase block mb-1">04. PLATFORM</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              Platform NXCTF &amp; Mekanisme Dynamic Decay
+            </h2>
+          </div>
+
           <p>
-            Kompetisi berjalan pada infrastruktur <strong>Platform NXCTF</strong> yang menerapkan <strong>Dynamic Scoring Engine</strong>:
+            Kompetisi dioperasikan pada infrastruktur <strong class="text-white">Platform NXCTF</strong> yang menerapkan rumus penilaian dinamis (<em class="text-nx-cyan">Dynamic Scoring Engine</em>) untuk menjaga kompetisi tetap seimbang dan adil:
           </p>
 
-          <ul class="list-disc list-inside space-y-1.5 pl-1">
-            <li>Setiap challenge dibuka dengan nilai awal maksimal <strong>500 Poin</strong>.</li>
-            <li>Nilai soal meluruh (*decay*) secara dinamis dengan parameter decay <strong>20 Solver</strong> hingga mencapai batas minimum <strong>100 Poin</strong>.</li>
-            <li>Skor seluruh solver sebelumnya akan diperbarui otomatis secara proporsional merefleksikan tingkat kesulitan soal.</li>
-            <li>Tie-breaker penentu peringkat jika poin sama dihitung berdasarkan waktu submission flag tercepat.</li>
+          <ul class="space-y-2 pl-2">
+            <li class="flex items-start gap-2.5">
+              <span class="size-1.5 rounded-full bg-nx-cyan mt-2 shrink-0"></span>
+              <span><strong>Maksimal 500 Poin:</strong> Setiap soal pertama kali dibuka dengan nilai awal 500 poin.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="size-1.5 rounded-full bg-nx-cyan mt-2 shrink-0"></span>
+              <span><strong>Decay Parameter 20 Solver:</strong> Semakin banyak peserta yang berhasil menyelesaikan suatu soal, nilai soal tersebut akan otomatis meluruh hingga batas minimum <strong>100 Poin</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="size-1.5 rounded-full bg-nx-cyan mt-2 shrink-0"></span>
+              <span><strong>Skor Retroaktif:</strong> Peserta yang menyelesaikan soal lebih awal poinnya akan disesuaikan otomatis seiring peluruhan nilai soal, merefleksikan tingkat kesulitan riil komunitas.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="size-1.5 rounded-full bg-nx-cyan mt-2 shrink-0"></span>
+              <span><strong>Tie-Breaker:</strong> Jika terdapat kesamaan poin akhir di papan skor (leaderboard), pemenang ditentukan oleh peserta yang mencapai poin tersebut lebih dahulu (waktu submit tercepat).</span>
+            </li>
           </ul>
 
-          <div class="p-4 rounded-xl bg-surface border-l-2 border-nx-cyan space-y-1">
-            <span class="font-mono text-xs text-nx-cyan font-bold block">Distribusi Kredensial Akun:</span>
-            <p class="text-xs text-text-secondary">
-              Akun peserta (Username & Password) dan link Discord resmi akan dikirimkan otomatis ke <strong>Email Terdaftar</strong> pada <strong>H-1 Technical Meeting (03 Nov 2026)</strong> atau <strong>H-1 Lomba (06 Nov 2026)</strong>.
+          <div class="p-4 rounded-xl bg-surface-elevated/80 border-l-2 border-nx-cyan text-xs font-mono space-y-1">
+            <strong class="text-white block">Distribusi Akun &amp; Kredensial:</strong>
+            <p class="text-text-muted">
+              Kredensial login platform (username, password acak) serta link server Discord resmi akan dikirim otomatis ke alamat email yang Anda gunakan saat mendaftar pada <strong>H-1 Technical Meeting (03 Nov 2026)</strong>.
             </p>
           </div>
         </section>
 
-        <hr class="border-white/10" />
+        <!-- 05. Standar Format Flag -->
+        <section id="format-flag" class="scroll-mt-24 space-y-4">
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-nf-orange tracking-widest uppercase block mb-1">05. FLAG FORMAT</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              Standar Format Submission Flag
+            </h2>
+          </div>
 
-        <!-- 4. Format Flag -->
-        <section id="format-flag" class="scroll-mt-24 space-y-3">
-          <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            4. Standar Format Flag
-          </h2>
           <p>
-            Setiap flag jawaban yang berhasil didapatkan dibungkus dengan format resmi case-sensitive:
+            Seluruh flag rahasia yang diperoleh dari penyelesaian target challenge dibungkus dengan format resmi berikut:
           </p>
 
-          <div class="p-3.5 rounded-xl bg-black border border-nx-cyan/30 flex items-center justify-between font-mono text-sm shadow-inner">
-            <span class="text-nx-cyan font-bold select-all tracking-wider">NFX&#123;your_flag_here&#125;</span>
-            <span class="text-[0.65rem] font-bold text-text-muted uppercase px-2 py-0.5 rounded bg-white/5 border border-white/10">CASE-SENSITIVE</span>
+          <div class="p-4 rounded-xl bg-black/80 border border-nx-cyan/30 flex items-center justify-between font-mono text-sm">
+            <code class="text-nx-cyan font-bold select-all tracking-wide">NFX&#123;flag_rahasia_anda_disini&#125;</code>
+            <span class="text-[0.65rem] text-text-muted px-2 py-0.5 rounded bg-white/5 border border-white/10 uppercase">CASE-SENSITIVE</span>
           </div>
 
           <p class="text-xs text-text-muted">
-            Harap masukkan string lengkap termasuk pembungkus <code class="text-amber-300 font-mono">NFX&#123;</code> dan penutup <code class="text-amber-300 font-mono">&#125;</code> tanpa spasi tambahan.
+            Pastikan menyertakan prefix <code class="text-amber-300 font-mono">NFX&#123;</code> dan kurung kurawal tutup <code class="text-amber-300 font-mono">&#125;</code> persis seperti yang ditemukan tanpa spasi atau tanda petik.
           </p>
         </section>
 
-        <hr class="border-white/10" />
-
-        <!-- 5. Pedoman Writeup -->
+        <!-- 06. Pedoman Writeup -->
         <section id="pedoman-writeup" class="scroll-mt-24 space-y-4">
-          <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            5. Pedoman Penulisan Writeup (WU)
-          </h2>
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-nx-cyan tracking-widest uppercase block mb-1">06. WRITEUP</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              Pedoman Penulisan Laporan Writeup (WU)
+            </h2>
+          </div>
+
           <p>
-            Writeup adalah laporan bukti penyelesaian challenge bagi peserta. Dokumen dikumpulkan dalam format <strong>PDF</strong> atau link <strong>GitHub / Markdown</strong> maksimal 24 jam setelah kompetisi berakhir.
+            Writeup merupakan dokumen bukti orisinalitas dan metodologi penyelesaian challenge. Dokumen wajib dikumpulkan paling lambat <strong>24 jam setelah kompetisi berakhir</strong> dalam bentuk file <strong>PDF</strong> atau tautan repositori <strong>GitHub / Markdown</strong>.
           </p>
 
-          <div class="p-4 rounded-xl bg-surface border border-white/10 space-y-3">
-            <span class="font-mono text-xs text-nx-cyan font-bold block">// FORMAT PRAKTIS STRUKTUR WRITEUP //</span>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-mono text-xs text-text-secondary">
-              <div class="p-2.5 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2.5">
-                <span class="text-emerald-400 font-bold shrink-0">01.</span>
-                <div>
-                  <strong class="text-white block">Username & Akun CTF</strong>
-                  <span class="text-text-muted text-[0.68rem]">Nama/Username dan Username di platform CTF</span>
-                </div>
+          <div class="space-y-3 font-mono text-xs pt-1">
+            <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
+              <span class="text-nx-cyan font-bold">1.</span>
+              <div>
+                <strong class="text-white block">Identitas Peserta:</strong>
+                <span class="text-text-muted">Nama lengkap, username yang terdaftar di ctf.nfx.my.id, serta jalur track.</span>
               </div>
-              <div class="p-2.5 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2.5">
-                <span class="text-emerald-400 font-bold shrink-0">02.</span>
-                <div>
-                  <strong class="text-white block">Foto Scoreboard</strong>
-                  <span class="text-text-muted text-[0.68rem]">Screenshot bukti peringkat & total poin akhir</span>
-                </div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
+              <span class="text-nx-cyan font-bold">2.</span>
+              <div>
+                <strong class="text-white block">Tangkapan Layar Scoreboard:</strong>
+                <span class="text-text-muted">Screenshot bukti posisi akhir di scoreboard dan challenge yang berhasil diselesaikan.</span>
               </div>
-              <div class="p-2.5 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2.5">
-                <span class="text-emerald-400 font-bold shrink-0">03.</span>
-                <div>
-                  <strong class="text-white block">Analisa Solver & PoC</strong>
-                  <span class="text-text-muted text-[0.68rem]">Langkah exploit, command terminal, atau script solver</span>
-                </div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
+              <span class="text-nx-cyan font-bold">3.</span>
+              <div>
+                <strong class="text-white block">Metodologi &amp; Proof-of-Concept (PoC):</strong>
+                <span class="text-text-muted">Penjelasan alur analisis celah, script exploit (Python/bash), command terminal, atau screenshot tahapan krusial.</span>
               </div>
-              <div class="p-2.5 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2.5">
-                <span class="text-emerald-400 font-bold shrink-0">04.</span>
-                <div>
-                  <strong class="text-white block">Flag</strong>
-                  <span class="text-text-muted text-[0.68rem]">String flag lengkap yang didapatkan (NFX&#123;...&#125;)</span>
-                </div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
+              <span class="text-nx-cyan font-bold">4.</span>
+              <div>
+                <strong class="text-white block">String Flag:</strong>
+                <span class="text-text-muted">Flag utuh yang diperoleh dari masing-masing challenge.</span>
               </div>
-              <div class="p-2.5 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2.5 sm:col-span-2">
-                <span class="text-emerald-400 font-bold shrink-0">05.</span>
-                <div>
-                  <strong class="text-white block">Transparansi AI</strong>
-                  <span class="text-text-muted text-[0.68rem]">Keterangan terbuka jika/bagaimana tools/asisten AI (ChatGPT/Gemini/Claude) digunakan</span>
-                </div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
+              <span class="text-nx-cyan font-bold">5.</span>
+              <div>
+                <strong class="text-white block">Deklarasi Penggunaan AI:</strong>
+                <span class="text-text-muted">Keterangan transparan mengenai bagaimana AI (ChatGPT, Claude, dsb.) digunakan selama riset pemecahan tantangan.</span>
               </div>
             </div>
           </div>
         </section>
 
-        <hr class="border-white/10" />
-
-        <!-- 6. Hadiah & Sponsor -->
-        <section id="hadiah-sponsor" class="scroll-mt-24 space-y-3">
-          <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            6. Skema Hadiah & Sponsor
-          </h2>
-          <p class="text-xs text-text-secondary">
-            Alokasi hadiah pemenang terverifikasi di masing-masing track dengan dukungan sponsorship dan dynamic pool:
-          </p>
-
-          <!-- Explanation Box for Track Umum Prize Structure -->
-          <div class="p-3.5 rounded-xl bg-surface border border-nx-cyan/30 space-y-2 font-mono text-xs">
-            <div class="flex items-center gap-2 text-nx-cyan font-bold text-xs sm:text-sm">
-              <span>💰</span>
-              <span>Struktur Hadiah Track Umum (Nasional):</span>
-            </div>
-            <p class="text-text-secondary leading-relaxed text-[0.72rem]">
-              Total Prize Pool Track Umum merupakan gabungan dari <strong>Dana Tunai Sponsorship Rp 1.000.000</strong> (didukung penuh oleh Main Sponsor <strong>LINUXENIC CORP.</strong>) ditambah akumulasi <strong>90% uang tiket registrasi</strong> seluruh peserta (@ Rp 10.000/peserta).
-            </p>
-            <div class="p-2.5 rounded-lg bg-black/60 border border-white/10 text-white font-bold text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5">
-              <span class="text-text-muted text-[0.68rem]">Rumus Total Hadiah:</span>
-              <span class="text-emerald-400 font-mono text-xs sm:text-sm">Rp 1.000.000 (Sponsor) + (Peserta × Rp 9.000)</span>
-            </div>
+        <!-- 07. Skema Hadiah & Sponsor -->
+        <section id="hadiah-sponsor" class="scroll-mt-24 space-y-4">
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-amber-400 tracking-widest uppercase block mb-1">07. REWARDS</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              Skema Hadiah &amp; Sponsorship Linuxenic Corp.
+            </h2>
           </div>
 
-          <div class="overflow-x-auto rounded-xl border border-white/10 bg-surface shadow-md">
+          <p>
+            Reward pemenang didukung oleh alokasi kas pendaftaran serta sponsor utama <strong class="text-amber-300">LINUXENIC CORP.</strong> yang menyediakan dana tunai Rp 1.000.000 dan voucher akses lab browser gratis:
+          </p>
+
+          <!-- Formula callout -->
+          <div class="p-4 rounded-xl bg-surface-elevated/80 border border-amber-400/20 font-mono text-xs space-y-1.5">
+            <div class="flex items-center gap-2 text-amber-300 font-bold">
+              <Coins className="size-4" />
+              <span>Kalkulasi Dynamic Prize Pool (Track Umum):</span>
+            </div>
+            <p class="text-text-muted text-[0.72rem]">
+              Total Pool = <strong class="text-white">Rp 1.000.000</strong> (Sponsor Linuxenic) + (<strong class="text-emerald-400">90% × Rp 10.000 × Jumlah Peserta</strong>).
+            </p>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-white/10 bg-surface-elevated/50">
             <table class="w-full text-left font-mono text-xs">
               <thead class="bg-white/5 border-b border-white/10 text-text-muted">
                 <tr>
-                  <th class="p-3 font-bold text-white">Peringkat</th>
-                  <th class="p-3 text-nf-orange-bright font-bold">Track Mahasiswa NF (Fixed Rp400k)</th>
-                  <th class="p-3 text-nx-cyan font-bold">Track Umum (Rp 1 Jt Sponsor + 90% Pool)</th>
+                  <th class="p-3.5 font-bold text-white">Peringkat</th>
+                  <th class="p-3.5 text-nf-orange-bright font-bold">Track Mahasiswa NF (Fixed)</th>
+                  <th class="p-3.5 text-nx-cyan font-bold">Track Umum (Dynamic Pool)</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-white/5 text-[0.72rem]">
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 font-bold text-amber-300 flex items-center gap-1.5">
-                    <span class="text-base">🥇</span>
+              <tbody class="divide-y divide-white/5">
+                <tr>
+                  <td class="p-3.5 font-bold text-amber-300 flex items-center gap-1.5">
+                    <Trophy className="size-4 text-amber-300" />
                     <span>Juara 1</span>
                   </td>
-                  <td class="p-3">
-                    <strong class="text-white">Rp 150.000</strong>
-                    <span class="text-text-muted block text-[0.65rem]">+ Voucher LINUXENIC 1 Bulan</span>
+                  <td class="p-3.5">
+                    <strong class="text-white block">Rp 150.000</strong>
+                    <span class="text-text-muted text-[0.68rem]">+ Voucher Lab Linuxenic 1 Bulan</span>
                   </td>
-                  <td class="p-3">
-                    <strong class="text-emerald-400 font-bold">50% Total Pool</strong>
-                    <span class="text-text-muted block text-[0.65rem]">+ Voucher LINUXENIC 1 Bulan</span>
+                  <td class="p-3.5">
+                    <strong class="text-emerald-400 font-bold block">50% Total Prize Pool</strong>
+                    <span class="text-text-muted text-[0.68rem]">+ Voucher Lab Linuxenic 1 Bulan</span>
                   </td>
                 </tr>
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 font-bold text-slate-300 flex items-center gap-1.5">
-                    <span class="text-base">🥈</span>
+                <tr>
+                  <td class="p-3.5 font-bold text-slate-300 flex items-center gap-1.5">
+                    <Trophy className="size-4 text-slate-300" />
                     <span>Juara 2</span>
                   </td>
-                  <td class="p-3">
+                  <td class="p-3.5">
                     <strong class="text-white">Rp 100.000</strong>
                   </td>
-                  <td class="p-3">
-                    <strong class="text-nx-cyan font-bold">30% Total Pool</strong>
+                  <td class="p-3.5">
+                    <strong class="text-nx-cyan font-bold">30% Total Prize Pool</strong>
                   </td>
                 </tr>
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 font-bold text-amber-500 flex items-center gap-1.5">
-                    <span class="text-base">🥉</span>
+                <tr>
+                  <td class="p-3.5 font-bold text-amber-500 flex items-center gap-1.5">
+                    <Trophy className="size-4 text-amber-500" />
                     <span>Juara 3</span>
                   </td>
-                  <td class="p-3">
+                  <td class="p-3.5">
                     <strong class="text-white">Rp 50.000</strong>
                   </td>
-                  <td class="p-3">
-                    <strong class="text-nx-cyan font-bold">20% Total Pool</strong>
+                  <td class="p-3.5">
+                    <strong class="text-nx-cyan font-bold">20% Total Prize Pool</strong>
                   </td>
                 </tr>
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 text-text-muted flex items-center gap-1.5">
-                    <span class="text-base">🎖️</span>
-                    <span>Juara 4</span>
-                  </td>
-                  <td class="p-3 text-text-secondary">Rp 50.000</td>
-                  <td class="p-3 text-text-dim">—</td>
-                </tr>
-                <tr class="hover:bg-white/[0.02] transition-colors">
-                  <td class="p-3 text-text-muted flex items-center gap-1.5">
-                    <span class="text-base">🎖️</span>
-                    <span>Juara 5</span>
-                  </td>
-                  <td class="p-3 text-text-secondary">Rp 50.000</td>
-                  <td class="p-3 text-text-dim">—</td>
+                <tr>
+                  <td class="p-3.5 text-text-muted">Juara 4 &amp; 5</td>
+                  <td class="p-3.5 text-text-secondary">Masing-masing Rp 50.000</td>
+                  <td class="p-3.5 text-text-muted">—</td>
                 </tr>
               </tbody>
             </table>
           </div>
-
-          <p class="text-[0.68rem] text-text-muted font-mono pt-1">
-            Seluruh peserta di kedua track berhak mendapatkan E-Certificate resmi NFX CTF 2026 (Track Umum wajib validasi submission Writeup).
-          </p>
         </section>
 
-        <hr class="border-white/10" />
-
-        <!-- 7. Kode Etik & AI -->
+        <!-- 08. Kode Etik & AI -->
         <section id="kode-etik" class="scroll-mt-24 space-y-4">
-          <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            7. Kode Etik, Kebijakan AI, & Integritas
-          </h2>
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-rose-400 tracking-widest uppercase block mb-1">08. FAIRPLAY</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              Kode Etik, Integritas &amp; Kebijakan AI
+            </h2>
+          </div>
 
-          <div class="space-y-3 font-mono text-xs">
-            <div class="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 space-y-1.5">
-              <span class="text-emerald-400 font-bold block">✓ Hal yang Diperbolehkan:</span>
+          <div class="space-y-4 font-mono text-xs">
+            <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 space-y-1.5">
+              <span class="text-emerald-400 font-bold flex items-center gap-1.5 text-sm">
+                <Check className="size-4" />
+                <span>Hal yang Diperbolehkan:</span>
+              </span>
               <p class="text-text-secondary leading-relaxed">
-                Penggunaan asisten AI (ChatGPT, Claude, Gemini, Copilot), tools pentest open-source standar (Burp Suite, Ghidra, GDB, Wireshark, sqlmap, pwntools), serta teknik <strong>bruteforce / fuzzing pada target container challenge</strong>.
+                Penggunaan tools Artificial Intelligence (ChatGPT, Claude, Gemini, Copilot), automated fuzzer/bruteforce pada target container challenge, serta tools pentest standar (Burp Suite, Ghidra, GDB, Wireshark, sqlmap, pwntools).
               </p>
             </div>
 
-            <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-1.5">
-              <span class="text-rose-400 font-bold block">✗ Larangan Keras (Diskualifikasi Langsung):</span>
-              <ul class="list-disc list-inside space-y-1 text-text-secondary leading-relaxed">
-                <li>Melakukan penyerangan Denial of Service (DoS/DDoS) terhadap website/platform utama kompetisi (<code>ctf.nfx.my.id</code>) atau server host.</li>
-                <li>Merusak, memodifikasi sistem, menghapus file challenge, atau spam restart container (karena container bersifat shared / sharing bersama peserta lain).</li>
-                <li>Berbagi flag, payload solver, atau bekerja sama antar peserta selama kompetisi aktif (kompetisi bersifat <strong>individu</strong>, wajib dikerjakan mandiri).</li>
-                <li>Meminta bantuan orang lain / joki / pihak ketiga.</li>
+            <div class="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-2">
+              <span class="text-rose-400 font-bold flex items-center gap-1.5 text-sm">
+                <X className="size-4" />
+                <span>Larangan Keras (Sanksi Diskualifikasi Permanen):</span>
+              </span>
+              <ul class="space-y-1.5 text-text-secondary leading-relaxed pl-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400">✗</span>
+                  <span>Menyerang infrastruktur utama kompetisi (DoS/DDoS pada <code>ctf.nfx.my.id</code>).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400">✗</span>
+                  <span>Merusak, menghapus file flag, atau spam restart container bersama.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400">✗</span>
+                  <span>Berbagi flag, payload, atau bekerja sama antar peserta (kompetisi bersifat <strong>individu</strong>).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400">✗</span>
+                  <span>Mempekerjakan pihak ketiga / joki.</span>
+                </li>
               </ul>
             </div>
           </div>
         </section>
 
-        <hr class="border-white/10" />
-
-        <!-- 8. Helpdesk -->
+        <!-- 09. Narahubung & Bantuan -->
         <section id="helpdesk" class="scroll-mt-24 space-y-4">
-          <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
-            8. Narahubung & Bantuan Resmi (Open Ticket)
-          </h2>
-          <p>
-            Jika menemukan kendala teknis pada challenge container, platform error, atau pertanyaan operasional perlombaan:
-          </p>
-
-          <div class="p-4 rounded-xl bg-surface border border-nx-cyan/30 font-mono text-xs space-y-2">
-            <div class="flex items-center gap-2 text-nx-cyan font-bold">
-              <span>🎫</span>
-              <span>Sistem Open Ticket di Discord Resmi NFX:</span>
-            </div>
-            <p class="text-text-secondary text-xs leading-relaxed">
-              Silakan bergabung ke Discord NFX CTF 2026 dan gunakan channel <code class="text-white bg-black px-1.5 py-0.5 rounded border border-white/10">#open-ticket</code> untuk menghubungi tim panitia secara privat dan responsif.
-            </p>
+          <div class="pb-2 border-b border-white/10">
+            <span class="font-mono text-xs text-nx-cyan tracking-widest uppercase block mb-1">09. HELPDESK</span>
+            <h2 class="font-display font-bold text-2xl text-white">
+              Narahubung &amp; Bantuan Teknis (Open Ticket)
+            </h2>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs pt-1">
-            <div class="p-3.5 rounded-xl bg-surface border border-white/10 space-y-1">
-              <span class="text-white font-bold block">Komunitas UKM NFCC:</span>
-              <p class="text-text-muted">Track Mahasiswa & Info Workshop</p>
-              <a href="https://discord.gg/q8gxeYZgMC" target="_blank" rel="noopener noreferrer" class="text-nx-cyan hover:underline block">
-                discord.gg/q8gxeYZgMC ↗
-              </a>
+          <p>
+            Jika Anda mengalami kendala koneksi instance container challenge atau butuh konfirmasi aturan selama perlombaan berlangsung, silakan buat tiket privat melalui saluran Discord resmi:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 font-mono text-xs">
+            <div class="p-4 rounded-xl bg-surface-elevated/70 border border-white/5 space-y-2">
+              <div class="flex items-center gap-2 text-white font-bold text-sm">
+                <Ticket className="size-4 text-nx-cyan" />
+                <span>Discord NFX CTF</span>
+              </div>
+              <p class="text-text-muted text-[0.72rem]">
+                Gunakan channel privat <code class="text-nx-cyan">#open-ticket</code> untuk kendala teknis perlombaan dan validasi challenge.
+              </p>
             </div>
 
-            <div class="p-3.5 rounded-xl bg-surface border border-white/10 space-y-1">
-              <span class="text-white font-bold block">Komunitas NXCTF:</span>
-              <p class="text-text-muted">Platform NXCTF & Track Umum</p>
-              <a href="https://discord.gg/5etKks6aQQ" target="_blank" rel="noopener noreferrer" class="text-nx-cyan hover:underline block">
-                discord.gg/5etKks6aQQ ↗
-              </a>
+            <div class="p-4 rounded-xl bg-surface-elevated/70 border border-white/5 space-y-2">
+              <div class="flex items-center gap-2 text-white font-bold text-sm">
+                <MessageSquare className="size-4 text-nf-orange" />
+                <span>Sekretariat Panitia</span>
+              </div>
+              <p class="text-text-muted text-[0.72rem]">
+                Pertanyaan seputar pendaftaran &amp; workshop: email ke <code class="text-white">nfcc@nurulfikri.ac.id</code>.
+              </p>
             </div>
           </div>
         </section>
+
       </div>
     </div>
   </main>
 
   <Footer />
+
+  <!-- Interactive Modals -->
+  <DiscordNfxModal client:idle />
+  <RegisterModal client:idle />
 </Layout>
+
+<script is:inline>
+  (() => {
+    function initDocsNav() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.toc-link');
+
+      if (!sections.length || !navLinks.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              navLinks.forEach((link) => {
+                if (link.getAttribute('href') === `#${id}`) {
+                  link.classList.add('text-nx-cyan', 'bg-white/10', 'font-bold');
+                  link.classList.remove('text-text-secondary');
+                } else {
+                  link.classList.remove('text-nx-cyan', 'bg-white/10', 'font-bold');
+                  link.classList.add('text-text-secondary');
+                }
+              });
+            }
+          });
+        },
+        { rootMargin: '-15% 0px -75% 0px' }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDocsNav);
+    } else {
+      initDocsNav();
+    }
+  })();
+</script>

@@ -1,5 +1,6 @@
 ---
 // Rules.astro
+import { FileText, Scale, Flag, Check, X, Clock } from "lucide-react";
 ---
 
 <section id="rules" class="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 relative z-10">
@@ -26,7 +27,7 @@
           <!-- Header (Uniform Height) -->
           <div class="flex items-center justify-between gap-2 mb-2.5 pb-2 border-b border-white/5 min-h-[2rem]">
             <h3 class="font-display font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
-              <span>📝</span>
+              <FileText className="size-4 text-nx-cyan shrink-0" />
               <span>Ketentuan Writeup</span>
             </h3>
             <span class="font-mono text-[0.58rem] font-bold px-1.5 py-0.5 rounded bg-nx-cyan/10 text-nx-cyan border border-nx-cyan/25 uppercase shrink-0">
@@ -67,7 +68,7 @@
           <!-- Header (Uniform Height) -->
           <div class="flex items-center justify-between gap-2 mb-2.5 pb-2 border-b border-white/5 min-h-[2rem]">
             <h3 class="font-display font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
-              <span>⚖️</span>
+              <Scale className="size-4 text-amber-400 shrink-0" />
               <span>Integritas & Kode Etik</span>
             </h3>
             <span class="font-mono text-[0.58rem] font-bold px-1.5 py-0.5 rounded bg-amber-400/10 text-amber-300 border border-amber-400/25 uppercase shrink-0">
@@ -78,11 +79,11 @@
           <!-- Body -->
           <div class="space-y-1.5 font-mono text-[0.68rem]">
             <div class="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-start gap-1.5 text-emerald-400">
-              <span class="font-bold shrink-0">✓</span>
+              <Check className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
               <span class="text-text-secondary leading-tight"><strong class="text-emerald-400">Boleh:</strong> AI tools, bruteforce soal, & tools pentest.</span>
             </div>
             <div class="p-1.5 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-start gap-1.5 text-rose-400">
-              <span class="font-bold shrink-0">✗</span>
+              <X className="size-3.5 text-rose-400 shrink-0 mt-0.5" />
               <span class="text-text-secondary leading-tight"><strong class="text-rose-400">Dilarang:</strong> Sharing flag, DoS web, & spam restart container.</span>
             </div>
             <div class="flex items-center justify-between text-[0.62rem] text-text-secondary px-0.5 pt-0.5">
@@ -104,7 +105,7 @@
           <!-- Header (Uniform Height) -->
           <div class="flex items-center justify-between gap-2 mb-2.5 pb-2 border-b border-white/5 min-h-[2rem]">
             <h3 class="font-display font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
-              <span>🚩</span>
+              <Flag className="size-4 text-nf-orange shrink-0" />
               <span>Format Flag & Skor</span>
             </h3>
             <span class="font-mono text-[0.58rem] font-bold px-1.5 py-0.5 rounded bg-nf-orange/10 text-nf-orange-bright border border-nf-orange/25 uppercase shrink-0">
@@ -114,10 +115,13 @@
 
           <!-- Body -->
           <div class="space-y-1.5 font-mono text-[0.68rem]">
-            <div class="p-1.5 rounded-lg bg-black/60 border border-white/5 flex items-center justify-between">
-              <span class="text-text-muted text-[0.62rem]">Flag:</span>
-              <code class="text-nx-cyan font-bold text-xs">NFX&#123;...&#125;</code>
-              <span class="text-[0.52rem] text-text-muted px-1 rounded bg-white/5 border border-white/5">CASE-SENSITIVE</span>
+            <div class="p-2 rounded-lg bg-black/70 border border-nx-cyan/20 flex items-center justify-between gap-2 shadow-inner">
+              <code class="text-nx-cyan font-bold text-xs tracking-wide select-all truncate">
+                NFX&#123;your_flag_here&#125;
+              </code>
+              <span class="font-mono text-[0.52rem] font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20 uppercase tracking-wider shrink-0">
+                CASE-SENSITIVE
+              </span>
             </div>
             <!-- Complete Dynamic Scoring: Max 500, Decay 20, Min 100 -->
             <div class="grid grid-cols-3 gap-1 text-center font-mono">
@@ -136,7 +140,10 @@
             </div>
             <div class="flex items-center justify-between text-[0.62rem] text-text-secondary px-0.5 pt-0.5">
               <span class="text-text-muted">Tie-Breaker:</span>
-              <span class="text-white font-medium">Submit Tercepat ⏱</span>
+              <span class="text-white font-medium flex items-center gap-1">
+                <Clock className="size-3 text-nx-cyan" />
+                <span>Submit Tercepat</span>
+              </span>
             </div>
           </div>
         </div>

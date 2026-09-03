@@ -27,7 +27,7 @@
     </a>
 
     <!-- Desktop Navigation Menu (Dead-Center Aligned & Streamlined) -->
-    <nav class="hidden xl:flex items-center gap-0.5 p-1 rounded-full bg-surface-elevated/70 border border-white/[0.08] backdrop-blur-md absolute left-1/2 -translate-x-1/2 shrink-0 z-20 shadow-sm">
+    <nav class="hidden lg:flex items-center gap-0.5 p-1 rounded-full bg-surface-elevated/70 border border-white/[0.08] backdrop-blur-md absolute left-1/2 -translate-x-1/2 shrink-0 z-20 shadow-sm">
       <a href="/#tracks" class="px-3 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Track & Hadiah</a>
       <a href="/#timeline" class="px-3 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Timeline</a>
       <a href="/#rules" class="px-3 py-1.5 rounded-full text-xs font-medium text-text-secondary hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Rules</a>
@@ -37,108 +37,156 @@
     </nav>
 
     <!-- Header Actions (Sponsored by LINUXENIC on the Right + Mobile Burger) -->
-    <div class="flex items-center gap-2.5 sm:gap-3 shrink-0 z-10">
-      <!-- Navbar Sponsor Badge (Prominent on Right Side) -->
-      <div class="hidden sm:inline-flex items-center gap-2">
-        <span class="font-mono text-[0.62rem] text-text-muted uppercase tracking-wider whitespace-nowrap select-none">Sponsored by</span>
-        <a
-          href="https://linuxenic.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-elevated/90 border border-amber-400/35 hover:border-amber-400 text-amber-300 hover:text-amber-200 transition-all text-xs font-display font-bold shadow-[0_0_12px_rgba(251,191,36,0.12)] whitespace-nowrap shrink-0 group leading-none"
-          title="Official Main Sponsor: LINUXENIC CORP."
-        >
-          <img
-            src="/linuxenic-logo.png"
-            alt="LINUXENIC"
-            class="w-4 h-4 rounded object-contain bg-black border border-white/10 shrink-0"
-            style="width: 16px; height: 16px; min-width: 16px; max-width: 16px; max-height: 16px;"
-          />
-          <span class="tracking-wide whitespace-nowrap text-xs font-bold">LINUXENIC</span>
-          <span class="text-[0.6rem] text-text-muted group-hover:text-amber-300 transition-colors">↗</span>
-        </a>
-      </div>
-
-      <!-- Mobile Hamburger Button (Prominent on Mobile/Phone) -->
-      <button
-        id="mobile-menu-btn"
-        aria-label="Toggle Navigation Menu"
-        class="xl:hidden p-2.5 rounded-xl bg-surface-elevated border border-white/10 text-text-secondary hover:text-white hover:border-nx-cyan/40 transition-colors cursor-pointer"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon-open"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="menu-icon-close"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu-drawer" class="hidden xl:hidden fixed top-[72px] left-0 right-0 bottom-0 bg-background/95 backdrop-blur-2xl border-t border-white/10 p-6 overflow-y-auto flex flex-col gap-4">
-    <a href="/#about" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Tentang Kolaborasi</a>
-    <a href="/#tracks" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Track & Hadiah</a>
-    <a href="/#categories" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">8 Kategori Soal</a>
-    <a href="/#timeline" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Timeline Lomba</a>
-    <a href="/#rules" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Rules & Writeup</a>
-    <a href="/#sponsors" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">Sponsor & Partner</a>
-    <a href="/#faq" class="mobile-nav-link text-base font-medium text-text-secondary hover:text-white py-1">FAQ</a>
-    <a href="/guidebook" class="mobile-nav-link text-base font-bold text-nx-cyan py-1">📖 Official Guidebook</a>
-
-    <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0 z-10">
+      <!-- Navbar Sponsor Badge (Always Visible on Mobile & Desktop) -->
       <a
-        href="https://ctf.nfx.my.id"
+        href="https://linuxenic.com"
         target="_blank"
         rel="noopener noreferrer"
-        class="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-mono text-xs font-bold bg-nx-cyan text-slate-950 shadow-lg shadow-nx-cyan/20"
+        class="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-xl bg-surface-elevated/90 border border-amber-400/35 hover:border-amber-400 text-amber-300 hover:text-amber-200 transition-all text-[0.7rem] sm:text-xs font-display font-bold shadow-[0_0_12px_rgba(251,191,36,0.12)] whitespace-nowrap shrink-0 group leading-none"
+        title="Official Main Sponsor: LINUXENIC CORP."
       >
-        Akses Platform ctf.nfx.my.id
+        <span class="hidden sm:inline font-mono text-[0.62rem] text-text-muted uppercase tracking-wider select-none mr-0.5">Sponsored by</span>
+        <img
+          src="/linuxenic-logo.png"
+          alt="LINUXENIC"
+          class="size-3.5 sm:size-4 rounded object-contain bg-black border border-white/10 shrink-0"
+          style="width: 15px; height: 15px; min-width: 14px; max-width: 16px; max-height: 16px;"
+        />
+        <span class="tracking-wide whitespace-nowrap text-[0.7rem] sm:text-xs font-bold">LINUXENIC</span>
+        <span class="text-[0.6rem] text-text-muted group-hover:text-amber-300 transition-colors">↗</span>
       </a>
-      <p class="text-center font-mono text-[0.7rem] text-text-muted">
-        Diselenggarakan oleh UKM NFCC × NXCTF
-      </p>
-      <div class="flex items-center justify-center gap-2 pt-2 border-t border-white/5">
-        <span class="font-mono text-[0.65rem] text-text-muted">Main Sponsor:</span>
-        <a href="https://linuxenic.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-amber-300 font-bold text-xs hover:underline">
-          <img
-            src="/linuxenic-logo.png"
-            alt="LINUXENIC"
-            class="w-4 h-4 object-contain rounded"
-            style="width: 16px; height: 16px;"
-          />
-          <span>LINUXENIC CORP.</span>
-        </a>
-      </div>
+
+      <!-- Mobile Hamburger Button (Visible below lg) -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        aria-label="Toggle Navigation Menu"
+        class="lg:hidden p-2 sm:p-2.5 rounded-xl bg-surface-elevated border border-white/10 text-text-secondary hover:text-white hover:border-nx-cyan/40 transition-colors cursor-pointer shrink-0"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon-open"><line x1="4" x2="20" y1="12" x2="20" y1="12"/><line x1="4" x2="20" y1="6" x2="20" y1="6"/><line x1="4" x2="20" y1="18" x2="20" y1="18"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="menu-icon-close"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
     </div>
   </div>
 </header>
 
+<!-- Mobile Drawer Menu (Placed OUTSIDE <header> to prevent backdrop-filter containing block bugs) -->
+<div
+  id="mobile-menu-drawer"
+  class="hidden lg:hidden fixed top-[72px] inset-x-0 bottom-0 z-40 bg-background/98 backdrop-blur-2xl border-t border-white/10 p-5 sm:p-6 overflow-y-auto flex flex-col justify-between"
+  style="height: calc(100dvh - 72px);"
+>
+  <div class="flex flex-col gap-1 w-full">
+    <a href="/#about" class="mobile-nav-link text-sm font-semibold text-text-secondary hover:text-white py-3 border-b border-white/5 flex items-center justify-between transition-colors">
+      <span>Tentang Kolaborasi</span>
+      <span class="text-text-muted text-xs">→</span>
+    </a>
+    <a href="/#tracks" class="mobile-nav-link text-sm font-semibold text-text-secondary hover:text-white py-3 border-b border-white/5 flex items-center justify-between transition-colors">
+      <span>Track &amp; Hadiah</span>
+      <span class="text-text-muted text-xs">→</span>
+    </a>
+    <a href="/#categories" class="mobile-nav-link text-sm font-semibold text-text-secondary hover:text-white py-3 border-b border-white/5 flex items-center justify-between transition-colors">
+      <span>8 Kategori Soal</span>
+      <span class="text-text-muted text-xs">→</span>
+    </a>
+    <a href="/#timeline" class="mobile-nav-link text-sm font-semibold text-text-secondary hover:text-white py-3 border-b border-white/5 flex items-center justify-between transition-colors">
+      <span>Timeline Lomba</span>
+      <span class="text-text-muted text-xs">→</span>
+    </a>
+    <a href="/#rules" class="mobile-nav-link text-sm font-semibold text-text-secondary hover:text-white py-3 border-b border-white/5 flex items-center justify-between transition-colors">
+      <span>Rules &amp; Writeup</span>
+      <span class="text-text-muted text-xs">→</span>
+    </a>
+    <a href="/#sponsors" class="mobile-nav-link text-sm font-semibold text-text-secondary hover:text-white py-3 border-b border-white/5 flex items-center justify-between transition-colors">
+      <span>Sponsor &amp; Partner</span>
+      <span class="text-text-muted text-xs">→</span>
+    </a>
+    <a href="/#faq" class="mobile-nav-link text-sm font-semibold text-text-secondary hover:text-white py-3 border-b border-white/5 flex items-center justify-between transition-colors">
+      <span>FAQ</span>
+      <span class="text-text-muted text-xs">→</span>
+    </a>
+    <a href="/guidebook" class="mobile-nav-link text-sm font-bold text-nx-cyan py-3 flex items-center justify-between">
+      <span>📖 Official Guidebook</span>
+      <span class="text-nx-cyan text-xs">↗</span>
+    </a>
+  </div>
+
+  <div class="pt-4 border-t border-white/10 flex flex-col gap-2.5 pb-6">
+    <a
+      href="https://ctf.nfx.my.id"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-mono text-xs font-bold bg-nx-cyan text-slate-950 shadow-lg shadow-nx-cyan/20 hover:bg-cyan-300 transition-colors"
+    >
+      <span>Akses Platform ctf.nfx.my.id ↗</span>
+    </a>
+    <p class="text-center font-mono text-[0.68rem] text-text-muted">
+      Diselenggarakan oleh UKM NFCC × NXCTF
+    </p>
+  </div>
+</div>
+
 <script is:inline>
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const menuDrawer = document.getElementById('mobile-menu-drawer');
-  const iconOpen = document.getElementById('menu-icon-open');
-  const iconClose = document.getElementById('menu-icon-close');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  (() => {
+    function initNavbar() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const menuDrawer = document.getElementById('mobile-menu-drawer');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      const mobileLinks = Array.from(document.querySelectorAll('.mobile-nav-link'));
 
-  function toggleMenu() {
-    const isHidden = menuDrawer.classList.contains('hidden');
-    if (isHidden) {
-      menuDrawer.classList.remove('hidden');
-      iconOpen.classList.add('hidden');
-      iconClose.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    } else {
-      menuDrawer.classList.add('hidden');
-      iconOpen.classList.remove('hidden');
-      iconClose.classList.add('hidden');
-      document.body.style.overflow = '';
+      if (!menuBtn || !menuDrawer) return;
+
+      const openMenu = () => {
+        menuDrawer.classList.remove('hidden');
+        iconOpen?.classList.add('hidden');
+        iconClose?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeMenu = () => {
+        menuDrawer.classList.add('hidden');
+        iconOpen?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
+        document.body.style.overflow = '';
+      };
+
+      const toggleMenu = (e) => {
+        if (e) e.stopPropagation();
+        const isHidden = menuDrawer.classList.contains('hidden');
+        if (isHidden) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      menuBtn.onclick = toggleMenu;
+
+      mobileLinks.forEach((link) => {
+        link.onclick = () => {
+          closeMenu();
+        };
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !menuDrawer.classList.contains('hidden')) {
+          closeMenu();
+        }
+      });
     }
-  }
 
-  menuBtn?.addEventListener('click', toggleMenu);
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menuDrawer.classList.add('hidden');
-      iconOpen.classList.remove('hidden');
-      iconClose.classList.add('hidden');
-      document.body.style.overflow = '';
-    });
-  });
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNavbar);
+    } else {
+      initNavbar();
+    }
+  })();
 </script>
