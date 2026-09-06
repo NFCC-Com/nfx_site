@@ -1,6 +1,5 @@
 ---
 // Tracks.astro
-import PrizeCalculator from "./PrizeCalculator";
 import { Check } from "lucide-react";
 ---
 
@@ -48,8 +47,8 @@ import { Check } from "lucide-react";
               <strong class="text-emerald-400 font-bold text-sm sm:text-base">Rp 0,- (Free)</strong>
             </div>
             <div class="text-right">
-              <span class="text-text-muted text-[0.62rem] uppercase block">TOTAL CASH POOL:</span>
-              <strong class="text-white font-bold text-sm sm:text-base">Rp 400.000</strong>
+              <span class="text-text-muted text-[0.62rem] uppercase block">HADIAH:</span>
+              <strong class="text-white font-bold text-sm sm:text-base">Juara 1–5</strong>
             </div>
           </div>
 
@@ -61,7 +60,7 @@ import { Check } from "lucide-react";
             </li>
             <li class="flex items-start gap-2">
               <Check className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-              <span><strong>Fixed Cash Top 5:</strong> J1 (150k), J2 (100k), J3-5 (@50k).</span>
+              <span><strong>Hadiah uang tunai:</strong> Untuk Juara 1–5 Track Mahasiswa NF.</span>
             </li>
             <li class="flex items-start gap-2">
               <Check className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
@@ -100,7 +99,7 @@ import { Check } from "lucide-react";
             Track Umum (Nasional)
           </h3>
           <p class="text-text-secondary text-xs sm:text-sm leading-relaxed mb-4">
-            Terbuka untuk pelajar, mahasiswa luar kampus, praktisi, & publik se-Indonesia. Bersaing memperebutkan dynamic prize pool.
+            Terbuka untuk pelajar, mahasiswa luar kampus, praktisi, & publik se-Indonesia. Raih hadiah untuk Juara 1–5 Track Umum.
           </p>
 
           <!-- Price & Prize Mini Bar -->
@@ -111,7 +110,7 @@ import { Check } from "lucide-react";
             </div>
             <div class="text-right">
               <span class="text-text-muted text-[0.62rem] uppercase block">SKEMA HADIAH:</span>
-              <strong class="text-emerald-400 font-bold text-sm sm:text-base">Rp 300 Ribu + 90% Pool</strong>
+              <strong class="text-emerald-400 font-bold text-sm sm:text-base">Juara 1–5</strong>
             </div>
           </div>
 
@@ -119,7 +118,7 @@ import { Check } from "lucide-react";
           <ul class="space-y-2 font-mono text-[0.72rem] text-text-secondary mb-5">
             <li class="flex items-start gap-2">
               <Check className="size-3.5 text-nx-cyan shrink-0 mt-0.5" />
-              <span><strong>Rp 300 Rb + 90% Pool:</strong> Sponsor LINUXENIC + tiket pendaftaran.</span>
+              <span><strong>Hadiah uang tunai:</strong> Untuk Juara 1–5 Track Umum.</span>
             </li>
             <li class="flex items-start gap-2">
               <Check className="size-3.5 text-nx-cyan shrink-0 mt-0.5" />
@@ -147,9 +146,11 @@ import { Check } from "lucide-react";
       </div>
     </div>
 
-    <!-- Live Dynamic Prize Calculator (With Clear Ample Spacing Gap) -->
-    <div class="pt-2">
-      <PrizeCalculator client:visible />
+    <div class="text-center text-sm text-text-secondary">
+      <p>Hadiah untuk Juara 1–5 di masing-masing track, dengan voucher Linuxenic 1 bulan untuk Juara 1.</p>
+      <a href="/guidebook#hadiah-sponsor" class="inline-block mt-2 text-nx-cyan hover:underline font-semibold">
+        Lihat rincian hadiah & ketentuan di guidebook →
+      </a>
     </div>
   </div>
 </section>

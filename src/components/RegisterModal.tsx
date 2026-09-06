@@ -75,7 +75,7 @@ export default function RegisterModal() {
                 Mahasiswa STT-NF
               </h4>
               <p className="text-[0.72rem] text-text-secondary leading-relaxed mb-3">
-                Khusus mahasiswa aktif STT-NF. Termasuk 2x workshop persiapan &amp; hadiah Top 5 (Rp 400.000).
+                Khusus mahasiswa aktif STT-NF. Termasuk 2x workshop persiapan &amp; hadiah untuk Juara 1–5. Rincian hadiah tersedia di guidebook.
               </p>
             </div>
 
@@ -104,7 +104,7 @@ export default function RegisterModal() {
                 Track Umum
               </h4>
               <p className="text-[0.72rem] text-text-secondary leading-relaxed mb-3">
-                Terbuka publik/pelajar nasional. Rebut Rp 300 Rb sponsor Linuxenic + 90% tiket pool.
+                Terbuka publik/pelajar nasional. Hadiah untuk Juara 1–5 dan voucher Linuxenic untuk Juara 1. Rincian hadiah tersedia di guidebook.
               </p>
             </div>
 

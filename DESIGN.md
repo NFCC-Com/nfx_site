@@ -149,7 +149,7 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
   - **NXCTF:** Komunitas dan platform ekosistem CTF open-source terkemuka yang menyediakan infrastruktur lomba modern, standardisasi tantangan, dan jangkauan komunitas luas.
   - **Hasil Sinergi:** Event **NFX CTF 2026** yang inklusif untuk pembinaan kampus sekaligus kompetitif di level nasional.
 
-### Section 5: Track Peserta & Interactive Dynamic Prize Calculator
+### Section 5: Track Peserta & Ringkasan Hadiah
 - **Card 1: Track Mahasiswa NF (Internal)**
   - Badge: `GRATIS / FREE HTM`
   - Benefit: 4x Workshop Online Intensif (oleh NFCC), Akses Latihan, E-Certificate sesuai peringkat (*minimal 1 challenge selesai dengan flag benar; 0 solve tidak mendapat sertifikat; writeup opsional*).
@@ -158,12 +158,12 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
   - Badge: `EARLY BIRD: 10K / 15K`
   - Benefit: Bersaing di tingkat nasional, E-Certificate of Participation (*wajib submit Writeup*).
   - Revenue Split: 90% Prize Pool, 10% Operasional & Server.
-- **⚡ Live Prize Pool Calculator (Interaktif):**
-  - **Slider Jumlah Peserta:** Rentang 10 s/d 300+ peserta (Default: 100 pendaftar).
+- **Ringkasan hadiah di landing page:** Hadiah uang tunai Juara 1–5 setiap track dan voucher Linuxenic untuk Juara 1. Tanpa kalkulator atau simulasi nominal; tautkan ke rincian guidebook.
+- **Rincian di guidebook:**
   - **Skema Hadiah Umum Top 5:** Pool tiket (90% registrasi) dibagi 40% / 30% / 15% / 10% / 5%.
   - **Sponsor Linuxenic Rp300.000:** Bonus tetap juara 1 Rp150.000, juara 2 Rp100.000, dan juara 3 Rp50.000. Juara 4–5 dari pool tiket saja.
   - **Voucher Linuxenic:** Akses 1 bulan untuk juara 1 masing-masing track.
-  - Output dinamis terhitung otomatis dalam mata uang Rupiah (`Rp xxx.xxx`).
+  - Nominal dan persentase pembagian dijelaskan di guidebook.
 
 ### Section 6: 7 Kategori Tantangan
 - Tampilan 7 Kartu Neon Interaktif:
