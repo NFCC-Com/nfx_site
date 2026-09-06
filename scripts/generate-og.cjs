@@ -202,7 +202,7 @@ async function generateOgImage() {
         <g transform="translate(204, 22)">
           <!-- Tier Tag -->
           <rect width="255" height="22" rx="11" fill="#f59e0b" fill-opacity="0.16" stroke="#f59e0b" stroke-width="1"/>
-          <text x="12" y="15" fill="#fde047" font-size="10.5" font-weight="800" letter-spacing="1.2" class="font-mono">★ MAIN SPONSOR &amp; LAB PARTNER</text>
+          <text x="12" y="15" fill="#fde047" font-size="10.5" font-weight="800" letter-spacing="1.2" class="font-mono">★ MAIN SPONSOR</text>
 
           <!-- Main Sponsor Name -->
           <text x="0" y="52" fill="#ffffff" font-size="27" font-weight="900" letter-spacing="1" class="font-sans">

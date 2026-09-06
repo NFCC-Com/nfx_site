@@ -275,7 +275,7 @@ export default function GuidebookModal() {
                   Pedoman & Standar Writeup (WU)
                 </h4>
                 <p className="text-xs text-text-secondary leading-relaxed">
-                  Writeup adalah dokumentasi teknis langkah penyelesaian challenge dalam format <strong>PDF</strong> atau <strong>GitHub Repository / Markdown</strong> (maksimal H+1 setelah kompetisi).
+                  Writeup cukup berisi ringkasan cara menyelesaikan challenge. Format bebas: <strong>blog, PDF, GitHub / Markdown, Notion, atau format lainnya</strong>, asalkan dapat dibaca dan diakses panitia. Pastikan izin akses tautan sudah sesuai. Wajib untuk Track Umum dan opsional untuk Mahasiswa NF.
                 </p>
               </div>
 
@@ -285,7 +285,7 @@ export default function GuidebookModal() {
                   <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2">
                     <span className="text-emerald-400 font-bold shrink-0">01.</span>
                     <div>
-                      <strong className="text-white block text-xs">Username & Akun CTF</strong>
+                      <strong className="text-white block text-xs">Identitas Peserta</strong>
                       <span className="text-text-muted text-[0.65rem]">Nama & username platform CTF</span>
                     </div>
                   </div>
@@ -293,14 +293,14 @@ export default function GuidebookModal() {
                     <span className="text-emerald-400 font-bold shrink-0">02.</span>
                     <div>
                       <strong className="text-white block text-xs">Foto Scoreboard</strong>
-                      <span className="text-text-muted text-[0.65rem]">Screenshot ranking & total poin</span>
+                      <span className="text-text-muted text-[0.65rem]">Screenshot posisi akhir di scoreboard track masing-masing</span>
                     </div>
                   </div>
                   <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2">
                     <span className="text-emerald-400 font-bold shrink-0">03.</span>
                     <div>
-                      <strong className="text-white block text-xs">Analisa Solver & PoC</strong>
-                      <span className="text-text-muted text-[0.65rem]">Langkah exploit, script & command</span>
+                      <strong className="text-white block text-xs">Deskripsi & Alur Penyelesaian</strong>
+                      <span className="text-text-muted text-[0.65rem]">Nama challenge, deskripsi singkat cara penyelesaian, dan urutan langkah hingga memperoleh flag untuk setiap challenge yang diselesaikan</span>
                     </div>
                   </div>
                   <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2">
@@ -313,8 +313,8 @@ export default function GuidebookModal() {
                   <div className="p-2 rounded-lg bg-background/80 border border-white/5 flex items-start gap-2 sm:col-span-2">
                     <span className="text-emerald-400 font-bold shrink-0">05.</span>
                     <div>
-                      <strong className="text-white block text-xs">Transparansi AI</strong>
-                      <span className="text-text-muted text-[0.65rem]">Keterangan terbuka jika/bagaimana tools/asisten AI digunakan</span>
+                      <strong className="text-white block text-xs">Penggunaan AI (Opsional)</strong>
+                      <span className="text-text-muted text-[0.65rem]">Boleh cantumkan chatbot yang digunakan (misalnya ChatGPT atau Claude), atau nama AI agent beserta modelnya jika menggunakan agent. Tambahkan keterangan singkat bantuannya untuk transparansi.</span>
                     </div>
                   </div>
                 </div>
@@ -468,10 +468,23 @@ export default function GuidebookModal() {
                   <span className="text-text-muted">discord.gg/5etKks6aQQ ↗</span>
                 </a>
 
+                <a
+                  href="https://instagram.com/nfcc.id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-surface border border-white/10 flex items-center justify-between hover:border-nf-orange/50 transition-colors"
+                >
+                  <span className="flex items-center gap-2">
+                    <span>📷</span>
+                    <span>Instagram NFCC</span>
+                  </span>
+                  <span className="text-text-muted">@nfcc.id ↗</span>
+                </a>
+
                 <div className="p-3 rounded-xl bg-surface border border-white/10 flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <span>📧</span>
-                    <span>Email Resmi Panitia NFCC</span>
+                    <span>Sekretariat Panitia (Email)</span>
                   </span>
                   <span className="text-text-muted">nfcc@nurulfikri.ac.id</span>
                 </div>

@@ -168,7 +168,6 @@ const tocItems = [
           <p>
             <strong class="text-white">NFX CTF 2026</strong> adalah kompetisi keamanan siber nasional dengan format <strong class="text-white">Jeopardy CTF</strong> yang diselenggarakan melalui kolaborasi resmi antara divisi kompetisi <strong class="text-nf-orange-bright">UKM NFCC (Nurul Fikri Cyber Security Community)</strong> dan <strong class="text-nx-cyan">NXCTF Community</strong>, dengan dukungan penuh dari institusi akademik <strong class="text-white">STT Terpadu Nurul Fikri</strong> serta sponsor utama reward <strong class="text-amber-300">LINUXENIC CORP.</strong>
           </p>
-
           <p>
             Awalnya diinisiasi dari program kerja internal kampus bertajuk <em>NFCTF Season 1</em> untuk pembinaan mahasiswa, inisiatif ini dielevasi menjadi ajang kompetisi skala nasional terbuka yang memfasilitasi persaingan kompetitif independen sekaligus sarana pembinaan talenta muda cybersecurity Indonesia.
           </p>
@@ -353,7 +352,7 @@ const tocItems = [
           </div>
 
           <p>
-            Writeup merupakan dokumen bukti orisinalitas dan metodologi penyelesaian challenge. Dokumen wajib dikumpulkan paling lambat <strong>24 jam setelah kompetisi berakhir</strong> dalam bentuk file <strong>PDF</strong> atau tautan repositori <strong>GitHub / Markdown</strong>.
+            Writeup cukup berisi ringkasan cara menyelesaikan challenge. Format bebas: <strong>blog, PDF, GitHub / Markdown, Notion, atau format lainnya</strong>, asalkan dapat dibaca dan diakses panitia. Pastikan izin akses tautan sudah sesuai. Wajib untuk Track Umum dan opsional untuk Mahasiswa NF. Batas pengumpulan: <strong>13 November 2026 pukul 23:59 WIB</strong>.
           </p>
 
           <div class="space-y-3 font-mono text-xs pt-1">
@@ -361,21 +360,21 @@ const tocItems = [
               <span class="text-nx-cyan font-bold">1.</span>
               <div>
                 <strong class="text-white block">Identitas Peserta:</strong>
-                <span class="text-text-muted">Nama lengkap, username yang terdaftar di ctf.nfx.my.id, serta jalur track.</span>
+                <span class="text-text-muted">Nama dan username yang terdaftar di ctf.nfx.my.id.</span>
               </div>
             </div>
             <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
               <span class="text-nx-cyan font-bold">2.</span>
               <div>
                 <strong class="text-white block">Tangkapan Layar Scoreboard:</strong>
-                <span class="text-text-muted">Screenshot bukti posisi akhir di scoreboard dan challenge yang berhasil diselesaikan.</span>
+                <span class="text-text-muted">Screenshot posisi akhir di scoreboard track masing-masing.</span>
               </div>
             </div>
             <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
               <span class="text-nx-cyan font-bold">3.</span>
               <div>
-                <strong class="text-white block">Metodologi &amp; Proof-of-Concept (PoC):</strong>
-                <span class="text-text-muted">Penjelasan alur analisis celah, script exploit (Python/bash), command terminal, atau screenshot tahapan krusial.</span>
+                <strong class="text-white block">Deskripsi &amp; Alur Penyelesaian:</strong>
+                <span class="text-text-muted">Untuk setiap challenge yang diselesaikan, tulis nama challenge, deskripsi singkat cara penyelesaian, dan urutan langkah hingga memperoleh flag.</span>
               </div>
             </div>
             <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
@@ -388,8 +387,8 @@ const tocItems = [
             <div class="p-3.5 rounded-xl bg-surface-elevated/60 border border-white/5 flex items-start gap-3">
               <span class="text-nx-cyan font-bold">5.</span>
               <div>
-                <strong class="text-white block">Deklarasi Penggunaan AI:</strong>
-                <span class="text-text-muted">Keterangan transparan mengenai bagaimana AI (ChatGPT, Claude, dsb.) digunakan selama riset pemecahan tantangan.</span>
+                <strong class="text-white block">Penggunaan AI (Opsional):</strong>
+                <span class="text-text-muted">Untuk transparansi, boleh cantumkan chatbot yang digunakan (misalnya ChatGPT atau Claude), atau nama AI agent beserta modelnya jika menggunakan agent. Tambahkan keterangan singkat bantuannya, misalnya untuk memahami soal atau debugging script.</span>
               </div>
             </div>
           </div>
@@ -551,7 +550,14 @@ const tocItems = [
                 <span>Discord NFX CTF</span>
               </div>
               <p class="text-text-muted text-[0.72rem]">
-                Gunakan channel privat <code class="text-nx-cyan">#open-ticket</code> untuk kendala teknis perlombaan dan validasi challenge.
+                Gunakan channel privat
+                <button
+                  type="button"
+                  onclick="window.dispatchEvent(new CustomEvent('open-discord-nfx-modal'))"
+                  class="text-nx-cyan hover:underline cursor-pointer"
+                  aria-label="Buka informasi akses Discord NFX CTF"
+                >#open-ticket ↗</button>
+                di Discord NFX CTF untuk melaporkan kendala teknis perlombaan, meminta bantuan validasi challenge, atau mengonfirmasi masalah akses selama kompetisi.
               </p>
             </div>
 
@@ -561,8 +567,22 @@ const tocItems = [
                 <span>Sekretariat Panitia</span>
               </div>
               <p class="text-text-muted text-[0.72rem]">
-                Pertanyaan seputar pendaftaran &amp; workshop: email ke <code class="text-white">nfcc@nurulfikri.ac.id</code>.
+                Pertanyaan seputar pendaftaran &amp; workshop:
               </p>
+              <div class="space-y-1 text-[0.72rem]">
+                <div>
+                  Email:
+                  <a href="mailto:nfcc@nurulfikri.ac.id" class="text-white hover:text-nx-cyan hover:underline">nfcc@nurulfikri.ac.id</a>
+                </div>
+                <div>
+                  Instagram:
+                  <a href="https://instagram.com/nfcc.id" target="_blank" rel="noopener noreferrer" class="text-nf-orange hover:underline">@nfcc.id ↗</a>
+                </div>
+                <div>
+                  Discord:
+                  <a href="https://discord.gg/5etKks6aQQ" target="_blank" rel="noopener noreferrer" class="text-nx-cyan hover:underline">NXCTF Community ↗</a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
