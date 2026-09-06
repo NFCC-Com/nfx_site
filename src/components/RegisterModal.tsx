@@ -104,7 +104,7 @@ export default function RegisterModal() {
                 Track Umum
               </h4>
               <p className="text-[0.72rem] text-text-secondary leading-relaxed mb-3">
-                Terbuka publik/pelajar nasional. Rebut Rp 1 Jt sponsor Linuxenic + 90% tiket pool.
+                Terbuka publik/pelajar nasional. Rebut Rp 300 Rb sponsor Linuxenic + 90% tiket pool.
               </p>
             </div>
 

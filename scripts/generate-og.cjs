@@ -219,7 +219,7 @@ async function generateOgImage() {
         <g transform="translate(604, 18)">
           <rect width="156" height="88" rx="12" fill="#090e1a" stroke="#f59e0b" stroke-width="1.2" stroke-opacity="0.5"/>
           <text x="78" y="24" fill="#fde047" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="1" class="font-mono">SUPPORT DANA &amp; LAB</text>
-          <text x="78" y="52" fill="#10b981" font-size="19" font-weight="900" text-anchor="middle" class="font-mono">Rp 1 JUTA</text>
+          <text x="78" y="52" fill="#10b981" font-size="19" font-weight="900" text-anchor="middle" class="font-mono">Rp 300 RIBU</text>
           <text x="78" y="72" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="middle" class="font-mono">+ Voucher Akses Lab</text>
         </g>
       </g>
@@ -237,8 +237,8 @@ async function generateOgImage() {
           <rect x="6" y="8" width="16" height="12" rx="2" fill="none" stroke="#10b981" stroke-width="1.5"/>
           <circle cx="14" cy="14" r="2.5" fill="#10b981"/>
         </g>
-        <text x="50" y="24" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">Total Prize Pool</text>
-        <text x="50" y="42" fill="#34d399" font-size="13" font-weight="800" class="font-mono">Rp 1.000.000 Tunai</text>
+        <text x="50" y="24" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">Dana Sponsor Umum</text>
+        <text x="50" y="42" fill="#34d399" font-size="13" font-weight="800" class="font-mono">Rp 300.000 Tunai</text>
       </g>
 
       <!-- Pill 2: 1-Month Voucher Lab -->

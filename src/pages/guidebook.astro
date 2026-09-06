@@ -1,4 +1,5 @@
 ---
+import CertificatePolicy from "../components/CertificatePolicy";
 import Layout from "../layouts/Layout.astro";
 import BackgroundCanvas from "../components/BackgroundCanvas";
 import Header from "../components/Header.astro";
@@ -264,18 +265,20 @@ const tocItems = [
                 </tr>
                 <tr>
                   <td class="p-3.5 font-semibold text-white">E-Certificate</td>
-                  <td class="p-3.5 text-emerald-400">Otomatis diberikan ke seluruh peserta</td>
+                  <td class="p-3.5 text-emerald-400">Minimal 1 challenge selesai (flag benar); 0 solve tidak mendapat sertifikat. Writeup opsional.</td>
                   <td class="p-3.5 text-nx-cyan">Diberikan bagi peserta yang submit Writeup</td>
                 </tr>
                 <tr>
                   <td class="p-3.5 font-semibold text-white">Alokasi Hadiah</td>
                   <td class="p-3.5 text-amber-300 font-semibold">Fixed Cash Rp 400.000 (Top 5) + Voucher</td>
-                  <td class="p-3.5 text-emerald-400 font-semibold">Rp 1 Juta (Sponsor) + 90% Pool Tiket + Voucher</td>
+                  <td class="p-3.5 text-emerald-400 font-semibold">Rp 300 Ribu (Sponsor) + 90% Pool Tiket + Voucher</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
+
+        <CertificatePolicy />
 
         <!-- 04. Platform & Scoring -->
         <section id="platform-scoring" class="scroll-mt-24 space-y-4">
@@ -402,17 +405,19 @@ const tocItems = [
           </div>
 
           <p>
-            Reward pemenang didukung oleh alokasi kas pendaftaran serta sponsor utama <strong class="text-amber-300">LINUXENIC CORP.</strong> yang menyediakan dana tunai Rp 1.000.000 dan voucher akses lab browser gratis:
+            Reward pemenang didukung oleh alokasi kas pendaftaran serta sponsor utama <strong class="text-amber-300">LINUXENIC CORP.</strong> yang menyediakan dana tunai Rp 300.000 dan voucher akses lab browser gratis:
           </p>
+
+          <p>Persentase hadiah dihitung dari pool tiket saja. Sponsor Rp300.000 dibagi tetap ke juara 1–3 (Rp150.000 / Rp100.000 / Rp50.000); juara 4–5 mendapat 10% dan 5% pool tiket. Sisa 10% uang pendaftaran untuk operasional.</p>
 
           <!-- Formula callout -->
           <div class="p-4 rounded-xl bg-surface-elevated/80 border border-amber-400/20 font-mono text-xs space-y-1.5">
             <div class="flex items-center gap-2 text-amber-300 font-bold">
               <Coins className="size-4" />
-              <span>Kalkulasi Dynamic Prize Pool (Track Umum):</span>
+              <span>Kalkulasi Dynamic Prize Pool (Track Umum, Top 5):</span>
             </div>
             <p class="text-text-muted text-[0.72rem]">
-              Total Pool = <strong class="text-white">Rp 1.000.000</strong> (Sponsor Linuxenic) + (<strong class="text-emerald-400">90% × Rp 10.000 × Jumlah Peserta</strong>).
+              Total Pool = <strong class="text-white">Rp 300.000</strong> (Sponsor Linuxenic) + (<strong class="text-emerald-400">90% × Rp 10.000 × Jumlah Peserta Umum Berbayar</strong>).
             </p>
           </div>
 
@@ -436,7 +441,7 @@ const tocItems = [
                     <span class="text-text-muted text-[0.68rem]">+ Voucher Lab Linuxenic 1 Bulan</span>
                   </td>
                   <td class="p-3.5">
-                    <strong class="text-emerald-400 font-bold block">50% Total Prize Pool</strong>
+                    <strong class="text-emerald-400 font-bold block">40% Pool Tiket + Rp150.000 Sponsor</strong>
                     <span class="text-text-muted text-[0.68rem]">+ Voucher Lab Linuxenic 1 Bulan</span>
                   </td>
                 </tr>
@@ -449,7 +454,7 @@ const tocItems = [
                     <strong class="text-white">Rp 100.000</strong>
                   </td>
                   <td class="p-3.5">
-                    <strong class="text-nx-cyan font-bold">30% Total Prize Pool</strong>
+                    <strong class="text-nx-cyan font-bold">30% Pool Tiket + Rp100.000 Sponsor</strong>
                   </td>
                 </tr>
                 <tr>
@@ -461,13 +466,18 @@ const tocItems = [
                     <strong class="text-white">Rp 50.000</strong>
                   </td>
                   <td class="p-3.5">
-                    <strong class="text-nx-cyan font-bold">20% Total Prize Pool</strong>
+                    <strong class="text-nx-cyan font-bold">15% Pool Tiket + Rp50.000 Sponsor</strong>
                   </td>
                 </tr>
                 <tr>
-                  <td class="p-3.5 text-text-muted">Juara 4 &amp; 5</td>
-                  <td class="p-3.5 text-text-secondary">Masing-masing Rp 50.000</td>
-                  <td class="p-3.5 text-text-muted">—</td>
+                  <td class="p-3.5 text-text-muted">Juara 4</td>
+                  <td class="p-3.5 text-text-secondary">Rp 50.000</td>
+                  <td class="p-3.5 text-nx-cyan">10% Pool Tiket</td>
+                </tr>
+                <tr>
+                  <td class="p-3.5 text-text-muted">Juara 5</td>
+                  <td class="p-3.5 text-text-secondary">Rp 50.000</td>
+                  <td class="p-3.5 text-nx-cyan">5% Pool Tiket</td>
                 </tr>
               </tbody>
             </table>

@@ -152,7 +152,7 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
 ### Section 5: Track Peserta & Interactive Dynamic Prize Calculator
 - **Card 1: Track Mahasiswa NF (Internal)**
   - Badge: `GRATIS / FREE HTM`
-  - Benefit: 4x Workshop Online Intensif (oleh NFCC), Akses Latihan, E-Certificate of Participation (*tanpa wajib Writeup*).
+  - Benefit: 4x Workshop Online Intensif (oleh NFCC), Akses Latihan, E-Certificate sesuai peringkat (*minimal 1 challenge selesai dengan flag benar; 0 solve tidak mendapat sertifikat; writeup opsional*).
   - Total Fixed Prize: **Rp400.000** (Juara 1: 150k, Juara 2: 100k, Juara 3-5: 50k).
 - **Card 2: Track Umum (Nasional)**
   - Badge: `EARLY BIRD: 10K / 15K`
@@ -160,9 +160,9 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
   - Revenue Split: 90% Prize Pool, 10% Operasional & Server.
 - **⚡ Live Prize Pool Calculator (Interaktif):**
   - **Slider Jumlah Peserta:** Rentang 10 s/d 300+ peserta (Default: 100 pendaftar).
-  - **Toggle Skema Hadiah:**
-    - **Opsi 1 (Top 5):** Juara 1 (40%), Juara 2 (25%), Juara 3 (15%), Juara 4 (10%), Juara 5 (10%).
-    - **Opsi 2 (Top 3 + Best WU):** Juara 1 (45%), Juara 2 (25%), Juara 3 (15%), Best Writeup (15%).
+  - **Skema Hadiah Umum Top 5:** Pool tiket (90% registrasi) dibagi 40% / 30% / 15% / 10% / 5%.
+  - **Sponsor Linuxenic Rp300.000:** Bonus tetap juara 1 Rp150.000, juara 2 Rp100.000, dan juara 3 Rp50.000. Juara 4–5 dari pool tiket saja.
+  - **Voucher Linuxenic:** Akses 1 bulan untuk juara 1 masing-masing track.
   - Output dinamis terhitung otomatis dalam mata uang Rupiah (`Rp xxx.xxx`).
 
 ### Section 6: 7 Kategori Tantangan
@@ -188,7 +188,9 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
 - Highlight Aturan Kunci:
   - 📝 **Writeup Policy:**
     - Track Umum: **Wajib** submit writeup untuk klaim E-Certificate & hadiah.
-    - Track Mahasiswa: **Tidak Wajib** submit writeup untuk klaim E-Certificate.
+    - Track Mahasiswa: **Minimal 1 challenge selesai (flag benar)** untuk sertifikat; 0 solve tidak mendapat sertifikat. Writeup opsional.
+  - **Kategori Sertifikat Kedua Track:** Juara 1–5 sesuai peringkat, Top 10 untuk peringkat 6–10, Peserta untuk peringkat 11 dan seterusnya; syarat track tetap berlaku.
+  - **Format Kompetisi:** Waktu lomba dan challenge sama; scoreboard Mahasiswa NF dan Umum terpisah. Peringkat, hadiah, dan sertifikat mengikuti hasil akhir masing-masing track.
   - 🤖 **AI Policy:** Penggunaan AI / LLM **diperbolehkan** (*AI Allowed*).
   - 🚩 **Flag Format:** `NFX{fLaG_h3r3_s4mpL3}`.
   - 🛡️ **Fair Play:** Dilarang DDoS infrastruktur, dilarang sharing flag antar tim.
@@ -199,7 +201,7 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
 
 ### Section 10: Sponsorship & Partner Showcase
 - **Sponsor Utama:**
-  - **LinuxEnix** (Voucher Cloud Server untuk Juara 1: 1 Bulan, Juara 2: 14 Hari, Juara 3: 7 Hari)
+  - **Linuxenic** (Dana tunai Rp300.000 untuk juara 1–3 umum + voucher akses lab 1 bulan untuk juara 1 masing-masing track)
 - **Organized by (Penyelenggara):**
   - **UKM NFCC (Nurul Fikri Cyber Security Community)** — Penyelenggara & Pembina Workshop
   - **NXCTF Community** — CTF Platform & Ecosystem Partner

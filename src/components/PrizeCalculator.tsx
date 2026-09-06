@@ -3,35 +3,37 @@ import React, { useState, useMemo } from "react";
 export default function PrizeCalculator() {
   const [participants, setParticipants] = useState<number>(100);
 
-  const BASE_SPONSOR = 1000000; // Rp 1.000.000 Cash Sponsorship dari LINUXENIC CORP.
+  const BASE_SPONSOR = 300000; // Rp 300.000 Cash Sponsorship dari LINUXENIC CORP.
   const BASE_HTM = 10000; // Rp 10.000 Flat per peserta
 
   const { totalPrizePool, distribution } = useMemo(() => {
     const ticketPool = participants * BASE_HTM * 0.90; // 90% alokasi tiket peserta
-    const totalPrizePool = BASE_SPONSOR + ticketPool; // Rp 1 Juta Sponsor + Dynamic Pool
+    const totalPrizePool = BASE_SPONSOR + ticketPool; // Rp 300 Ribu Sponsor + Dynamic Pool
 
     const distribution = [
       {
         rank: "Juara 1",
-        percentage: "50%",
-        amount: totalPrizePool * 0.50,
+        percentage: "40% tiket + Rp150k",
+        amount: ticketPool * 0.40 + 150000,
         badge: "🥇",
-        voucher: "Voucher 1 Bulan LINUXENIC + Cash",
+        voucher: "Voucher Linuxenic 1 Bulan + E-Certificate + Cash",
       },
       {
         rank: "Juara 2",
-        percentage: "30%",
-        amount: totalPrizePool * 0.30,
+        percentage: "30% tiket + Rp100k",
+        amount: ticketPool * 0.30 + 100000,
         badge: "🥈",
         voucher: "E-Certificate + Cash Prize",
       },
       {
         rank: "Juara 3",
-        percentage: "20%",
-        amount: totalPrizePool * 0.20,
+        percentage: "15% tiket + Rp50k",
+        amount: ticketPool * 0.15 + 50000,
         badge: "🥉",
         voucher: "E-Certificate + Cash Prize",
       },
+      { rank: "Juara 4", percentage: "10% tiket", amount: ticketPool * 0.10, badge: "4", voucher: "E-Certificate + Cash Prize" },
+      { rank: "Juara 5", percentage: "5% tiket", amount: ticketPool * 0.05, badge: "5", voucher: "E-Certificate + Cash Prize" },
     ];
 
     return { totalPrizePool, distribution };
@@ -55,19 +57,19 @@ export default function PrizeCalculator() {
       {/* Simplified Sleek Top Bar: Title & Total Pool */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3.5 border-b border-white/5">
         <div>
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
             <span className="font-mono text-[0.62rem] font-bold px-2 py-0.5 rounded bg-nx-cyan/10 border border-nx-cyan/25 text-nx-cyan uppercase tracking-wider">
               ⚡ SIMULASI PRIZE POOL
             </span>
             <span className="font-mono text-[0.62rem] font-bold px-2 py-0.5 rounded bg-amber-400/10 border border-amber-400/25 text-amber-300 uppercase">
-              +Rp 1 Jt Sponsor LINUXENIC
+              +Rp 300 Rb Sponsor LINUXENIC
             </span>
           </div>
           <h3 className="font-display font-bold text-base sm:text-lg text-white">
-            Simulasi Hadiah Track Umum
+            Simulasi Hadiah Track Umum — Top 5
           </h3>
           <p className="font-mono text-xs text-text-muted mt-0.5">
-            Rp 1.000.000 (Base Sponsor) + 90% Tiket Registrasi (Rp 10k/peserta)
+            Rp 300.000 sponsor + pool tiket (90% registrasi Rp10.000/peserta). Sisa 10% untuk operasional.
           </p>
         </div>
 
@@ -125,8 +127,8 @@ export default function PrizeCalculator() {
         </div>
       </div>
 
-      {/* Symmetrical 3-Column Prize Breakdown */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+      {/* Hadiah Top 5: pool tiket dan bonus sponsor terpisah */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         {distribution.map((item, idx) => (
           <div
             key={idx}
@@ -157,7 +159,7 @@ export default function PrizeCalculator() {
               </div>
             </div>
 
-            <div className="font-mono text-[0.68rem] text-text-muted truncate pt-2 border-t border-white/5">
+            <div className="font-mono text-[0.68rem] text-text-muted pt-2 border-t border-white/5">
               🎁 {item.voucher}
             </div>
           </div>

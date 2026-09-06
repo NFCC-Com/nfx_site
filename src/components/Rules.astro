@@ -1,5 +1,6 @@
 ---
 // Rules.astro
+import CertificatePolicy from "./CertificatePolicy";
 import { FileText, Scale, Flag, Check, X, Clock } from "lucide-react";
 ---
 
@@ -17,6 +18,8 @@ import { FileText, Scale, Flag, Check, X, Clock } from "lucide-react";
         Ketentuan writeup per track, aturan integritas sportivitas, dan standarisasi submission flag.
       </p>
     </div>
+
+    <CertificatePolicy />
 
     <!-- 3 Ultra-Compact Cards Grid with Uniform Headers & Footers -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-3.5 items-stretch" data-reveal-group data-reveal-stagger="60">
@@ -58,7 +61,7 @@ import { FileText, Scale, Flag, Check, X, Clock } from "lucide-react";
 
         <!-- Footer (Uniform Height) -->
         <div class="pt-2 mt-2.5 border-t border-white/5 min-h-[2.25rem] flex items-center font-mono text-[0.62rem] text-text-muted leading-tight">
-          <span>Umum wajib kumpul WU untuk validasi hadiah & sertifikat.</span>
+          <span>Umum wajib kumpul WU untuk validasi hadiah & sertifikat. Mahasiswa wajib minimal 1 challenge selesai untuk sertifikat; WU opsional.</span>
         </div>
       </div>
 

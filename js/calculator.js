@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentScheme = 'option1'; // 'option1' or 'option2'
   const AVG_HTM = 10000;
-  const BASE_SPONSOR = 1000000; // Rp 1.000.000 Cash Sponsorship dari LINUXENIC CORP.
+  const BASE_SPONSOR = 300000; // Rp 300.000 Cash Sponsorship dari LINUXENIC CORP.
 
   const formatRupiah = (num) => {
     return new Intl.NumberFormat('id-ID', {
@@ -45,73 +45,73 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prizePoolEl) prizePoolEl.innerText = formatRupiah(totalPrizePool);
     if (opsCostEl) opsCostEl.innerText = formatRupiah(opsCost);
 
-    renderPrizes(totalPrizePool);
+    renderPrizes(ticketPool);
   }
 
   function renderPrizes(prizePool) {
     if (!prizeGridContainer) return;
 
     if (currentScheme === 'option1') {
-      const j1 = prizePool * 0.40;
-      const j2 = prizePool * 0.25;
-      const j3 = prizePool * 0.15;
+      const j1 = prizePool * 0.40 + 150000;
+      const j2 = prizePool * 0.30 + 100000;
+      const j3 = prizePool * 0.15 + 50000;
       const j4 = prizePool * 0.10;
-      const j5 = prizePool * 0.10;
+      const j5 = prizePool * 0.05;
 
       prizeGridContainer.innerHTML = `
         <div class="prize-rank-card rank-1">
           <div class="prize-medal">🥇</div>
           <div class="prize-rank-title">Juara 1</div>
-          <div class="prize-percentage">40% Prize Pool</div>
+          <div class="prize-percentage">40% Pool Tiket + Rp150.000 + Voucher 1 Bulan</div>
           <div class="prize-amount">${formatRupiah(j1)}</div>
         </div>
         <div class="prize-rank-card rank-2">
           <div class="prize-medal">🥈</div>
           <div class="prize-rank-title">Juara 2</div>
-          <div class="prize-percentage">25% Prize Pool</div>
+          <div class="prize-percentage">30% Pool Tiket + Rp100.000</div>
           <div class="prize-amount">${formatRupiah(j2)}</div>
         </div>
         <div class="prize-rank-card rank-3">
           <div class="prize-medal">🥉</div>
           <div class="prize-rank-title">Juara 3</div>
-          <div class="prize-percentage">15% Prize Pool</div>
+          <div class="prize-percentage">15% Pool Tiket + Rp50.000</div>
           <div class="prize-amount">${formatRupiah(j3)}</div>
         </div>
         <div class="prize-rank-card">
           <div class="prize-medal">4️⃣</div>
           <div class="prize-rank-title">Juara 4</div>
-          <div class="prize-percentage">10% Prize Pool</div>
+          <div class="prize-percentage">10% Pool Tiket</div>
           <div class="prize-amount">${formatRupiah(j4)}</div>
         </div>
         <div class="prize-rank-card">
           <div class="prize-medal">5️⃣</div>
           <div class="prize-rank-title">Juara 5</div>
-          <div class="prize-percentage">10% Prize Pool</div>
+          <div class="prize-percentage">5% Pool Tiket</div>
           <div class="prize-amount">${formatRupiah(j5)}</div>
         </div>
       `;
     } else {
-      const j1 = prizePool * 0.50;
-      const j2 = prizePool * 0.30;
-      const j3 = prizePool * 0.20;
+      const j1 = prizePool * 0.50 + 150000;
+      const j2 = prizePool * 0.30 + 100000;
+      const j3 = prizePool * 0.20 + 50000;
 
       prizeGridContainer.innerHTML = `
         <div class="prize-rank-card rank-1">
           <div class="prize-medal">🥇</div>
           <div class="prize-rank-title">Juara 1</div>
-          <div class="prize-percentage">50% Prize Pool</div>
+          <div class="prize-percentage">50% Pool Tiket + Rp150.000 + Voucher 1 Bulan</div>
           <div class="prize-amount">${formatRupiah(j1)}</div>
         </div>
         <div class="prize-rank-card rank-2">
           <div class="prize-medal">🥈</div>
           <div class="prize-rank-title">Juara 2</div>
-          <div class="prize-percentage">30% Prize Pool</div>
+          <div class="prize-percentage">30% Pool Tiket + Rp100.000</div>
           <div class="prize-amount">${formatRupiah(j2)}</div>
         </div>
         <div class="prize-rank-card rank-3">
           <div class="prize-medal">🥉</div>
           <div class="prize-rank-title">Juara 3</div>
-          <div class="prize-percentage">20% Prize Pool</div>
+          <div class="prize-percentage">20% Pool Tiket + Rp50.000</div>
           <div class="prize-amount">${formatRupiah(j3)}</div>
         </div>
       `;

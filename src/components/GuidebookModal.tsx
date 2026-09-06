@@ -1,3 +1,4 @@
+import CertificatePolicy from "./CertificatePolicy";
 import React, { useState, useEffect } from "react";
 import { BookOpen, X } from "lucide-react";
 
@@ -157,6 +158,7 @@ export default function GuidebookModal() {
           {/* TAB 2: TRACKS */}
           {activeTab === "tracks" && (
             <div className="space-y-3.5 animate-in fade-in duration-200">
+              <CertificatePolicy />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* Track Mahasiswa NF */}
                 <div className="p-4 rounded-xl bg-surface border border-nf-orange/30 flex flex-col justify-between">
@@ -182,7 +184,7 @@ export default function GuidebookModal() {
                       </div>
                       <div className="flex justify-between py-1 border-b border-white/5">
                         <span className="text-text-muted">Sertifikat:</span>
-                        <span className="text-emerald-400">E-Cert (Tanpa Wajib WU)</span>
+                        <span className="text-emerald-400">Minimal 1 solve; WU opsional</span>
                       </div>
                       <div className="flex justify-between py-1">
                         <span className="text-text-muted">Hadiah:</span>
@@ -220,7 +222,7 @@ export default function GuidebookModal() {
                       </div>
                       <div className="flex justify-between py-1">
                         <span className="text-text-muted">Hadiah:</span>
-                        <span className="text-emerald-400 font-bold">Rp 1 Jt + 90% Pool</span>
+                        <span className="text-emerald-400 font-bold">Rp 300 Rb + 90% Pool</span>
                       </div>
                     </div>
                   </div>
@@ -356,7 +358,7 @@ export default function GuidebookModal() {
                     </li>
                   </ul>
                   <span className="text-[0.62rem] text-text-muted block pt-1 border-t border-white/5 font-mono">
-                    E-Certificate otomatis tanpa wajib writeup.
+                    Sertifikat sesuai peringkat: minimal 1 challenge selesai (flag benar). 0 solve tidak mendapat sertifikat; writeup opsional.
                   </span>
                 </div>
 
@@ -365,24 +367,30 @@ export default function GuidebookModal() {
                   <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
                     <strong className="text-nx-cyan font-display text-xs">🌐 Track Umum (Nasional)</strong>
                     <span className="font-mono text-[0.6rem] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25">
-                      RP 1 JT + 90% POOL
+                      RP 300 RB + 90% POOL
                     </span>
                   </div>
                   <div className="p-1.5 px-2 rounded bg-black/50 border border-white/5 text-[0.65rem] text-emerald-400 font-mono font-semibold text-center">
-                    Total = Rp 1.000.000 + (Peserta × Rp 9.000)
+                    Total = Rp 300.000 + (Peserta Umum Berbayar × Rp 9.000). Persentase hadiah dari pool tiket; 10% registrasi untuk operasional.
                   </div>
                   <ul className="space-y-1 font-mono text-xs text-text-secondary">
                     <li className="flex justify-between">
                       <span className="text-amber-300 font-bold">🥇 Juara 1:</span>
-                      <span className="text-white">50% Pool + Voucher Lab</span>
+                      <span className="text-white">40% Tiket + Rp150k + Voucher 1 Bulan</span>
                     </li>
                     <li className="flex justify-between">
                       <span className="text-slate-300 font-bold">🥈 Juara 2:</span>
-                      <span className="text-white">30% Total Pool</span>
+                      <span className="text-white">30% Tiket + Rp100k</span>
                     </li>
                     <li className="flex justify-between">
                       <span className="text-amber-600 font-bold">🥉 Juara 3:</span>
-                      <span className="text-white">20% Total Pool</span>
+                      <span className="text-white">15% Tiket + Rp50k</span>
+                    </li>
+                    <li className="flex justify-between gap-2">
+                      <span>Juara 4:</span><span className="text-white">10% Pool Tiket</span>
+                    </li>
+                    <li className="flex justify-between gap-2">
+                      <span>Juara 5:</span><span className="text-white">5% Pool Tiket</span>
                     </li>
                   </ul>
                   <span className="text-[0.62rem] text-text-muted block pt-1 border-t border-white/5 font-mono">
