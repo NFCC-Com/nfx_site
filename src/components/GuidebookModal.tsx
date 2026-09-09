@@ -371,7 +371,7 @@ export default function GuidebookModal() {
                     </span>
                   </div>
                   <div className="p-2 rounded bg-amber-400/10 border border-amber-400/20 text-[0.65rem] text-amber-200 font-mono leading-relaxed">
-                    Hadiah Track Umum <strong>tidak bersumber dari biaya pendaftaran</strong> (prinsip syariat hukum Islam), melainkan murni dari sponsor (dana tunai Rp XXX.XXX) &amp; pihak penyelenggara. Bentuk dan nominal resmi akan diumumkan kembali setelah alokasi pendanaan ditetapkan. Pendaftaran tetap berlaku!
+                    Hadiah Track Umum <strong>tidak bersumber dari biaya pendaftaran</strong> (prinsip syariat hukum Islam), melainkan didukung murni oleh <strong>dana sponsor &amp; pihak penyelenggara</strong>. Bentuk dan nominal resmi hadiah akan diinfokan lebih lanjut setelah alokasi pendanaan ditetapkan. Pendaftaran tetap berlaku sah!
                   </div>
                   <ul className="space-y-1 font-mono text-xs text-text-secondary">
                     <li className="flex justify-between">
