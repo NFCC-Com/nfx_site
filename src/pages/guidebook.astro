@@ -270,7 +270,7 @@ const tocItems = [
                 <tr>
                   <td class="p-3.5 font-semibold text-white">Alokasi Hadiah</td>
                   <td class="p-3.5 text-amber-300 font-semibold">Fixed Cash Rp 400.000 (Top 5) + Voucher</td>
-                  <td class="p-3.5 text-emerald-400 font-semibold">Rp 300 Ribu (Sponsor) + 90% Pool Tiket + Voucher</td>
+                  <td class="p-3.5 text-emerald-400 font-semibold">Sponsor &amp; Penyelenggara (TBA) + Voucher</td>
                 </tr>
               </tbody>
             </table>
@@ -403,30 +403,31 @@ const tocItems = [
             </h2>
           </div>
 
-          <p>
-            Reward pemenang didukung oleh alokasi kas pendaftaran serta sponsor utama <strong class="text-amber-300">LINUXENIC CORP.</strong> yang menyediakan dana tunai Rp 300.000 dan voucher akses lab browser gratis:
-          </p>
-
-          <p>Persentase hadiah dihitung dari pool tiket saja. Sponsor Rp300.000 dibagi tetap ke juara 1–3 (Rp150.000 / Rp100.000 / Rp50.000); juara 4–5 mendapat 10% dan 5% pool tiket. Sisa 10% uang pendaftaran untuk operasional.</p>
-
-          <!-- Formula callout -->
-          <div class="p-4 rounded-xl bg-surface-elevated/80 border border-amber-400/20 font-mono text-xs space-y-1.5">
-            <div class="flex items-center gap-2 text-amber-300 font-bold">
-              <Coins className="size-4" />
-              <span>Kalkulasi Dynamic Prize Pool (Track Umum, Top 5):</span>
+          <!-- Announcement Box for Prize Adjustment -->
+          <div class="p-4 sm:p-5 rounded-xl bg-amber-400/10 border border-amber-400/30 space-y-2 font-mono text-xs text-amber-200">
+            <div class="flex items-center gap-2 text-amber-300 font-bold text-sm">
+              <span>📢</span>
+              <span>PENGUMUMAN: PENYESUAIAN PENDANAAN HADIAH TRACK UMUM</span>
             </div>
-            <p class="text-text-muted text-[0.72rem]">
-              Total Pool = <strong class="text-white">Rp 300.000</strong> (Sponsor Linuxenic) + (<strong class="text-emerald-400">90% × Rp 10.000 × Jumlah Peserta Umum Berbayar</strong>).
+            <p class="leading-relaxed text-text-secondary text-xs">
+              Menindaklanjuti pertimbangan ketentuan hukum Islam (syariat) terkait penggunaan biaya pendaftaran peserta, kami memutuskan bahwa <strong>hadiah NFX CTF Track Umum TIDAK AKAN BERSUMBER dari biaya pendaftaran peserta</strong>, melainkan bersumber murni dari <strong>sponsor dan/atau pihak penyelenggara</strong>.
+            </p>
+            <p class="leading-relaxed text-text-secondary text-xs">
+              Pendaftaran yang sudah dilakukan <strong>tetap berlaku</strong>. Informasi resmi mengenai bentuk dan nominal hadiah akan kami sampaikan kembali <strong>setelah pendanaan hadiah telah ditetapkan secara final</strong>.
             </p>
           </div>
+
+          <p>
+            Reward pemenang didukung oleh sponsor utama <strong class="text-amber-300">LINUXENIC CORP.</strong> (sponsorship dana tunai Rp XXX.XXX) dan/atau pihak penyelenggara:
+          </p>
 
           <div class="overflow-x-auto rounded-xl border border-white/10 bg-surface-elevated/50">
             <table class="w-full text-left font-mono text-xs">
               <thead class="bg-white/5 border-b border-white/10 text-text-muted">
                 <tr>
                   <th class="p-3.5 font-bold text-white">Peringkat</th>
-                  <th class="p-3.5 text-nf-orange-bright font-bold">Track Mahasiswa NF (Fixed)</th>
-                  <th class="p-3.5 text-nx-cyan font-bold">Track Umum (Dynamic Pool)</th>
+                  <th class="p-3.5 text-nf-orange-bright font-bold">Track Mahasiswa NF (Fixed Cash)</th>
+                  <th class="p-3.5 text-nx-cyan font-bold">Track Umum (Sponsor &amp; Penyelenggara)</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-white/5">
@@ -440,7 +441,7 @@ const tocItems = [
                     <span class="text-text-muted text-[0.68rem]">+ Voucher Lab Linuxenic 1 Bulan</span>
                   </td>
                   <td class="p-3.5">
-                    <strong class="text-emerald-400 font-bold block">40% Pool Tiket + Rp150.000 Sponsor</strong>
+                    <strong class="text-emerald-400 font-bold block">Hadiah Sponsor (TBA)</strong>
                     <span class="text-text-muted text-[0.68rem]">+ Voucher Lab Linuxenic 1 Bulan</span>
                   </td>
                 </tr>
@@ -453,7 +454,7 @@ const tocItems = [
                     <strong class="text-white">Rp 100.000</strong>
                   </td>
                   <td class="p-3.5">
-                    <strong class="text-nx-cyan font-bold">30% Pool Tiket + Rp100.000 Sponsor</strong>
+                    <strong class="text-nx-cyan font-bold">Hadiah Sponsor (TBA)</strong>
                   </td>
                 </tr>
                 <tr>
@@ -465,22 +466,25 @@ const tocItems = [
                     <strong class="text-white">Rp 50.000</strong>
                   </td>
                   <td class="p-3.5">
-                    <strong class="text-nx-cyan font-bold">15% Pool Tiket + Rp50.000 Sponsor</strong>
+                    <strong class="text-nx-cyan font-bold">Hadiah Sponsor (TBA)</strong>
                   </td>
                 </tr>
                 <tr>
                   <td class="p-3.5 text-text-muted">Juara 4</td>
                   <td class="p-3.5 text-text-secondary">Rp 50.000</td>
-                  <td class="p-3.5 text-nx-cyan">10% Pool Tiket</td>
+                  <td class="p-3.5 text-nx-cyan">Hadiah Sponsor (TBA)</td>
                 </tr>
                 <tr>
                   <td class="p-3.5 text-text-muted">Juara 5</td>
                   <td class="p-3.5 text-text-secondary">Rp 50.000</td>
-                  <td class="p-3.5 text-nx-cyan">5% Pool Tiket</td>
+                  <td class="p-3.5 text-nx-cyan">Hadiah Sponsor (TBA)</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p class="text-[0.68rem] text-text-muted font-mono pt-1">
+            *Bentuk dan nominal resmi hadiah Track Umum akan diumumkan kembali setelah alokasi sponsor &amp; penyelenggara ditetapkan secara final.
+          </p>
         </section>
 
         <!-- 08. Kode Etik & AI -->
