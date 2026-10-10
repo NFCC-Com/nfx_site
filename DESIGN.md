@@ -1,6 +1,6 @@
 # 🎨 DESIGN.md — NFX CTF 2026 Landing Page
 
-> **Design Specification & Visual Identity System**  
+> **Design Specification & Visual Identity System**
 > Event: **NFX CTF 2026** (Kolaborasi: **NFCTF** × **NXCTF**, didukung oleh **NFCC**).
 
 ---
@@ -213,7 +213,7 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
 
 ### Section 12: Cyber Footer
 - Navigasi lengkap, link ke `ctf.nfx.my.id`, link Instagram `@nfcc.id`, GitHub NFCC & NXCTF, Discord komunitas, dan copyright notice 2026.
-
+a
 ---
 
 ## 📱 5. Responsive Design & Accessibility
