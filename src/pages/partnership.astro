@@ -20,6 +20,10 @@ import {
   HeartHandshake,
   ShieldCheck,
   Download,
+  Megaphone,
+  Sparkles,
+  FileText,
+  Image as ImageIcon,
 } from "lucide-react";
 
 // Google Drive Folder URL directly requested by the user
@@ -49,7 +53,7 @@ const sponsorPackages = [
     badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
     price: "Mulai Rp 50.000",
     target: "Donasi perorangan / komunitas",
-    statusNote: "Tanpa LoA formal",
+    statusNote: "Tanpa MoU formal",
     benefits: [
       "Pencantuman nama pada Daftar Donatur di Instagram @nfcc.id",
       "Mention apresiasi & role khusus di Discord NFCC",
@@ -66,7 +70,7 @@ const sponsorPackages = [
     badgeColor: "text-amber-400 bg-amber-500/10 border-amber-500/20",
     price: "Rp 100.000",
     target: "Brand / Komunitas IT",
-    statusNote: "Eksposur visual dasar",
+    statusNote: "Eksposur visual dasar (MoU)",
     benefits: [
       "Penempatan Logo di Website Utama (nfx.my.id)",
       "Penempatan Logo pada Poster Publikasi Resmi Medsos",
@@ -83,7 +87,7 @@ const sponsorPackages = [
     badgeColor: "text-nx-cyan bg-nx-cyan/10 border-nx-cyan/25",
     price: "Rp 250.000",
     target: "Perusahaan & Platform Cyber",
-    statusNote: "Eksposur platform CTF",
+    statusNote: "Eksposur platform CTF (MoU)",
     benefits: [
       "Semua benefit Paket Bronze",
       "Logo di Platform Kompetisi (ctf.nfx.my.id)",
@@ -101,7 +105,7 @@ const sponsorPackages = [
     badgeColor: "text-amber-300 bg-amber-400/15 border-amber-400/30",
     price: "Rp 500.000",
     target: "Title Sponsor Resmi",
-    statusNote: "Disponsori oleh LINUXENIC CORP.",
+    statusNote: "Disponsori LINUXENIC CORP. (MoU)",
     benefits: [
       "Title Sponsor: 'NFX CTF 2026 Sponsored by Linuxenic'",
       "Co-Branding Utama pada Web, Platform CTF, & Scoreboard",
@@ -158,8 +162,19 @@ const sponsorPackages = [
               </strong>
             </div>
             <p class="text-xs text-text-secondary">
-              Unduh berkas lengkap: <em>Proposal Sponsorship (.pdf/.docx)</em> &amp; <em>Proposal Media Partner (.pdf)</em>.
+              Unduh berkas lengkap: <em>Proposal Sponsorship (.pdf/.docx)</em>, <em>Proposal Donasi (.pdf)</em>, <em>Proposal Media Partner (.pdf)</em>, dan <em>Poster Publikasi</em>.
             </p>
+            <div class="pt-1 flex items-center gap-3 font-mono text-[0.7rem]">
+              <a
+                href="/nfxctf-sponsor-poster.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-amber-300 hover:underline flex items-center gap-1"
+              >
+                <ImageIcon className="size-3 text-amber-300" />
+                <span>Lihat Poster Flyer Sponsor ↗</span>
+              </a>
+            </div>
           </div>
 
           <a
@@ -206,7 +221,7 @@ const sponsorPackages = [
             <span>Paket Sponsorship &amp; Donatur</span>
           </h2>
           <p class="text-xs text-text-secondary">
-            Pilihan paket pendanaan transparan sesuai skala kontribusi mitra.
+            Pilihan paket pendanaan transparan &amp; kemitraan formal MoU sesuai skala kontribusi mitra.
           </p>
         </div>
         <a
@@ -217,6 +232,46 @@ const sponsorPackages = [
         >
           <span>Konsultasi Paket via WhatsApp ↗</span>
         </a>
+      </div>
+
+      <!-- 4 Key Value Benefits Grid (Sesuai Flyer Poster NFXCTF-SPONSOR & Proposal Bab 3.1) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="p-3.5 rounded-xl bg-surface/70 border border-white/10 space-y-1 backdrop-blur-md">
+          <div class="flex items-center gap-2 text-amber-400 font-display font-bold text-xs">
+            <Megaphone className="size-4 shrink-0 text-amber-400" />
+            <span>Brand Exposure</span>
+          </div>
+          <p class="text-[0.72rem] text-text-secondary leading-relaxed font-sans">
+            Logo &amp; identitas mitra tampil di website, platform CTF, scoreboard, dan medsos resmi.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-surface/70 border border-white/10 space-y-1 backdrop-blur-md">
+          <div class="flex items-center gap-2 text-nx-cyan font-display font-bold text-xs">
+            <Sparkles className="size-4 shrink-0 text-nx-cyan" />
+            <span>Promosi Produk</span>
+          </div>
+          <p class="text-[0.72rem] text-text-secondary leading-relaxed font-sans">
+            Peluang mengenalkan produk, tools software, voucher, atau platform ke talenta cyber.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-surface/70 border border-white/10 space-y-1 backdrop-blur-md">
+          <div class="flex items-center gap-2 text-purple-400 font-display font-bold text-xs">
+            <FileText className="size-4 shrink-0 text-purple-400" />
+            <span>Publikasi Resmi</span>
+          </div>
+          <p class="text-[0.72rem] text-text-secondary leading-relaxed font-sans">
+            Pencantuman nama &amp; logo dalam publikasi dokumentasi dan Laporan LPJ resmi.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-surface/70 border border-white/10 space-y-1 backdrop-blur-md">
+          <div class="flex items-center gap-2 text-emerald-400 font-display font-bold text-xs">
+            <ShieldCheck className="size-4 shrink-0 text-emerald-400" />
+            <span>Citra Positif</span>
+          </div>
+          <p class="text-[0.72rem] text-text-secondary leading-relaxed font-sans">
+            Dukung langsung edukasi dan pengembangan talenta keamanan siber generasi muda Indonesia.
+          </p>
+        </div>
       </div>
 
       <!-- 4 Tier Grid -->
@@ -333,26 +388,26 @@ const sponsorPackages = [
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-mono">
           <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-            <span class="text-amber-400 font-bold text-[0.7rem] block">01. MINAT</span>
+            <span class="text-amber-400 font-bold text-[0.7rem] block">01. KESEDIAAN</span>
             <strong class="text-white text-xs block font-display">Pernyataan Minat</strong>
             <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Hubungi panitia via WhatsApp / Email nfcc@nurulfikri.ac.id.
+              Calon sponsor menghubungi panitia via WhatsApp resmi atau email nfcc@nurulfikri.ac.id.
             </p>
           </div>
 
           <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
             <span class="text-amber-400 font-bold text-[0.7rem] block">02. KESEPAKATAN</span>
-            <strong class="text-white text-xs block font-display">Persetujuan LoA</strong>
+            <strong class="text-white text-xs block font-display">Penandatanganan MoU</strong>
             <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Panitia mengirim formulir kesepakatan / LoA ringkas untuk disetujui.
+              Panitia mengirimkan Surat Perjanjian Kerja Sama (MoU) resmi untuk diisi dan ditandatangani kedua belah pihak.
             </p>
           </div>
 
           <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
             <span class="text-amber-400 font-bold text-[0.7rem] block">03. PEMBAYARAN</span>
-            <strong class="text-white text-xs block font-display">Transfer &amp; Logo</strong>
+            <strong class="text-white text-xs block font-display">Transfer &amp; Kirim Logo</strong>
             <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Transfer dana ke rekening resmi &amp; kirim logo resolusi tinggi (PNG/SVG).
+              Transfer ke rekening resmi SeaBank &amp; kirim bukti pembayaran beserta berkas logo transparan (PNG/SVG).
             </p>
           </div>
 
@@ -360,7 +415,7 @@ const sponsorPackages = [
             <span class="text-amber-400 font-bold text-[0.7rem] block">04. PUBLIKASI</span>
             <strong class="text-white text-xs block font-display">Benefit &amp; LPJ</strong>
             <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Logo langsung ditayangkan di seluruh media, disusul LPJ setelah acara.
+              Logo langsung ditampilkan di seluruh kanal promosi, disusul penyerahan LPJ kegiatan pasca acara.
             </p>
           </div>
         </div>
