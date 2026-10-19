@@ -27,8 +27,6 @@ import {
   UserCheck,
   ArrowRight,
   Info,
-  ChevronRight,
-  HelpCircle,
 } from "lucide-react";
 
 // Google Drive Folder URL directly requested by the user
@@ -89,7 +87,7 @@ const sponsorPackages = [
     cardBorder: "border-nx-cyan/30 shadow-[0_0_20px_rgba(34,211,238,0.08)] hover:border-nx-cyan/60",
   },
   {
-    tier: "Gold (Main)",
+    tier: "Gold",
     badge: "Full (1 Slot)",
     badgeColor: "text-amber-300 bg-amber-400/15 border-amber-400/30",
     price: "Rp 500.000",
@@ -116,22 +114,22 @@ const sponsorPackages = [
   <BackgroundCanvas client:load />
   <Header />
 
-  <main class="relative z-10 pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-8">
+  <main class="relative z-10 pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-[1360px] mx-auto space-y-8">
     <!-- Breadcrumb & Top Bar -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-white/5 font-mono text-xs text-text-muted">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-white/5 font-mono text-xs text-text-muted">
       <div class="flex items-center gap-2">
         <a href="/" class="hover:text-nx-cyan transition-colors">Beranda</a>
         <span>/</span>
         <span class="text-amber-300 font-semibold">Partnership &amp; Kemitraan</span>
       </div>
-      <div class="inline-flex items-center gap-2 text-[0.7rem] text-text-secondary self-start sm:self-auto">
+      <div class="inline-flex items-center gap-2 text-xs text-text-secondary self-start sm:self-auto">
         <span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
         <span>Portal Kemitraan Resmi NFX CTF 2026</span>
       </div>
     </div>
 
     <!-- Header / Hero Section (Clean & Balanced Width) -->
-    <section class="space-y-3 max-w-3xl" data-reveal>
+    <section class="space-y-3 max-w-4xl" data-reveal>
       <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight">
         Kemitraan, Sponsorship <br class="hidden sm:inline" />
         <span class="gradient-text">&amp; Donasi NFX CTF 2026</span>
@@ -142,7 +140,7 @@ const sponsorPackages = [
       </p>
     </section>
 
-    <!-- Mobile Tab Switcher Dropdown / Pills (< lg screens) -->
+    <!-- Mobile Tab Switcher Pills (< lg screens) -->
     <div class="lg:hidden" data-reveal>
       <div class="grid grid-cols-3 gap-1.5 p-1.5 rounded-xl bg-surface-elevated/90 border border-white/10 backdrop-blur-md font-mono text-xs">
         <button
@@ -172,13 +170,13 @@ const sponsorPackages = [
       </div>
     </div>
 
-    <!-- 2-Column Layout (Matching Guidebook Design): Sticky Sidebar (Left) + Content (Right) -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+    <!-- Flex Layout (Matching Guidebook Design): Fixed Width Sticky Sidebar (Left) + Spacious Content Area (Right) -->
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
 
       <!-- ========================================== -->
       <!-- LEFT SIDEBAR: Nav Tabs, Download & Kontak -->
       <!-- ========================================== -->
-      <aside class="hidden lg:block lg:col-span-4 sticky top-24 self-start space-y-4 max-h-[calc(100vh-7rem)] overflow-y-auto no-scrollbar">
+      <aside class="hidden lg:block w-72 xl:w-80 shrink-0 sticky top-24 self-start space-y-4 max-h-[calc(100vh-7rem)] overflow-y-auto no-scrollbar">
         <!-- Sidebar Navigation Card -->
         <div class="p-4 rounded-2xl bg-surface/85 border border-white/10 backdrop-blur-xl shadow-xl space-y-3">
           <div class="pb-2.5 border-b border-white/10">
@@ -281,7 +279,7 @@ const sponsorPackages = [
               Berkas Proposal di Drive
             </strong>
           </div>
-          <p class="text-[0.7rem] text-text-secondary leading-relaxed">
+          <p class="text-xs text-text-secondary leading-relaxed">
             Unduh Proposal Sponsorship, Proposal Media Partner, Proposal Donasi (.pdf), dan Poster Flyer.
           </p>
           <a
@@ -297,7 +295,7 @@ const sponsorPackages = [
             href="/nfxctf-sponsor-poster.png"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-[0.68rem] font-mono text-amber-300 hover:underline flex items-center justify-center gap-1 pt-0.5"
+            class="text-xs font-mono text-amber-300 hover:underline flex items-center justify-center gap-1 pt-0.5"
           >
             <ImageIcon className="size-3" />
             <span>Lihat Poster Flyer Sponsor ↗</span>
@@ -311,14 +309,14 @@ const sponsorPackages = [
           </span>
           <div class="space-y-0.5">
             <strong class="text-white block font-display text-xs">{CONTACTS.waTri.name}</strong>
-            <span class="text-text-secondary text-[0.68rem] block">{CONTACTS.waTri.phone}</span>
-            <span class="text-text-muted text-[0.65rem] block truncate">{CONTACTS.email}</span>
+            <span class="text-text-secondary text-xs block">{CONTACTS.waTri.phone}</span>
+            <span class="text-text-muted text-[0.68rem] block truncate">{CONTACTS.email}</span>
           </div>
           <a
             href={CONTACTS.waTri.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full inline-flex items-center justify-center gap-1 py-1.5 px-2.5 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 font-bold transition-all text-[0.7rem]"
+            class="w-full inline-flex items-center justify-center gap-1 py-1.5 px-2.5 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 font-bold transition-all text-xs"
           >
             <Phone className="size-3" />
             <span>Chat WhatsApp Humas ↗</span>
@@ -327,9 +325,9 @@ const sponsorPackages = [
       </aside>
 
       <!-- ========================================== -->
-      <!-- RIGHT COLUMN: Active Tab Content Area      -->
+      <!-- RIGHT COLUMN: Spacious Content Area        -->
       <!-- ========================================== -->
-      <div class="lg:col-span-8 space-y-8 min-w-0">
+      <div class="flex-1 min-w-0 w-full space-y-8">
 
         <!-- ---------------------------------------- -->
         <!-- TAB 1: SPONSORSHIP (MoU FORMAL)          -->
@@ -339,10 +337,10 @@ const sponsorPackages = [
           <div class="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[0.65rem] font-bold px-2 py-0.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 uppercase">
+                <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 uppercase">
                   KERJASAMA FORMAL (MoU)
                 </span>
-                <span class="font-mono text-[0.65rem] text-text-muted">Bab 3 Proposal Sponsorship</span>
+                <span class="font-mono text-xs text-text-muted">Bab 3 Proposal Sponsorship</span>
               </div>
               <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
                 Paket Kemitraan Sponsorship
@@ -359,94 +357,100 @@ const sponsorPackages = [
           </div>
 
           <!-- 4 Key Value Benefits Grid (Proposal Bab 3.1) -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-            <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1 backdrop-blur-md">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-surface/75 border border-white/10 space-y-1.5 backdrop-blur-md">
               <div class="flex items-center gap-1.5 text-amber-400 font-display font-bold text-xs">
-                <Megaphone className="size-3.5 shrink-0" />
+                <Megaphone className="size-4 shrink-0 text-amber-400" />
                 <span>Brand Exposure</span>
               </div>
-              <p class="text-[0.68rem] text-text-secondary leading-relaxed font-sans">
+              <p class="text-xs text-text-secondary leading-relaxed font-sans">
                 Logo tampil di website, platform CTF, scoreboard, dan poster medsos.
               </p>
             </div>
-            <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1 backdrop-blur-md">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-surface/75 border border-white/10 space-y-1.5 backdrop-blur-md">
               <div class="flex items-center gap-1.5 text-nx-cyan font-display font-bold text-xs">
-                <Sparkles className="size-3.5 shrink-0" />
+                <Sparkles className="size-4 shrink-0 text-nx-cyan" />
                 <span>Promosi Produk</span>
               </div>
-              <p class="text-[0.68rem] text-text-secondary leading-relaxed font-sans">
-                Promosi tools cybersecurity, voucher, lisensi, atau platform lab.
+              <p class="text-xs text-text-secondary leading-relaxed font-sans">
+                Promosi tools cybersecurity, voucher LMS, lisensi, atau platform lab.
               </p>
             </div>
-            <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1 backdrop-blur-md">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-surface/75 border border-white/10 space-y-1.5 backdrop-blur-md">
               <div class="flex items-center gap-1.5 text-purple-400 font-display font-bold text-xs">
-                <FileText className="size-3.5 shrink-0" />
+                <FileText className="size-4 shrink-0 text-purple-400" />
                 <span>Publikasi &amp; LPJ</span>
               </div>
-              <p class="text-[0.68rem] text-text-secondary leading-relaxed font-sans">
+              <p class="text-xs text-text-secondary leading-relaxed font-sans">
                 Dokumentasi resmi dan penyerahan Laporan LPJ pasca acara selesai.
               </p>
             </div>
-            <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1 backdrop-blur-md">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-surface/75 border border-white/10 space-y-1.5 backdrop-blur-md">
               <div class="flex items-center gap-1.5 text-emerald-400 font-display font-bold text-xs">
-                <ShieldCheck className="size-3.5 shrink-0" />
+                <ShieldCheck className="size-4 shrink-0 text-emerald-400" />
                 <span>Citra Positif</span>
               </div>
-              <p class="text-[0.68rem] text-text-secondary leading-relaxed font-sans">
+              <p class="text-xs text-text-secondary leading-relaxed font-sans">
                 Mendukung langsung regenerasi talenta cybersecurity generasi muda.
               </p>
             </div>
           </div>
 
           <!-- 3 Tier Grid: Bronze (8 slot), Silver (5 slot), Gold (1 slot full) -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 items-stretch">
             {sponsorPackages.map((pkg) => (
               <div
-                class={`p-4 sm:p-5 rounded-2xl bg-surface/85 border backdrop-blur-md flex flex-col justify-between motion-card transition-all ${pkg.cardBorder}`}
+                class={`p-5 sm:p-6 rounded-2xl bg-surface/85 border backdrop-blur-md flex flex-col justify-between motion-card transition-all ${pkg.cardBorder}`}
               >
-                <div>
-                  <div class="flex items-center justify-between gap-1 mb-2.5">
-                    <span class={`font-mono text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${pkg.badgeColor}`}>
-                      {pkg.badge}
-                    </span>
-                    <span class="font-mono text-[0.62rem] text-text-muted">
-                      {pkg.target}
-                    </span>
-                  </div>
+                <div class="flex-1 flex flex-col">
+                  <!-- Header: Tier Title (Left) + Badge Pill (Right) -->
+                  <div class="mb-5 pb-4 border-b border-white/5 space-y-2">
+                    <div class="flex items-center justify-between gap-2">
+                      <h3 class="font-display font-extrabold text-2xl text-white flex items-center gap-1.5">
+                        <span>{pkg.tier}</span>
+                        {pkg.isTaken && <Star className="size-4 text-amber-300 fill-amber-300/40 shrink-0" />}
+                      </h3>
+                      <span class={`font-mono text-xs font-bold px-2.5 py-1 rounded-full border whitespace-nowrap shrink-0 ${pkg.badgeColor}`}>
+                        {pkg.badge}
+                      </span>
+                    </div>
 
-                  <div class="mb-3">
-                    <h3 class="font-display font-bold text-base sm:text-lg text-white flex items-center gap-1.5">
-                      <span>{pkg.tier}</span>
-                      {pkg.isTaken && <Star className="size-3.5 text-amber-300 fill-amber-300/40" />}
-                    </h3>
-                    <div class="font-mono font-bold text-lg sm:text-xl text-white mt-0.5">
-                      {pkg.price}
+                    <div class="font-mono text-xs text-text-secondary">
+                      {pkg.target}
                     </div>
-                    <div class="font-mono text-[0.68rem] text-text-muted mt-0.5">
+
+                    <div class="pt-1">
+                      <span class="font-mono font-bold text-2xl sm:text-3xl text-white">
+                        {pkg.price}
+                      </span>
+                    </div>
+
+                    <p class="font-mono text-xs text-text-muted">
                       {pkg.statusNote}
-                    </div>
+                    </p>
                   </div>
 
                   <!-- Benefits List -->
-                  <ul class="space-y-1.5 py-2.5 border-t border-white/5 font-mono text-[0.72rem] text-text-secondary">
+                  <ul class="space-y-3 font-mono text-xs text-text-secondary flex-1 mb-5">
                     {pkg.benefits.map((b) => (
-                      <li class="flex items-start gap-1.5 leading-snug">
-                        <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                      <li class="flex items-start gap-2.5 leading-relaxed">
+                        <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                         <span>{b}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div class="pt-3 border-t border-white/5">
+                <!-- Bottom Button / Main Sponsor Pill -->
+                <div class="pt-3 border-t border-white/5 mt-auto">
                   {pkg.isTaken ? (
-                    <div class="p-2 rounded-lg bg-black/40 border border-amber-400/25 flex items-center justify-between font-mono text-xs">
-                      <span class="text-text-muted text-[0.68rem]">Title Sponsor:</span>
+                    <div class="p-2.5 rounded-xl bg-black/40 border border-amber-400/25 flex items-center justify-between font-mono text-xs">
+                      <span class="text-text-muted text-[0.7rem]">Title Sponsor:</span>
                       <a
                         href="https://linuxenic.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="font-bold text-amber-300 hover:underline text-[0.72rem]"
+                        class="font-bold text-amber-300 hover:underline"
                       >
                         LINUXENIC CORP. ↗
                       </a>
@@ -456,7 +460,7 @@ const sponsorPackages = [
                       href={pkg.ctaLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="w-full inline-flex items-center justify-center gap-1 py-2 px-3 rounded-lg font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors text-center"
+                      class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors text-center shadow-sm"
                     >
                       <span>{pkg.ctaText}</span>
                     </a>
@@ -467,34 +471,34 @@ const sponsorPackages = [
           </div>
 
           <!-- Support-in-Kind (Non-Tunai) Strip (Proposal Bab 3.3) -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-surface-elevated/70 border border-white/10 space-y-2.5">
+          <div class="p-5 rounded-2xl bg-surface-elevated/70 border border-white/10 space-y-3">
             <div class="flex items-center justify-between gap-2 flex-wrap">
               <div class="flex items-center gap-2">
                 <Layers className="size-4 text-nx-purple" />
-                <strong class="font-display font-bold text-sm text-white">
+                <strong class="font-display font-bold text-sm sm:text-base text-white">
                   Support-in-Kind (Kemitraan Non-Tunai)
                 </strong>
               </div>
-              <span class="font-mono text-[0.65rem] text-text-muted">
-                Bab 3.3 Proposal
+              <span class="font-mono text-xs text-text-muted">
+                Bab 3.3 Proposal Sponsorship
               </span>
             </div>
 
-            <p class="text-xs text-text-secondary leading-relaxed font-sans">
-              Panitia juga menerima bentuk kemitraan non-tunai (fasilitas, lisensi, kredit komputasi, atau voucher hadiah peserta). Bentuk apresiasi dinegosiasikan secara fleksibel.
+            <p class="text-xs sm:text-sm text-text-secondary leading-relaxed font-sans">
+              Panitia juga menerima kemitraan non-tunai berupa sarana fasilitas, lisensi, kredit komputasi lab, atau voucher apresiasi peserta. Bentuk dan apresiasi publikasi dinegosiasikan secara fleksibel sesuai kontribusi.
             </p>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[0.68rem]">
-              <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 font-mono text-xs">
+              <div class="p-2.5 rounded-xl bg-black/30 border border-white/5 text-slate-300 text-center">
                 Cloud / VPS Credit
               </div>
-              <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
+              <div class="p-2.5 rounded-xl bg-black/30 border border-white/5 text-slate-300 text-center">
                 Cybersec Lab Subs
               </div>
-              <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
+              <div class="p-2.5 rounded-xl bg-black/30 border border-white/5 text-slate-300 text-center">
                 Software Dev Tools
               </div>
-              <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
+              <div class="p-2.5 rounded-xl bg-black/30 border border-white/5 text-slate-300 text-center">
                 E-Money / Tech Gear
               </div>
             </div>
@@ -502,76 +506,76 @@ const sponsorPackages = [
 
           <!-- 6 Tahap Prosedur Sponsorship MoU (Proposal Bab 3.4) -->
           <div class="space-y-3">
-            <div class="pb-1.5 border-b border-white/10 flex items-center justify-between">
-              <h3 class="font-display font-bold text-base text-white flex items-center gap-2">
+            <div class="pb-2 border-b border-white/10 flex items-center justify-between">
+              <h3 class="font-display font-bold text-base sm:text-lg text-white flex items-center gap-2">
                 <FileCheck2 className="size-4 text-amber-400" />
                 <span>Alur &amp; Prosedur Sponsorship (MoU)</span>
               </h3>
-              <span class="font-mono text-[0.65rem] text-text-muted">Batas: 31 Oktober 2026</span>
+              <span class="font-mono text-xs text-text-muted">Batas Kesediaan: 31 Oktober 2026</span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 font-mono">
-              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-                <span class="text-amber-400 font-bold text-[0.65rem] block">01. KESEDIAAN</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 font-mono">
+              <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-xs block">01. KESEDIAAN</span>
                 <strong class="text-white text-xs block font-display">Pernyataan Minat</strong>
-                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-                  Menyatakan kesediaan tertulis via WA Humas / email paling lambat 31 Oktober 2026.
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
+                  Menyatakan kesediaan tertulis via WhatsApp Humas atau email paling lambat 31 Oktober 2026.
                 </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-surface/75 border border-amber-400/30 bg-amber-950/10 space-y-1">
-                <span class="text-amber-400 font-bold text-[0.65rem] block">02. KESEPAKATAN (MoU)</span>
+              <div class="p-3.5 rounded-xl bg-surface/75 border border-amber-400/30 bg-amber-950/15 space-y-1">
+                <span class="text-amber-400 font-bold text-xs block">02. KESEPAKATAN (MoU)</span>
                 <strong class="text-white text-xs block font-display">Penandatanganan MoU</strong>
-                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
                   Panitia mengirimkan Surat Perjanjian Kerja Sama (MoU) resmi untuk ditandatangani kedua pihak.
                 </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-                <span class="text-amber-400 font-bold text-[0.65rem] block">03. PEMBAYARAN</span>
+              <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-xs block">03. PEMBAYARAN</span>
                 <strong class="text-white text-xs block font-display">Transfer Dana</strong>
-                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-                  Transfer dana sponsor ke rekening resmi SeaBank panitia atas nama bendahara.
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
+                  Transfer dana sponsor ke rekening resmi SeaBank panitia atas nama bendahara resmi.
                 </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-                <span class="text-amber-400 font-bold text-[0.65rem] block">04. ASSET LOGO</span>
+              <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-xs block">04. ASSET LOGO</span>
                 <strong class="text-white text-xs block font-display">Kirim Logo &amp; Bukti</strong>
-                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-                  Mengonfirmasi transfer &amp; mengirim file logo transparan (PNG/SVG) ke email.
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
+                  Mengonfirmasi transfer &amp; mengirimkan berkas logo format PNG/SVG transparan ke email.
                 </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-                <span class="text-amber-400 font-bold text-[0.65rem] block">05. EKSEKUSI BENEFIT</span>
+              <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-xs block">05. EKSEKUSI BENEFIT</span>
                 <strong class="text-white text-xs block font-display">Pemasangan Logo</strong>
-                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-                  Tim Medkref segera menampilkan logo sponsor pada media sesuai paket.
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
+                  Tim Medkref langsung menayangkan logo sponsor pada media publikasi sesuai paket.
                 </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-                <span class="text-amber-400 font-bold text-[0.65rem] block">06. LAPORAN (LPJ)</span>
+              <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-xs block">06. LAPORAN (LPJ)</span>
                 <strong class="text-white text-xs block font-display">Dokumentasi &amp; LPJ</strong>
-                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-                  Pengiriman laporan dokumentasi dan LPJ ringkas kepada sponsor setelah lomba selesai.
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
+                  Pengiriman laporan dokumentasi dan LPJ ringkas kepada sponsor setelah acara selesai.
                 </p>
               </div>
             </div>
           </div>
 
           <!-- Rekening Resmi Transaksi Sponsorship -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-surface-elevated/90 border border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="p-5 rounded-2xl bg-surface-elevated/90 border border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div class="space-y-1 min-w-0">
-              <div class="flex items-center gap-1.5 text-emerald-400 font-mono text-[0.68rem] font-bold">
-                <ShieldCheck className="size-3.5" />
+              <div class="flex items-center gap-1.5 text-emerald-400 font-mono text-xs font-bold">
+                <ShieldCheck className="size-4" />
                 <span>REKENING RESMI TRANSAKSI SPONSORSHIP</span>
               </div>
               <div class="font-mono text-xs sm:text-sm text-white flex flex-wrap items-center gap-2">
                 <span>Bank: <strong>{BANK_INFO.bankName}</strong></span>
                 <span>•</span>
-                <span>No. Rek: <strong class="text-amber-300" id="bank-acc-num">{BANK_INFO.accountNumber}</strong></span>
+                <span>No. Rek: <strong class="text-amber-300 text-sm sm:text-base" id="bank-acc-num">{BANK_INFO.accountNumber}</strong></span>
                 <span>•</span>
                 <span class="text-text-secondary">a.n {BANK_INFO.accountName}</span>
               </div>
@@ -581,7 +585,7 @@ const sponsorPackages = [
               <button
                 id="copy-bank-btn"
                 type="button"
-                class="px-3.5 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 font-mono text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+                class="px-4 py-2.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 font-mono text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 <Copy className="size-3.5" />
                 <span id="copy-bank-text">Salin No. Rekening</span>
@@ -590,7 +594,7 @@ const sponsorPackages = [
                 href={CONTACTS.waTri.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs transition-colors"
+                class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs transition-colors"
               >
                 Konfirmasi ke Humas ↗
               </a>
@@ -606,10 +610,10 @@ const sponsorPackages = [
           <div class="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[0.65rem] font-bold px-2 py-0.5 rounded-full bg-nx-cyan/15 border border-nx-cyan/30 text-nx-cyan uppercase">
+                <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-full bg-nx-cyan/15 border border-nx-cyan/30 text-nx-cyan uppercase">
                   KOLABORASI PUBLIKASI MUTUAL
                 </span>
-                <span class="font-mono text-[0.65rem] text-text-muted">Proposal Media Partner</span>
+                <span class="font-mono text-xs text-text-muted">Proposal Media Partner</span>
               </div>
               <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
                 Kemitraan Media Partner
@@ -623,60 +627,60 @@ const sponsorPackages = [
             </a>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
             <!-- Ketentuan Media Partner (Bab 3.1) -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-white/10 space-y-3 flex flex-col justify-between">
-              <div class="space-y-2.5">
-                <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
+            <div class="p-5 sm:p-6 rounded-2xl bg-surface/85 border border-white/10 space-y-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="flex items-center gap-2 font-display font-bold text-sm sm:text-base text-white">
                   <Radio className="size-4 text-nx-cyan" />
                   <span>Ketentuan Media Partner (Bab 3.1)</span>
                 </div>
 
-                <div class="space-y-2 font-mono text-xs">
-                  <div class="p-3 rounded-xl bg-surface-elevated/70 border border-white/5 space-y-1">
-                    <span class="font-bold text-white block text-[0.72rem]">1. Internal STT Terpadu Nurul Fikri:</span>
-                    <p class="text-text-secondary font-sans leading-relaxed text-[0.72rem]">
+                <div class="space-y-3 font-mono text-xs">
+                  <div class="p-3.5 rounded-xl bg-surface-elevated/70 border border-white/5 space-y-1.5">
+                    <span class="font-bold text-white block text-xs">1. Internal STT Terpadu Nurul Fikri:</span>
+                    <p class="text-text-secondary font-sans leading-relaxed text-xs">
                       UKM / Ormawa mengirimkan minimal <strong>3 orang perwakilan</strong> sebagai peserta aktif Track Mahasiswa NF (registrasi gratis) serta membantu share/repost poster &amp; caption resmi.
                     </p>
                   </div>
 
-                  <div class="p-3 rounded-xl bg-surface-elevated/70 border border-white/5 space-y-1">
-                    <span class="font-bold text-white block text-[0.72rem]">2. Eksternal / Komunitas Cyber / Media:</span>
-                    <p class="text-text-secondary font-sans leading-relaxed text-[0.72rem]">
+                  <div class="p-3.5 rounded-xl bg-surface-elevated/70 border border-white/5 space-y-1.5">
+                    <span class="font-bold text-white block text-xs">2. Eksternal / Komunitas Cyber / Media:</span>
+                    <p class="text-text-secondary font-sans leading-relaxed text-xs">
                       Membantu membagikan (repost/share) materi poster dan caption resmi NFX CTF 2026 di kanal medsos / Discord komunitas masing-masing.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div class="p-2.5 rounded-lg bg-black/30 border border-white/5 text-[0.68rem] font-mono text-text-muted">
+              <div class="p-3 rounded-xl bg-black/30 border border-white/5 text-xs font-mono text-text-muted">
                 🤝 Kolaborasi mutualisme untuk saling memperluas jangkauan komunitas keamanan siber.
               </div>
             </div>
 
             <!-- Benefit Media Partner (Bab 3.2) -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-white/10 space-y-3 flex flex-col justify-between">
+            <div class="p-5 sm:p-6 rounded-2xl bg-surface/85 border border-white/10 space-y-4 flex flex-col justify-between">
               <div class="space-y-3">
-                <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
+                <div class="flex items-center gap-2 font-display font-bold text-sm sm:text-base text-white">
                   <Star className="size-4 text-amber-400" />
                   <span>Benefit untuk Media Partner (Bab 3.2)</span>
                 </div>
 
-                <ul class="space-y-2 font-mono text-xs text-text-secondary">
-                  <li class="flex items-start gap-2">
-                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                <ul class="space-y-2.5 font-mono text-xs text-text-secondary">
+                  <li class="flex items-start gap-2 leading-relaxed">
+                    <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span><strong>Logo Placement:</strong> Logo di Website Utama (nfx.my.id)</span>
                   </li>
-                  <li class="flex items-start gap-2">
-                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <li class="flex items-start gap-2 leading-relaxed">
+                    <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span><strong>Poster Medsos:</strong> Logo di seluruh Poster Publikasi Resmi Medsos</span>
                   </li>
-                  <li class="flex items-start gap-2">
-                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <li class="flex items-start gap-2 leading-relaxed">
+                    <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span><strong>Social Media Exposure:</strong> Fitur Instagram Collaborative Post (Feed/Reels) bersama @nfcc.id</span>
                   </li>
-                  <li class="flex items-start gap-2">
-                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <li class="flex items-start gap-2 leading-relaxed">
+                    <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span><strong>Dokumentasi LPJ:</strong> Pencantuman logo &amp; nama di Laporan LPJ ringkas</span>
                   </li>
                 </ul>
@@ -684,46 +688,46 @@ const sponsorPackages = [
 
               <a
                 href={`mailto:${CONTACTS.email}?subject=Pengajuan%20Kerjasama%20Media%20Partner%20NFX%20CTF%202026`}
-                class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors text-center"
+                class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors text-center"
               >
-                <Mail className="size-3.5" />
+                <Mail className="size-4" />
                 <span>Ajukan Kerjasama Media Partner via Email ↗</span>
               </a>
             </div>
           </div>
 
           <!-- Prosedur Pengajuan Media Partner (Bab 3.3) -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-surface-elevated/70 border border-white/10 space-y-3">
-            <h3 class="font-display font-bold text-sm text-white flex items-center gap-2">
+          <div class="p-5 rounded-2xl bg-surface-elevated/70 border border-white/10 space-y-3">
+            <h3 class="font-display font-bold text-sm sm:text-base text-white flex items-center gap-2">
               <FileCheck2 className="size-4 text-nx-cyan" />
               <span>Prosedur Pengajuan Media Partner (Bab 3.3)</span>
             </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 font-mono text-xs">
-              <div class="p-3 rounded-xl bg-black/25 border border-white/5 space-y-1">
-                <span class="text-nx-cyan font-bold text-[0.68rem] block">01. PENGAJUAN</span>
-                <span class="text-white block font-display text-[0.72rem]">Hubungi Humas</span>
-                <p class="text-text-secondary text-[0.65rem] font-sans leading-relaxed">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-mono text-xs">
+              <div class="p-3.5 rounded-xl bg-black/25 border border-white/5 space-y-1">
+                <span class="text-nx-cyan font-bold text-xs block">01. PENGAJUAN</span>
+                <span class="text-white block font-display text-xs">Hubungi Humas</span>
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
                   Hubungi WA resmi atau email nfcc@nurulfikri.ac.id dengan nama media / ormawa.
                 </p>
               </div>
-              <div class="p-3 rounded-xl bg-black/25 border border-white/5 space-y-1">
-                <span class="text-nx-cyan font-bold text-[0.68rem] block">02. KETENTUAN</span>
-                <span class="text-white block font-display text-[0.72rem]">Penuhi Syarat</span>
-                <p class="text-text-secondary text-[0.65rem] font-sans leading-relaxed">
+              <div class="p-3.5 rounded-xl bg-black/25 border border-white/5 space-y-1">
+                <span class="text-nx-cyan font-bold text-xs block">02. KETENTUAN</span>
+                <span class="text-white block font-display text-xs">Penuhi Syarat</span>
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
                   Internal: kirim 3 delegasi mhs. Eksternal: share poster &amp; caption di media.
                 </p>
               </div>
-              <div class="p-3 rounded-xl bg-black/25 border border-white/5 space-y-1">
-                <span class="text-nx-cyan font-bold text-[0.68rem] block">03. KIRIM ASSET</span>
-                <span class="text-white block font-display text-[0.72rem]">Kirim Logo Transparan</span>
-                <p class="text-text-secondary text-[0.65rem] font-sans leading-relaxed">
+              <div class="p-3.5 rounded-xl bg-black/25 border border-white/5 space-y-1">
+                <span class="text-nx-cyan font-bold text-xs block">03. KIRIM ASSET</span>
+                <span class="text-white block font-display text-xs">Kirim Logo Transparan</span>
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
                   Kirim file logo transparan (PNG atau SVG resolusi tinggi) ke kontak Humas.
                 </p>
               </div>
-              <div class="p-3 rounded-xl bg-black/25 border border-white/5 space-y-1">
-                <span class="text-nx-cyan font-bold text-[0.68rem] block">04. PENAYANGAN</span>
-                <span class="text-white block font-display text-[0.72rem]">Logo &amp; Collab IG</span>
-                <p class="text-text-secondary text-[0.65rem] font-sans leading-relaxed">
+              <div class="p-3.5 rounded-xl bg-black/25 border border-white/5 space-y-1">
+                <span class="text-nx-cyan font-bold text-xs block">04. PENAYANGAN</span>
+                <span class="text-white block font-display text-xs">Logo &amp; Collab IG</span>
+                <p class="text-text-secondary text-xs font-sans leading-relaxed">
                   Medkref memasang logo di web &amp; poster serta menayangkan Collab Post Instagram.
                 </p>
               </div>
@@ -739,25 +743,25 @@ const sponsorPackages = [
           <div class="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[0.65rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 uppercase">
+                <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 uppercase">
                   DUKUNGAN SUKARELA (NON-MoU)
                 </span>
-                <span class="font-mono text-[0.65rem] text-text-muted">Proposal Donasi NFX CTF</span>
+                <span class="font-mono text-xs text-text-muted">Proposal Donasi NFX CTF</span>
               </div>
               <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
                 Jalur Donasi / Donatur
               </h2>
             </div>
-            <span class="font-mono text-[0.68rem] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full self-start sm:self-auto">
+            <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full self-start sm:self-auto font-bold">
               Sukarela • Mulai Rp 50.000
             </span>
           </div>
 
           <!-- Info Box: Mekanisme Donasi (Beda dengan Sponsor) -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-emerald-500/25 flex items-start gap-3 backdrop-blur-md">
-            <Info className="size-4 text-emerald-400 shrink-0 mt-0.5" />
-            <div class="text-xs text-text-secondary leading-relaxed font-sans space-y-1">
-              <strong class="text-white font-display block text-sm">
+          <div class="p-5 rounded-2xl bg-surface/85 border border-emerald-500/25 flex items-start gap-3.5 backdrop-blur-md">
+            <Info className="size-5 text-emerald-400 shrink-0 mt-0.5" />
+            <div class="text-xs sm:text-sm text-text-secondary leading-relaxed font-sans space-y-1">
+              <strong class="text-white font-display block text-sm sm:text-base">
                 Mekanisme Donasi Sesuai Proposal Donasi NFX CTF 2026:
               </strong>
               <p>
@@ -766,72 +770,72 @@ const sponsorPackages = [
             </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
             <!-- Apresiasi Donatur Card -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-white/10 space-y-3 flex flex-col justify-between">
+            <div class="p-5 sm:p-6 rounded-2xl bg-surface/85 border border-white/10 space-y-4 flex flex-col justify-between">
               <div class="space-y-3">
-                <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
+                <div class="flex items-center gap-2 font-display font-bold text-sm sm:text-base text-white">
                   <Star className="size-4 text-amber-400" />
                   <span>Apresiasi untuk Donatur (Bab 3.1)</span>
                 </div>
 
-                <ul class="space-y-2.5 font-mono text-xs text-text-secondary">
-                  <li class="flex items-start gap-2">
-                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                <ul class="space-y-3 font-mono text-xs text-text-secondary">
+                  <li class="flex items-start gap-2 leading-relaxed">
+                    <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span>Pencantuman nama pada <strong>Daftar Donatur Resmi</strong> di Instagram @nfcc.id.</span>
                   </li>
-                  <li class="flex items-start gap-2">
-                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <li class="flex items-start gap-2 leading-relaxed">
+                    <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span>Mention apresiasi dan role khusus donatur di server Discord NFCC.</span>
                   </li>
-                  <li class="flex items-start gap-2">
-                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <li class="flex items-start gap-2 leading-relaxed">
+                    <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span>Fleksibilitas identitas: donatur dapat memilih tampil dengan <strong>Nama Sendiri</strong>, <strong>Nama Komunitas</strong>, atau <strong>Anonim</strong>.</span>
                   </li>
                 </ul>
               </div>
 
-              <div class="p-3 rounded-xl bg-black/30 border border-white/5 font-mono text-[0.68rem] text-text-muted">
+              <div class="p-3.5 rounded-xl bg-black/30 border border-white/5 font-mono text-xs text-text-muted">
                 💡 Nominal donasi bebas &amp; sukarela sesuai keikhlasan para pendukung talenta cyber Indonesia.
               </div>
             </div>
 
             <!-- Cara Berdonasi Card (2 Langkah Mudah) -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-emerald-500/30 space-y-3 flex flex-col justify-between">
-              <div class="space-y-2.5">
-                <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
+            <div class="p-5 sm:p-6 rounded-2xl bg-surface/85 border border-emerald-500/30 space-y-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="flex items-center gap-2 font-display font-bold text-sm sm:text-base text-white">
                   <Coins className="size-4 text-emerald-400" />
                   <span>Cara Berdonasi (2 Langkah Mudah)</span>
                 </div>
 
-                <div class="space-y-2 font-mono text-xs">
-                  <div class="p-3 rounded-xl bg-surface-elevated/80 border border-white/5 space-y-1">
-                    <span class="text-emerald-400 font-bold block text-[0.68rem]">LANGKAH 1: TRANSFER DANA</span>
-                    <p class="text-text-secondary font-sans leading-relaxed text-[0.72rem]">
+                <div class="space-y-2.5 font-mono text-xs">
+                  <div class="p-3.5 rounded-xl bg-surface-elevated/80 border border-white/5 space-y-1">
+                    <span class="text-emerald-400 font-bold block text-xs">LANGKAH 1: TRANSFER DANA</span>
+                    <p class="text-text-secondary font-sans leading-relaxed text-xs">
                       Transfer dana sukarela ke rekening resmi SeaBank:
                     </p>
                     <div class="text-white pt-1">
                       <div>Bank: <strong>{BANK_INFO.bankName}</strong></div>
-                      <div>No. Rek: <strong class="text-amber-300" id="bank-acc-donasi">{BANK_INFO.accountNumber}</strong></div>
-                      <div class="text-text-muted text-[0.65rem]">a.n. {BANK_INFO.accountName}</div>
+                      <div>No. Rek: <strong class="text-amber-300 text-sm" id="bank-acc-donasi">{BANK_INFO.accountNumber}</strong></div>
+                      <div class="text-text-muted text-xs">a.n. {BANK_INFO.accountName}</div>
                     </div>
                   </div>
 
-                  <div class="p-3 rounded-xl bg-surface-elevated/80 border border-white/5 space-y-1">
-                    <span class="text-emerald-400 font-bold block text-[0.68rem]">LANGKAH 2: ISI FORMULIR DONASI</span>
-                    <p class="text-text-secondary font-sans leading-relaxed text-[0.72rem]">
+                  <div class="p-3.5 rounded-xl bg-surface-elevated/80 border border-white/5 space-y-1">
+                    <span class="text-emerald-400 font-bold block text-xs">LANGKAH 2: ISI FORMULIR DONASI</span>
+                    <p class="text-text-secondary font-sans leading-relaxed text-xs">
                       Isi formulir untuk konfirmasi nama tampilan (atau mode Anonim):
                     </p>
-                    <span class="text-nx-cyan break-all text-[0.68rem]">{BANK_INFO.donationFormUrl}</span>
+                    <span class="text-nx-cyan break-all text-xs">{BANK_INFO.donationFormUrl}</span>
                   </div>
                 </div>
               </div>
 
-              <div class="flex flex-col sm:flex-row gap-2 pt-1 font-mono text-xs">
+              <div class="flex flex-col sm:flex-row gap-2.5 pt-1 font-mono text-xs">
                 <button
                   id="copy-bank-donasi-btn"
                   type="button"
-                  class="flex-1 py-2 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center text-[0.72rem]"
+                  class="flex-1 py-2.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center text-xs"
                 >
                   <Copy className="size-3.5" />
                   <span id="copy-bank-donasi-text">Salin No. Rekening</span>
@@ -840,7 +844,7 @@ const sponsorPackages = [
                   href={BANK_INFO.donationFormUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex-1 py-2 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-display font-bold transition-all flex items-center justify-center gap-1.5 shadow-md shadow-emerald-500/20 text-center text-[0.72rem]"
+                  class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-display font-bold transition-all flex items-center justify-center gap-1.5 shadow-md shadow-emerald-500/20 text-center text-xs"
                 >
                   <span>Buka Form Donasi ↗</span>
                 </a>
