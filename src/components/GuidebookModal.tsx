@@ -179,8 +179,12 @@ export default function GuidebookModal() {
                         <span className="text-white font-medium">Mahasiswa Aktif STT-NF</span>
                       </div>
                       <div className="flex justify-between py-1 border-b border-white/5">
+                        <span className="text-text-muted">Difficulty:</span>
+                        <span className="text-amber-300 font-semibold">Baby – Easy – Medium</span>
+                      </div>
+                      <div className="flex justify-between py-1 border-b border-white/5">
                         <span className="text-text-muted">Fasilitas:</span>
-                        <span className="text-white">2x Workshop (Online/Offline)</span>
+                        <span className="text-white">1x Webinar Pembekalan (Online)</span>
                       </div>
                       <div className="flex justify-between py-1 border-b border-white/5">
                         <span className="text-text-muted">Sertifikat:</span>
@@ -211,6 +215,10 @@ export default function GuidebookModal() {
                       <div className="flex justify-between py-1 border-b border-white/5">
                         <span className="text-text-muted">Target:</span>
                         <span className="text-white font-medium">Nasional (Mhs/Siswa/Praktisi)</span>
+                      </div>
+                      <div className="flex justify-between py-1 border-b border-white/5">
+                        <span className="text-text-muted">Difficulty:</span>
+                        <span className="text-white font-medium">Baby s.d. Hard &amp; Insane</span>
                       </div>
                       <div className="flex justify-between py-1 border-b border-white/5">
                         <span className="text-text-muted">Fasilitas:</span>

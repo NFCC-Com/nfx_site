@@ -75,7 +75,7 @@ export default function RegisterModal() {
                 Mahasiswa STT-NF
               </h4>
               <p className="text-[0.72rem] text-text-secondary leading-relaxed mb-3">
-                Khusus mahasiswa aktif STT-NF. Termasuk 2x workshop persiapan &amp; hadiah untuk Juara 1–5. Rincian hadiah tersedia di guidebook.
+                Khusus mahasiswa aktif STT-NF. Termasuk 1x webinar pembekalan online &amp; hadiah untuk Juara 1–5. Rincian hadiah tersedia di guidebook.
               </p>
             </div>
 
