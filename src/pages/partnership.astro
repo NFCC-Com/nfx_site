@@ -27,6 +27,8 @@ import {
   UserCheck,
   ArrowRight,
   Info,
+  ChevronRight,
+  HelpCircle,
 } from "lucide-react";
 
 // Google Drive Folder URL directly requested by the user
@@ -54,7 +56,7 @@ const sponsorPackages = [
   {
     tier: "Bronze",
     badge: "Open (8 Slot)",
-    badgeColor: "text-amber-400 bg-amber-500/10 border-amber-500/20",
+    badgeColor: "text-amber-400 bg-amber-500/10 border-amber-500/25",
     price: "Rp 100.000",
     target: "Sponsor Brand / Community",
     statusNote: "Eksposur visual dasar (Kerjasama MoU)",
@@ -109,681 +111,779 @@ const sponsorPackages = [
 
 <Layout
   title="Partnership, Sponsorship & Donasi — NFX CTF 2026 | Portal Resmi Kemitraan"
-  description="Portal resmi kemitraan NFX CTF 2026. Temukan informasi paket sponsorship formal (MoU), jalur donatur sukarela, media partner, alur kerjasama resmi, dan berkas proposal di Google Drive."
+  description="Portal resmi kemitraan NFX CTF 2026. Temukan informasi paket sponsorship formal (MoU), media partner, donatur sukarela, alur kerjasama resmi, dan berkas proposal di Google Drive."
 >
   <BackgroundCanvas client:load />
   <Header />
 
-  <main class="relative z-10 pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-10">
-    <!-- Breadcrumb -->
-    <div class="flex items-center gap-2 font-mono text-xs text-text-muted">
-      <a href="/" class="hover:text-nx-cyan transition-colors">Beranda</a>
-      <span>/</span>
-      <span class="text-amber-300 font-semibold">Partnership &amp; Kemitraan</span>
+  <main class="relative z-10 pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-8">
+    <!-- Breadcrumb & Top Bar -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-white/5 font-mono text-xs text-text-muted">
+      <div class="flex items-center gap-2">
+        <a href="/" class="hover:text-nx-cyan transition-colors">Beranda</a>
+        <span>/</span>
+        <span class="text-amber-300 font-semibold">Partnership &amp; Kemitraan</span>
+      </div>
+      <div class="inline-flex items-center gap-2 text-[0.7rem] text-text-secondary self-start sm:self-auto">
+        <span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Portal Kemitraan Resmi NFX CTF 2026</span>
+      </div>
     </div>
 
-    <!-- Header / Hero Section -->
-    <section class="text-center space-y-4 max-w-3xl mx-auto" data-reveal>
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-elevated border border-white/10 text-text-secondary font-mono text-xs">
-        <span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>PORTAL KEMITRAAN RESMI NFX CTF 2026</span>
-      </div>
-
-      <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
+    <!-- Header / Hero Section (Clean & Balanced Width) -->
+    <section class="space-y-3 max-w-3xl" data-reveal>
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight">
         Kemitraan, Sponsorship <br class="hidden sm:inline" />
         <span class="gradient-text">&amp; Donasi NFX CTF 2026</span>
       </h1>
 
-      <p class="text-text-secondary text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-        Dukung kompetisi keamanan siber nasional kolaborasi <strong>UKM NFCC</strong> dan <strong>NXCTF Community</strong> dengan dukungan <strong>STT Terpadu Nurul Fikri</strong>. Menjangkau 130+ talenta mahasiswa &amp; praktisi teknologi di seluruh Indonesia.
+      <p class="text-text-secondary text-sm sm:text-base leading-relaxed">
+        Dukung kompetisi Capture The Flag nasional kolaborasi <strong>UKM NFCC</strong> dan <strong>NXCTF Community</strong> dengan dukungan <strong>STT Terpadu Nurul Fikri</strong>. Terhubung dengan 130+ talenta mahasiswa &amp; praktisi cybersecurity se-Indonesia.
       </p>
-
-      <!-- 3 Track Distinction Badges -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2 text-left font-mono text-xs max-w-3xl mx-auto">
-        <div class="p-2.5 rounded-xl bg-surface/70 border border-amber-400/20 backdrop-blur-sm">
-          <div class="flex items-center gap-1.5 text-amber-300 font-bold mb-0.5">
-            <Coins className="size-3.5" />
-            <span>Sponsorship (MoU)</span>
-          </div>
-          <span class="text-[0.7rem] text-text-muted font-sans block">
-            Kerjasama brand/korporasi formal berpayung MoU. Slot: Bronze (8), Silver (5), Gold (1 Full).
-          </span>
-        </div>
-
-        <div class="p-2.5 rounded-xl bg-surface/70 border border-nx-cyan/20 backdrop-blur-sm">
-          <div class="flex items-center gap-1.5 text-nx-cyan font-bold mb-0.5">
-            <Radio className="size-3.5" />
-            <span>Media Partner</span>
-          </div>
-          <span class="text-[0.7rem] text-text-muted font-sans block">
-            Barter publikasi mutual: 3 delegasi mhs (internal) atau repost poster, benefit IG Collab Post.
-          </span>
-        </div>
-
-        <div class="p-2.5 rounded-xl bg-surface/70 border border-emerald-400/20 backdrop-blur-sm">
-          <div class="flex items-center gap-1.5 text-emerald-400 font-bold mb-0.5">
-            <HeartHandshake className="size-3.5" />
-            <span>Donatur (Non-MoU)</span>
-          </div>
-          <span class="text-[0.7rem] text-text-muted font-sans block">
-            Kontribusi sukarela perorangan/komunitas mulai Rp 50k tanpa MoU. Dicantumkan di IG &amp; Discord (opsi anonim).
-          </span>
-        </div>
-      </div>
-
-      <!-- Prominent Google Drive Proposal Download Box -->
-      <div class="pt-2">
-        <div class="p-4 sm:p-5 rounded-2xl bg-surface-elevated/90 border border-amber-400/35 backdrop-blur-xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
-          <div class="space-y-1 min-w-0">
-            <div class="flex items-center gap-2">
-              <FolderOpen className="size-4 text-amber-300 shrink-0" />
-              <strong class="text-white font-display text-sm sm:text-base">
-                Berkas Proposal Lengkap di Google Drive
-              </strong>
-            </div>
-            <p class="text-xs text-text-secondary">
-              Unduh berkas resmi: <em>Proposal Sponsorship (.pdf/.docx)</em>, <em>Proposal Media Partner (.pdf)</em>, <em>Proposal Donasi (.pdf)</em>, dan <em>Poster Publikasi</em>.
-            </p>
-            <div class="pt-1 flex items-center gap-3 font-mono text-[0.7rem]">
-              <a
-                href="/nfxctf-sponsor-poster.png"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-amber-300 hover:underline flex items-center gap-1"
-              >
-                <ImageIcon className="size-3 text-amber-300" />
-                <span>Lihat Poster Flyer Sponsor ↗</span>
-              </a>
-            </div>
-          </div>
-
-          <a
-            href={GOOGLE_DRIVE_FOLDER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-display font-bold text-xs sm:text-sm bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 hover:brightness-105 shadow-md shadow-amber-400/20 transition-all whitespace-nowrap"
-          >
-            <Download className="size-4 text-slate-950" />
-            <span>Buka Google Drive Proposal ↗</span>
-          </a>
-        </div>
-      </div>
     </section>
 
-    <!-- 3 Navigation Tabs: Sponsorship (MoU) vs Media Partner vs Donatur (Non-MoU) -->
-    <div class="flex items-center justify-center" data-reveal>
-      <div class="inline-flex p-1 rounded-xl bg-surface-elevated/80 border border-white/10 backdrop-blur-md gap-1 font-mono text-xs" id="partnership-tabs">
+    <!-- Mobile Tab Switcher Dropdown / Pills (< lg screens) -->
+    <div class="lg:hidden" data-reveal>
+      <div class="grid grid-cols-3 gap-1.5 p-1.5 rounded-xl bg-surface-elevated/90 border border-white/10 backdrop-blur-md font-mono text-xs">
         <button
           type="button"
           data-tab-target="tab-sponsor"
-          class="tab-btn px-4 sm:px-5 py-2.5 rounded-lg font-semibold transition-all flex items-center gap-2 cursor-pointer bg-amber-400 text-slate-950 shadow-sm"
+          class="tab-btn py-2 px-2 rounded-lg font-semibold transition-all flex flex-col sm:flex-row items-center justify-center gap-1 cursor-pointer bg-amber-400 text-slate-950 shadow-sm text-center"
         >
-          <Coins className="size-3.5" />
-          <span>Sponsorship (MoU)</span>
+          <Coins className="size-3.5 shrink-0" />
+          <span class="truncate">Sponsor (MoU)</span>
         </button>
         <button
           type="button"
           data-tab-target="tab-medpart"
-          class="tab-btn px-4 sm:px-5 py-2.5 rounded-lg font-semibold transition-all flex items-center gap-2 cursor-pointer text-text-secondary hover:text-white"
+          class="tab-btn py-2 px-2 rounded-lg font-semibold transition-all flex flex-col sm:flex-row items-center justify-center gap-1 cursor-pointer text-text-secondary hover:text-white text-center"
         >
-          <Radio className="size-3.5" />
-          <span>Media Partner</span>
+          <Radio className="size-3.5 shrink-0" />
+          <span class="truncate">Medpart</span>
         </button>
         <button
           type="button"
           data-tab-target="tab-donatur"
-          class="tab-btn px-4 sm:px-5 py-2.5 rounded-lg font-semibold transition-all flex items-center gap-2 cursor-pointer text-text-secondary hover:text-white"
+          class="tab-btn py-2 px-2 rounded-lg font-semibold transition-all flex flex-col sm:flex-row items-center justify-center gap-1 cursor-pointer text-text-secondary hover:text-white text-center"
         >
-          <HeartHandshake className="size-3.5" />
-          <span>Donatur (Non-MoU)</span>
+          <HeartHandshake className="size-3.5 shrink-0" />
+          <span class="truncate">Donatur</span>
         </button>
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- TAB 1: Sponsorship (MoU Formal)            -->
-    <!-- ========================================== -->
-    <div id="tab-sponsor" class="tab-content space-y-8" data-reveal>
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-white/10">
-        <div>
-          <h2 class="font-display font-bold text-xl text-white flex items-center gap-2">
-            <span>Paket Sponsorship Resmi (MoU)</span>
-          </h2>
-          <p class="text-xs text-text-secondary">
-            Kemitraan korporasi / brand dengan Surat Perjanjian Kerja Sama (MoU) resmi dan alokasi benefit terstruktur.
-          </p>
-        </div>
-        <a
-          href={CONTACTS.waTri.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-xs font-mono text-amber-300 hover:underline flex items-center gap-1 self-start sm:self-auto"
-        >
-          <span>Konsultasi via WhatsApp ↗</span>
-        </a>
-      </div>
+    <!-- 2-Column Layout (Matching Guidebook Design): Sticky Sidebar (Left) + Content (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
 
-      <!-- 4 Key Value Benefits Grid (Proposal Bab 3.1) -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="p-3.5 rounded-xl bg-surface/70 border border-white/10 space-y-1 backdrop-blur-md">
-          <div class="flex items-center gap-2 text-amber-400 font-display font-bold text-xs">
-            <Megaphone className="size-4 shrink-0 text-amber-400" />
-            <span>Brand Exposure</span>
+      <!-- ========================================== -->
+      <!-- LEFT SIDEBAR: Nav Tabs, Download & Kontak -->
+      <!-- ========================================== -->
+      <aside class="hidden lg:block lg:col-span-4 sticky top-24 self-start space-y-4 max-h-[calc(100vh-7rem)] overflow-y-auto no-scrollbar">
+        <!-- Sidebar Navigation Card -->
+        <div class="p-4 rounded-2xl bg-surface/85 border border-white/10 backdrop-blur-xl shadow-xl space-y-3">
+          <div class="pb-2.5 border-b border-white/10">
+            <span class="font-mono text-[0.68rem] text-text-muted uppercase tracking-wider block font-bold">
+              // JALUR KEMITRAAN //
+            </span>
+            <span class="text-xs text-white font-display font-bold">Pilih Kategori Kemitraan</span>
           </div>
-          <p class="text-[0.72rem] text-text-secondary leading-relaxed font-sans">
-            Logo &amp; identitas mitra tampil di website utama, platform CTF, scoreboard, dan medsos resmi.
-          </p>
-        </div>
-        <div class="p-3.5 rounded-xl bg-surface/70 border border-white/10 space-y-1 backdrop-blur-md">
-          <div class="flex items-center gap-2 text-nx-cyan font-display font-bold text-xs">
-            <Sparkles className="size-4 shrink-0 text-nx-cyan" />
-            <span>Promosi Produk</span>
-          </div>
-          <p class="text-[0.72rem] text-text-secondary leading-relaxed font-sans">
-            Peluang mengenalkan produk, tools software, voucher LMS, atau platform lab ke talenta cyber.
-          </p>
-        </div>
-        <div class="p-3.5 rounded-xl bg-surface/70 border border-white/10 space-y-1 backdrop-blur-md">
-          <div class="flex items-center gap-2 text-purple-400 font-display font-bold text-xs">
-            <FileText className="size-4 shrink-0 text-purple-400" />
-            <span>Publikasi &amp; LPJ</span>
-          </div>
-          <p class="text-[0.72rem] text-text-secondary leading-relaxed font-sans">
-            Pencantuman nama &amp; logo dalam publikasi dokumentasi dan Laporan Pertanggungjawaban (LPJ) resmi.
-          </p>
-        </div>
-        <div class="p-3.5 rounded-xl bg-surface/70 border border-white/10 space-y-1 backdrop-blur-md">
-          <div class="flex items-center gap-2 text-emerald-400 font-display font-bold text-xs">
-            <ShieldCheck className="size-4 shrink-0 text-emerald-400" />
-            <span>Citra Positif</span>
-          </div>
-          <p class="text-[0.72rem] text-text-secondary leading-relaxed font-sans">
-            Mendukung langsung edukasi dan regenerasi talenta keamanan siber muda Indonesia.
-          </p>
-        </div>
-      </div>
 
-      <!-- 3 Tier Grid: Bronze (8 slot), Silver (5 slot), Gold (1 slot full) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {sponsorPackages.map((pkg) => (
-          <div
-            class={`p-5 rounded-xl bg-surface/75 border backdrop-blur-md flex flex-col justify-between motion-card transition-all ${pkg.cardBorder}`}
-          >
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-3">
-                <span class={`font-mono text-[0.68rem] font-bold px-2 py-0.5 rounded-full border ${pkg.badgeColor}`}>
-                  {pkg.badge}
-                </span>
-                <span class="font-mono text-[0.68rem] text-text-muted">
-                  {pkg.target}
-                </span>
+          <!-- Vertical Navigation Buttons -->
+          <nav class="space-y-2 font-mono" id="desktop-sidebar-tabs">
+            <!-- 1. Sponsorship -->
+            <button
+              type="button"
+              data-tab-target="tab-sponsor"
+              class="tab-btn w-full p-3 rounded-xl border text-left transition-all flex items-start gap-3 cursor-pointer group bg-amber-400/15 border-amber-400/50 text-white shadow-md shadow-amber-400/5"
+            >
+              <div class="size-8 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-400/30 group-hover:scale-105 transition-transform">
+                <Coins className="size-4" />
               </div>
-
-              <div class="mb-3">
-                <h3 class="font-display font-bold text-lg text-white flex items-center gap-1.5">
-                  <span>{pkg.tier}</span>
-                  {pkg.isTaken && <Star className="size-4 text-amber-300 fill-amber-300/40" />}
-                </h3>
-                <div class="font-mono font-bold text-xl text-white mt-0.5">
-                  {pkg.price}
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-1">
+                  <strong class="font-display font-bold text-xs text-white block truncate">
+                    Sponsorship (MoU)
+                  </strong>
+                  <span class="font-mono text-[0.6rem] px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 font-bold shrink-0">
+                    Formal
+                  </span>
                 </div>
-                <div class="font-mono text-[0.7rem] text-text-muted mt-0.5">
-                  {pkg.statusNote}
+                <p class="text-[0.68rem] text-text-secondary leading-snug mt-0.5 font-sans">
+                  Kemitraan brand, logo exposure &amp; perjanjian kerjasama MoU resmi.
+                </p>
+                <div class="flex items-center gap-1 text-[0.62rem] text-amber-300/80 mt-1 font-mono">
+                  <span>Bronze • Silver • Gold</span>
                 </div>
               </div>
+            </button>
 
-              <!-- Benefits List -->
-              <ul class="space-y-2 py-3 border-t border-white/5 font-mono text-xs text-text-secondary">
-                {pkg.benefits.map((b) => (
-                  <li class="flex items-start gap-2 leading-relaxed">
-                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div class="pt-3 border-t border-white/5">
-              {pkg.isTaken ? (
-                <div class="p-2 rounded-lg bg-black/40 border border-amber-400/25 flex items-center justify-between font-mono text-xs">
-                  <span class="text-text-muted text-[0.7rem]">Title Sponsor:</span>
-                  <a
-                    href="https://linuxenic.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="font-bold text-amber-300 hover:underline"
-                  >
-                    LINUXENIC CORP. ↗
-                  </a>
+            <!-- 2. Media Partner -->
+            <button
+              type="button"
+              data-tab-target="tab-medpart"
+              class="tab-btn w-full p-3 rounded-xl border text-left transition-all flex items-start gap-3 cursor-pointer group border-white/10 bg-surface/70 text-text-secondary hover:text-white hover:bg-surface-elevated/80 hover:border-white/20"
+            >
+              <div class="size-8 rounded-lg bg-white/5 text-nx-cyan flex items-center justify-center shrink-0 border border-white/10 group-hover:scale-105 transition-transform">
+                <Radio className="size-4" />
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-1">
+                  <strong class="font-display font-bold text-xs text-white block truncate">
+                    Media Partner
+                  </strong>
+                  <span class="font-mono text-[0.6rem] px-1.5 py-0.5 rounded bg-nx-cyan/15 text-nx-cyan font-bold shrink-0">
+                    Mutual
+                  </span>
                 </div>
-              ) : (
-                <a
-                  href={pkg.ctaLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors text-center"
-                >
-                  <span>{pkg.ctaText}</span>
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+                <p class="text-[0.68rem] text-text-secondary leading-snug mt-0.5 font-sans">
+                  Barter publikasi kegiatan, poster medsos &amp; Collab Post Instagram.
+                </p>
+                <div class="flex items-center gap-1 text-[0.62rem] text-nx-cyan/80 mt-1 font-mono">
+                  <span>Internal (3 Delegasi) / Eksternal</span>
+                </div>
+              </div>
+            </button>
 
-      <!-- Support-in-Kind (Non-Tunai) Strip (Proposal Bab 3.3) -->
-      <div class="p-5 rounded-xl bg-surface-elevated/70 border border-white/10 space-y-3">
-        <div class="flex items-center justify-between gap-2 flex-wrap">
+            <!-- 3. Donatur -->
+            <button
+              type="button"
+              data-tab-target="tab-donatur"
+              class="tab-btn w-full p-3 rounded-xl border text-left transition-all flex items-start gap-3 cursor-pointer group border-white/10 bg-surface/70 text-text-secondary hover:text-white hover:bg-surface-elevated/80 hover:border-white/20"
+            >
+              <div class="size-8 rounded-lg bg-white/5 text-emerald-400 flex items-center justify-center shrink-0 border border-white/10 group-hover:scale-105 transition-transform">
+                <HeartHandshake className="size-4" />
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-1">
+                  <strong class="font-display font-bold text-xs text-white block truncate">
+                    Donatur (Non-MoU)
+                  </strong>
+                  <span class="font-mono text-[0.6rem] px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 font-bold shrink-0">
+                    Sukarela
+                  </span>
+                </div>
+                <p class="text-[0.68rem] text-text-secondary leading-snug mt-0.5 font-sans">
+                  Dukungan perorangan/komunitas mulai Rp 50k tanpa MoU formal.
+                </p>
+                <div class="flex items-center gap-1 text-[0.62rem] text-emerald-400/80 mt-1 font-mono">
+                  <span>Apresiasi IG &amp; Discord (Bisa Anonim)</span>
+                </div>
+              </div>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Proposal Google Drive Download Card -->
+        <div class="p-4 rounded-2xl bg-surface-elevated/80 border border-amber-400/30 backdrop-blur-xl shadow-lg space-y-2.5">
           <div class="flex items-center gap-2">
-            <Layers className="size-4 text-nx-purple" />
-            <strong class="font-display font-bold text-sm text-white">
-              Support-in-Kind (Kemitraan Non-Tunai)
+            <FolderOpen className="size-4 text-amber-300 shrink-0" />
+            <strong class="text-white font-display text-xs font-bold block">
+              Berkas Proposal di Drive
             </strong>
           </div>
-          <span class="font-mono text-[0.68rem] text-text-muted">
-            Fasilitas / Lisensi / Voucher
-          </span>
-        </div>
-
-        <p class="text-xs text-text-secondary leading-relaxed">
-          Selain dana, panitia menerima kemitraan non-tunai dalam bentuk <strong>Cloud &amp; VPS Credit</strong>, <strong>Cybersec Platform Subscription (TryHackMe/HTB)</strong>, <strong>Lisensi Software Dev/Security</strong>, maupun <strong>Voucher E-Money</strong> untuk hadiah pemenang. Bentuk dan apresiasinya dinegosiasikan secara fleksibel sesuai kontribusi.
-        </p>
-
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[0.7rem]">
-          <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
-            Cloud / VPS Credit
-          </div>
-          <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
-            Cybersec Platform Lab
-          </div>
-          <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
-            Software Dev Tools
-          </div>
-          <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
-            E-Money / Tech Gear
-          </div>
-        </div>
-      </div>
-
-      <!-- ALUR KERJASAMA SPONSORSHIP (Sesuai Proposal Bab 3.4 - Prosedur 6 Tahap) -->
-      <div class="space-y-4 pt-2">
-        <div class="pb-2 border-b border-white/10 flex items-center justify-between">
-          <h3 class="font-display font-bold text-lg text-white flex items-center gap-2">
-            <FileCheck2 className="size-4 text-amber-400" />
-            <span>Alur &amp; Prosedur Sponsorship (MoU)</span>
-          </h3>
-          <span class="font-mono text-[0.68rem] text-text-muted">Batas Kesediaan: 31 Oktober 2026</span>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 font-mono">
-          <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-            <span class="text-amber-400 font-bold text-[0.7rem] block">01. KESEDIAAN</span>
-            <strong class="text-white text-xs block font-display">Pernyataan Tertulis</strong>
-            <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Calon sponsor menyatakan kesediaan tertulis lewat WhatsApp Humas atau email ke nfcc@nurulfikri.ac.id paling lambat 31 Oktober 2026.
-            </p>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-surface/75 border border-amber-400/30 bg-amber-950/10 space-y-1">
-            <span class="text-amber-400 font-bold text-[0.7rem] block">02. KESEPAKATAN (MoU)</span>
-            <strong class="text-white text-xs block font-display">Penandatanganan MoU</strong>
-            <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Panitia mengirimkan Surat Perjanjian Kerja Sama (MoU) resmi untuk diisi dan ditandatangani oleh kedua belah pihak.
-            </p>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-            <span class="text-amber-400 font-bold text-[0.7rem] block">03. PEMBAYARAN</span>
-            <strong class="text-white text-xs block font-display">Transfer Dana Sponsor</strong>
-            <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Sponsor mentransfer dana sponsorship ke rekening resmi SeaBank panitia atas nama bendahara resmi.
-            </p>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-            <span class="text-amber-400 font-bold text-[0.7rem] block">04. PENGIRIMAN LOGO</span>
-            <strong class="text-white text-xs block font-display">Kirim Bukti &amp; Asset Visual</strong>
-            <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Sponsor mengonfirmasi transfer serta mengirimkan berkas logo (PNG/SVG transparan resolusi tinggi) via email.
-            </p>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-            <span class="text-amber-400 font-bold text-[0.7rem] block">05. EKSEKUSI BENEFIT</span>
-            <strong class="text-white text-xs block font-display">Penayangan Logo</strong>
-            <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Bendahara memverifikasi pembayaran, tim Medkref segera memasang logo sponsor pada media sesuai paket.
-            </p>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-surface/75 border border-white/10 space-y-1">
-            <span class="text-amber-400 font-bold text-[0.7rem] block">06. LAPORAN (LPJ)</span>
-            <strong class="text-white text-xs block font-display">Laporan Pertanggungjawaban</strong>
-            <p class="text-text-secondary text-[0.7rem] font-sans leading-relaxed">
-              Setelah acara selesai, panitia mengirimkan laporan dokumentasi dan LPJ ringkas kepada pihak sponsor.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- REKENING RESMI SPONSORSHIP -->
-      <div class="p-5 rounded-xl bg-surface-elevated/90 border border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div class="space-y-1.5 min-w-0">
-          <div class="flex items-center gap-1.5 text-emerald-400 font-mono text-[0.7rem] font-bold">
-            <ShieldCheck className="size-3.5" />
-            <span>REKENING RESMI TRANSAKSI SPONSORSHIP</span>
-          </div>
-          <div class="font-mono text-xs sm:text-sm text-white flex flex-wrap items-center gap-2">
-            <span>Bank: <strong>{BANK_INFO.bankName}</strong></span>
-            <span>•</span>
-            <span>No. Rek: <strong class="text-amber-300" id="bank-acc-num">{BANK_INFO.accountNumber}</strong></span>
-            <span>•</span>
-            <span class="text-text-secondary">a.n {BANK_INFO.accountName}</span>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-2 shrink-0">
-          <button
-            id="copy-bank-btn"
-            type="button"
-            class="px-3.5 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 font-mono text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+          <p class="text-[0.7rem] text-text-secondary leading-relaxed">
+            Unduh Proposal Sponsorship, Proposal Media Partner, Proposal Donasi (.pdf), dan Poster Flyer.
+          </p>
+          <a
+            href={GOOGLE_DRIVE_FOLDER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl font-display font-bold text-xs bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 hover:brightness-105 shadow-md shadow-amber-400/20 transition-all text-center"
           >
-            <Copy className="size-3.5" />
-            <span id="copy-bank-text">Salin No. Rekening</span>
-          </button>
+            <Download className="size-3.5 text-slate-950" />
+            <span>Unduh Proposal di Drive ↗</span>
+          </a>
+          <a
+            href="/nfxctf-sponsor-poster.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[0.68rem] font-mono text-amber-300 hover:underline flex items-center justify-center gap-1 pt-0.5"
+          >
+            <ImageIcon className="size-3" />
+            <span>Lihat Poster Flyer Sponsor ↗</span>
+          </a>
+        </div>
+
+        <!-- Sidebar Kontak Humas -->
+        <div class="p-3.5 rounded-2xl bg-surface/70 border border-white/10 backdrop-blur-md space-y-2 font-mono text-xs">
+          <span class="text-text-muted text-[0.62rem] uppercase tracking-wider block">
+            Narahubung Kemitraan:
+          </span>
+          <div class="space-y-0.5">
+            <strong class="text-white block font-display text-xs">{CONTACTS.waTri.name}</strong>
+            <span class="text-text-secondary text-[0.68rem] block">{CONTACTS.waTri.phone}</span>
+            <span class="text-text-muted text-[0.65rem] block truncate">{CONTACTS.email}</span>
+          </div>
           <a
             href={CONTACTS.waTri.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-xs transition-colors"
+            class="w-full inline-flex items-center justify-center gap-1 py-1.5 px-2.5 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 font-bold transition-all text-[0.7rem]"
           >
-            Konfirmasi ke Humas ↗
+            <Phone className="size-3" />
+            <span>Chat WhatsApp Humas ↗</span>
           </a>
         </div>
-      </div>
-    </div>
+      </aside>
 
-    <!-- ========================================== -->
-    <!-- TAB 2: Media Partner                       -->
-    <!-- ========================================== -->
-    <div id="tab-medpart" class="tab-content hidden space-y-6" data-reveal>
-      <!-- Section Header -->
-      <div class="pb-3 border-b border-white/10">
-        <h2 class="font-display font-bold text-xl text-white flex items-center gap-2">
-          <span>Kemitraan Media Partner</span>
-        </h2>
-        <p class="text-xs text-text-secondary mt-0.5">
-          Kolaborasi barter publikasi untuk memperluas jangkauan talenta keamanan siber dan eksposur komunitas.
-        </p>
-      </div>
+      <!-- ========================================== -->
+      <!-- RIGHT COLUMN: Active Tab Content Area      -->
+      <!-- ========================================== -->
+      <div class="lg:col-span-8 space-y-8 min-w-0">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-        <!-- Ketentuan (Proposal Bab 3.1) -->
-        <div class="p-5 rounded-xl bg-surface/75 border border-white/10 space-y-3">
-          <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
-            <Radio className="size-4 text-nx-cyan" />
-            <span>Ketentuan Media Partner (Bab 3.1)</span>
+        <!-- ---------------------------------------- -->
+        <!-- TAB 1: SPONSORSHIP (MoU FORMAL)          -->
+        <!-- ---------------------------------------- -->
+        <div id="tab-sponsor" class="tab-content space-y-8" data-reveal>
+          <!-- Section Title Header -->
+          <div class="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[0.65rem] font-bold px-2 py-0.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 uppercase">
+                  KERJASAMA FORMAL (MoU)
+                </span>
+                <span class="font-mono text-[0.65rem] text-text-muted">Bab 3 Proposal Sponsorship</span>
+              </div>
+              <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
+                Paket Kemitraan Sponsorship
+              </h2>
+            </div>
+            <a
+              href={CONTACTS.waTri.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-mono text-amber-300 hover:underline flex items-center gap-1 self-start sm:self-auto"
+            >
+              <span>Ajukan via WhatsApp ↗</span>
+            </a>
           </div>
 
-          <div class="space-y-2.5 font-mono text-xs">
-            <div class="p-3 rounded-lg bg-surface-elevated/70 border border-white/5 space-y-1">
-              <span class="font-bold text-white block">1. Internal Kampus (STT Terpadu Nurul Fikri):</span>
-              <p class="text-text-secondary font-sans leading-relaxed">
-                UKM / Ormawa mengirimkan minimal <strong>3 orang perwakilan</strong> sebagai peserta aktif di Track Mahasiswa NF (registrasi gratis) serta membantu membagikan poster &amp; caption resmi di medsos.
+          <!-- 4 Key Value Benefits Grid (Proposal Bab 3.1) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1 backdrop-blur-md">
+              <div class="flex items-center gap-1.5 text-amber-400 font-display font-bold text-xs">
+                <Megaphone className="size-3.5 shrink-0" />
+                <span>Brand Exposure</span>
+              </div>
+              <p class="text-[0.68rem] text-text-secondary leading-relaxed font-sans">
+                Logo tampil di website, platform CTF, scoreboard, dan poster medsos.
               </p>
             </div>
-
-            <div class="p-3 rounded-lg bg-surface-elevated/70 border border-white/5 space-y-1">
-              <span class="font-bold text-white block">2. Eksternal / Komunitas Cyber / Media Publikasi:</span>
-              <p class="text-text-secondary font-sans leading-relaxed">
-                Membantu membagikan (repost/share) materi poster dan caption resmi NFX CTF 2026 di kanal media sosial / Discord komunitas masing-masing.
+            <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1 backdrop-blur-md">
+              <div class="flex items-center gap-1.5 text-nx-cyan font-display font-bold text-xs">
+                <Sparkles className="size-3.5 shrink-0" />
+                <span>Promosi Produk</span>
+              </div>
+              <p class="text-[0.68rem] text-text-secondary leading-relaxed font-sans">
+                Promosi tools cybersecurity, voucher, lisensi, atau platform lab.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1 backdrop-blur-md">
+              <div class="flex items-center gap-1.5 text-purple-400 font-display font-bold text-xs">
+                <FileText className="size-3.5 shrink-0" />
+                <span>Publikasi &amp; LPJ</span>
+              </div>
+              <p class="text-[0.68rem] text-text-secondary leading-relaxed font-sans">
+                Dokumentasi resmi dan penyerahan Laporan LPJ pasca acara selesai.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1 backdrop-blur-md">
+              <div class="flex items-center gap-1.5 text-emerald-400 font-display font-bold text-xs">
+                <ShieldCheck className="size-3.5 shrink-0" />
+                <span>Citra Positif</span>
+              </div>
+              <p class="text-[0.68rem] text-text-secondary leading-relaxed font-sans">
+                Mendukung langsung regenerasi talenta cybersecurity generasi muda.
               </p>
             </div>
           </div>
-        </div>
 
-        <!-- Benefit (Proposal Bab 3.2) -->
-        <div class="p-5 rounded-xl bg-surface/75 border border-white/10 space-y-3 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
-              <Star className="size-4 text-amber-400" />
-              <span>Benefit untuk Media Partner</span>
+          <!-- 3 Tier Grid: Bronze (8 slot), Silver (5 slot), Gold (1 slot full) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+            {sponsorPackages.map((pkg) => (
+              <div
+                class={`p-4 sm:p-5 rounded-2xl bg-surface/85 border backdrop-blur-md flex flex-col justify-between motion-card transition-all ${pkg.cardBorder}`}
+              >
+                <div>
+                  <div class="flex items-center justify-between gap-1 mb-2.5">
+                    <span class={`font-mono text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${pkg.badgeColor}`}>
+                      {pkg.badge}
+                    </span>
+                    <span class="font-mono text-[0.62rem] text-text-muted">
+                      {pkg.target}
+                    </span>
+                  </div>
+
+                  <div class="mb-3">
+                    <h3 class="font-display font-bold text-base sm:text-lg text-white flex items-center gap-1.5">
+                      <span>{pkg.tier}</span>
+                      {pkg.isTaken && <Star className="size-3.5 text-amber-300 fill-amber-300/40" />}
+                    </h3>
+                    <div class="font-mono font-bold text-lg sm:text-xl text-white mt-0.5">
+                      {pkg.price}
+                    </div>
+                    <div class="font-mono text-[0.68rem] text-text-muted mt-0.5">
+                      {pkg.statusNote}
+                    </div>
+                  </div>
+
+                  <!-- Benefits List -->
+                  <ul class="space-y-1.5 py-2.5 border-t border-white/5 font-mono text-[0.72rem] text-text-secondary">
+                    {pkg.benefits.map((b) => (
+                      <li class="flex items-start gap-1.5 leading-snug">
+                        <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="pt-3 border-t border-white/5">
+                  {pkg.isTaken ? (
+                    <div class="p-2 rounded-lg bg-black/40 border border-amber-400/25 flex items-center justify-between font-mono text-xs">
+                      <span class="text-text-muted text-[0.68rem]">Title Sponsor:</span>
+                      <a
+                        href="https://linuxenic.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-bold text-amber-300 hover:underline text-[0.72rem]"
+                      >
+                        LINUXENIC CORP. ↗
+                      </a>
+                    </div>
+                  ) : (
+                    <a
+                      href={pkg.ctaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-full inline-flex items-center justify-center gap-1 py-2 px-3 rounded-lg font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors text-center"
+                    >
+                      <span>{pkg.ctaText}</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Support-in-Kind (Non-Tunai) Strip (Proposal Bab 3.3) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-surface-elevated/70 border border-white/10 space-y-2.5">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <div class="flex items-center gap-2">
+                <Layers className="size-4 text-nx-purple" />
+                <strong class="font-display font-bold text-sm text-white">
+                  Support-in-Kind (Kemitraan Non-Tunai)
+                </strong>
+              </div>
+              <span class="font-mono text-[0.65rem] text-text-muted">
+                Bab 3.3 Proposal
+              </span>
             </div>
 
-            <ul class="space-y-2 font-mono text-xs text-text-secondary">
-              <li class="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Logo Placement:</strong> Logo di Website Utama (nfx.my.id)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Poster Medsos:</strong> Logo di seluruh Poster Publikasi Resmi Medsos</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Social Media Exposure:</strong> Fitur Instagram Collaborative Post (Feed/Reels) bersama @nfcc.id</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Dokumentasi &amp; LPJ:</strong> Pencantuman logo &amp; nama di Laporan Pertanggungjawaban (LPJ) ringkas</span>
-              </li>
-            </ul>
-          </div>
-
-          <a
-            href={`mailto:${CONTACTS.email}?subject=Pengajuan%20Kerjasama%20Media%20Partner%20NFX%20CTF%202026`}
-            class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors text-center"
-          >
-            <Mail className="size-3.5" />
-            <span>Ajukan Kerjasama Media Partner via Email ↗</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Prosedur Kerjasama Media Partner (Proposal Bab 3.3) -->
-      <div class="p-5 rounded-xl bg-surface-elevated/70 border border-white/10 space-y-3">
-        <h3 class="font-display font-bold text-sm text-white flex items-center gap-2">
-          <FileCheck2 className="size-4 text-nx-cyan" />
-          <span>Prosedur Pengajuan Media Partner (Bab 3.3)</span>
-        </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-mono text-xs">
-          <div class="p-3 rounded-lg bg-black/25 border border-white/5 space-y-1">
-            <span class="text-nx-cyan font-bold text-[0.7rem] block">01. PENGAJUAN</span>
-            <span class="text-white block font-display text-[0.75rem]">Hubungi Humas</span>
-            <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-              Hubungi WA resmi atau email nfcc@nurulfikri.ac.id dengan nama media / ormawa.
+            <p class="text-xs text-text-secondary leading-relaxed font-sans">
+              Panitia juga menerima bentuk kemitraan non-tunai (fasilitas, lisensi, kredit komputasi, atau voucher hadiah peserta). Bentuk apresiasi dinegosiasikan secara fleksibel.
             </p>
-          </div>
-          <div class="p-3 rounded-lg bg-black/25 border border-white/5 space-y-1">
-            <span class="text-nx-cyan font-bold text-[0.7rem] block">02. KETENTUAN</span>
-            <span class="text-white block font-display text-[0.75rem]">Penuhi Syarat</span>
-            <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-              Internal: kirim 3 delegasi mhs. Eksternal: repost poster &amp; caption di media.
-            </p>
-          </div>
-          <div class="p-3 rounded-lg bg-black/25 border border-white/5 space-y-1">
-            <span class="text-nx-cyan font-bold text-[0.7rem] block">03. KIRIM ASSET</span>
-            <span class="text-white block font-display text-[0.75rem]">Kirim Logo Resmi</span>
-            <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-              Kirimkan file logo resmi transparan (PNG atau SVG kualitas tinggi) ke Humas.
-            </p>
-          </div>
-          <div class="p-3 rounded-lg bg-black/25 border border-white/5 space-y-1">
-            <span class="text-nx-cyan font-bold text-[0.7rem] block">04. PENAYANGAN</span>
-            <span class="text-white block font-display text-[0.75rem]">Logo &amp; Collab IG</span>
-            <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
-              Medkref memasang logo di web &amp; poster serta menayangkan Collab Post Instagram.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- ========================================== -->
-    <!-- TAB 3: Donatur (Non-MoU / Sukarela)        -->
-    <!-- ========================================== -->
-    <div id="tab-donatur" class="tab-content hidden space-y-6" data-reveal>
-      <!-- Section Header -->
-      <div class="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <div>
-          <h2 class="font-display font-bold text-xl text-white flex items-center gap-2">
-            <span>Jalur Donasi / Donatur (Non-MoU)</span>
-          </h2>
-          <p class="text-xs text-text-secondary mt-0.5">
-            Dukungan sukarela perorangan maupun komunitas tanpa ikatan perjanjian kerjasama formal (MoU).
-          </p>
-        </div>
-        <span class="font-mono text-[0.68rem] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full self-start sm:self-auto">
-          Bebas &amp; Sukarela (Mulai Rp 50.000)
-        </span>
-      </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[0.68rem]">
+              <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
+                Cloud / VPS Credit
+              </div>
+              <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
+                Cybersec Lab Subs
+              </div>
+              <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
+                Software Dev Tools
+              </div>
+              <div class="p-2 rounded-lg bg-black/30 border border-white/5 text-slate-300 text-center">
+                E-Money / Tech Gear
+              </div>
+            </div>
+          </div>
 
-      <!-- Info Alert: Donatur vs Sponsor -->
-      <div class="p-4 rounded-xl bg-surface/75 border border-emerald-500/25 flex items-start gap-3">
-        <Info className="size-4 text-emerald-400 shrink-0 mt-0.5" />
-        <div class="text-xs text-text-secondary leading-relaxed font-sans space-y-1">
-          <strong class="text-white font-display block text-sm">
-            Mekanisme Donasi Sesuai Proposal Donasi NFX CTF 2026:
-          </strong>
-          <p>
-            Jalur donasi terbuka untuk perorangan maupun komunitas yang ingin mendukung kegiatan <strong>tanpa kerja sama formal</strong>. Donasi bersifat sukarela (dimulai dari Rp 50.000) dan <strong>TIDAK menggunakan Surat Perjanjian Kerja Sama (MoU)</strong>. Dana donasi digunakan untuk alokasi hadiah Track Umum dan kebutuhan operasional kegiatan.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-        <!-- Apresiasi Donatur Card -->
-        <div class="p-5 rounded-xl bg-surface/75 border border-white/10 space-y-3 flex flex-col justify-between">
+          <!-- 6 Tahap Prosedur Sponsorship MoU (Proposal Bab 3.4) -->
           <div class="space-y-3">
-            <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
-              <Star className="size-4 text-amber-400" />
-              <span>Apresiasi untuk Donatur (Bab 3.1)</span>
+            <div class="pb-1.5 border-b border-white/10 flex items-center justify-between">
+              <h3 class="font-display font-bold text-base text-white flex items-center gap-2">
+                <FileCheck2 className="size-4 text-amber-400" />
+                <span>Alur &amp; Prosedur Sponsorship (MoU)</span>
+              </h3>
+              <span class="font-mono text-[0.65rem] text-text-muted">Batas: 31 Oktober 2026</span>
             </div>
 
-            <ul class="space-y-2.5 font-mono text-xs text-text-secondary">
-              <li class="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span>Pencantuman nama pada <strong>Daftar Donatur Resmi</strong> di Instagram @nfcc.id.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span>Mention apresiasi dan role khusus donatur di server Discord NFCC.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span>Fleksibilitas identitas: donatur dapat memilih tampil dengan <strong>Nama Sendiri</strong>, <strong>Nama Komunitas</strong>, atau <strong>Anonim</strong>.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="p-3 rounded-lg bg-black/30 border border-white/5 font-mono text-[0.7rem] text-text-muted">
-            💡 Nominal donasi bebas &amp; sukarela sesuai keikhlasan para pendukung talenta cyber Indonesia.
-          </div>
-        </div>
-
-        <!-- Cara Berdonasi Card -->
-        <div class="p-5 rounded-xl bg-surface/75 border border-emerald-500/30 space-y-4 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
-              <Coins className="size-4 text-emerald-400" />
-              <span>Langkah Berdonasi (2 Langkah Mudah)</span>
-            </div>
-
-            <div class="space-y-2 font-mono text-xs">
-              <div class="p-3 rounded-lg bg-surface-elevated/80 border border-white/5 space-y-1">
-                <span class="text-emerald-400 font-bold block text-[0.7rem]">LANGKAH 1: TRANSFER</span>
-                <p class="text-text-secondary font-sans leading-relaxed text-[0.75rem]">
-                  Transfer dana sukarela ke rekening resmi SeaBank:
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 font-mono">
+              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-[0.65rem] block">01. KESEDIAAN</span>
+                <strong class="text-white text-xs block font-display">Pernyataan Minat</strong>
+                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
+                  Menyatakan kesediaan tertulis via WA Humas / email paling lambat 31 Oktober 2026.
                 </p>
-                <div class="text-white pt-1">
-                  <div>Bank: <strong>{BANK_INFO.bankName}</strong></div>
-                  <div>No. Rek: <strong class="text-amber-300" id="bank-acc-donasi">{BANK_INFO.accountNumber}</strong></div>
-                  <div class="text-text-muted text-[0.68rem]">a.n. {BANK_INFO.accountName}</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-surface/75 border border-amber-400/30 bg-amber-950/10 space-y-1">
+                <span class="text-amber-400 font-bold text-[0.65rem] block">02. KESEPAKATAN (MoU)</span>
+                <strong class="text-white text-xs block font-display">Penandatanganan MoU</strong>
+                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
+                  Panitia mengirimkan Surat Perjanjian Kerja Sama (MoU) resmi untuk ditandatangani kedua pihak.
+                </p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-[0.65rem] block">03. PEMBAYARAN</span>
+                <strong class="text-white text-xs block font-display">Transfer Dana</strong>
+                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
+                  Transfer dana sponsor ke rekening resmi SeaBank panitia atas nama bendahara.
+                </p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-[0.65rem] block">04. ASSET LOGO</span>
+                <strong class="text-white text-xs block font-display">Kirim Logo &amp; Bukti</strong>
+                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
+                  Mengonfirmasi transfer &amp; mengirim file logo transparan (PNG/SVG) ke email.
+                </p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-[0.65rem] block">05. EKSEKUSI BENEFIT</span>
+                <strong class="text-white text-xs block font-display">Pemasangan Logo</strong>
+                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
+                  Tim Medkref segera menampilkan logo sponsor pada media sesuai paket.
+                </p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-surface/75 border border-white/10 space-y-1">
+                <span class="text-amber-400 font-bold text-[0.65rem] block">06. LAPORAN (LPJ)</span>
+                <strong class="text-white text-xs block font-display">Dokumentasi &amp; LPJ</strong>
+                <p class="text-text-secondary text-[0.68rem] font-sans leading-relaxed">
+                  Pengiriman laporan dokumentasi dan LPJ ringkas kepada sponsor setelah lomba selesai.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rekening Resmi Transaksi Sponsorship -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-surface-elevated/90 border border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="space-y-1 min-w-0">
+              <div class="flex items-center gap-1.5 text-emerald-400 font-mono text-[0.68rem] font-bold">
+                <ShieldCheck className="size-3.5" />
+                <span>REKENING RESMI TRANSAKSI SPONSORSHIP</span>
+              </div>
+              <div class="font-mono text-xs sm:text-sm text-white flex flex-wrap items-center gap-2">
+                <span>Bank: <strong>{BANK_INFO.bankName}</strong></span>
+                <span>•</span>
+                <span>No. Rek: <strong class="text-amber-300" id="bank-acc-num">{BANK_INFO.accountNumber}</strong></span>
+                <span>•</span>
+                <span class="text-text-secondary">a.n {BANK_INFO.accountName}</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0">
+              <button
+                id="copy-bank-btn"
+                type="button"
+                class="px-3.5 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 font-mono text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+              >
+                <Copy className="size-3.5" />
+                <span id="copy-bank-text">Salin No. Rekening</span>
+              </button>
+              <a
+                href={CONTACTS.waTri.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs transition-colors"
+              >
+                Konfirmasi ke Humas ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------------------------------------- -->
+        <!-- TAB 2: MEDIA PARTNER                     -->
+        <!-- ---------------------------------------- -->
+        <div id="tab-medpart" class="tab-content hidden space-y-6" data-reveal>
+          <!-- Section Title Header -->
+          <div class="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[0.65rem] font-bold px-2 py-0.5 rounded-full bg-nx-cyan/15 border border-nx-cyan/30 text-nx-cyan uppercase">
+                  KOLABORASI PUBLIKASI MUTUAL
+                </span>
+                <span class="font-mono text-[0.65rem] text-text-muted">Proposal Media Partner</span>
+              </div>
+              <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
+                Kemitraan Media Partner
+              </h2>
+            </div>
+            <a
+              href={`mailto:${CONTACTS.email}?subject=Pengajuan%20Kerjasama%20Media%20Partner%20NFX%20CTF%202026`}
+              class="text-xs font-mono text-nx-cyan hover:underline flex items-center gap-1 self-start sm:self-auto"
+            >
+              <span>Ajukan via Email ↗</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+            <!-- Ketentuan Media Partner (Bab 3.1) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-white/10 space-y-3 flex flex-col justify-between">
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
+                  <Radio className="size-4 text-nx-cyan" />
+                  <span>Ketentuan Media Partner (Bab 3.1)</span>
+                </div>
+
+                <div class="space-y-2 font-mono text-xs">
+                  <div class="p-3 rounded-xl bg-surface-elevated/70 border border-white/5 space-y-1">
+                    <span class="font-bold text-white block text-[0.72rem]">1. Internal STT Terpadu Nurul Fikri:</span>
+                    <p class="text-text-secondary font-sans leading-relaxed text-[0.72rem]">
+                      UKM / Ormawa mengirimkan minimal <strong>3 orang perwakilan</strong> sebagai peserta aktif Track Mahasiswa NF (registrasi gratis) serta membantu share/repost poster &amp; caption resmi.
+                    </p>
+                  </div>
+
+                  <div class="p-3 rounded-xl bg-surface-elevated/70 border border-white/5 space-y-1">
+                    <span class="font-bold text-white block text-[0.72rem]">2. Eksternal / Komunitas Cyber / Media:</span>
+                    <p class="text-text-secondary font-sans leading-relaxed text-[0.72rem]">
+                      Membantu membagikan (repost/share) materi poster dan caption resmi NFX CTF 2026 di kanal medsos / Discord komunitas masing-masing.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div class="p-3 rounded-lg bg-surface-elevated/80 border border-white/5 space-y-1">
-                <span class="text-emerald-400 font-bold block text-[0.7rem]">LANGKAH 2: ISI FORMULIR</span>
-                <p class="text-text-secondary font-sans leading-relaxed text-[0.75rem]">
-                  Isi formulir konfirmasi donasi untuk pencatatan nama / opsi anonim di:
-                </p>
-                <span class="text-nx-cyan break-all text-[0.7rem]">{BANK_INFO.donationFormUrl}</span>
+              <div class="p-2.5 rounded-lg bg-black/30 border border-white/5 text-[0.68rem] font-mono text-text-muted">
+                🤝 Kolaborasi mutualisme untuk saling memperluas jangkauan komunitas keamanan siber.
               </div>
+            </div>
+
+            <!-- Benefit Media Partner (Bab 3.2) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-white/10 space-y-3 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
+                  <Star className="size-4 text-amber-400" />
+                  <span>Benefit untuk Media Partner (Bab 3.2)</span>
+                </div>
+
+                <ul class="space-y-2 font-mono text-xs text-text-secondary">
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span><strong>Logo Placement:</strong> Logo di Website Utama (nfx.my.id)</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span><strong>Poster Medsos:</strong> Logo di seluruh Poster Publikasi Resmi Medsos</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span><strong>Social Media Exposure:</strong> Fitur Instagram Collaborative Post (Feed/Reels) bersama @nfcc.id</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span><strong>Dokumentasi LPJ:</strong> Pencantuman logo &amp; nama di Laporan LPJ ringkas</span>
+                  </li>
+                </ul>
+              </div>
+
+              <a
+                href={`mailto:${CONTACTS.email}?subject=Pengajuan%20Kerjasama%20Media%20Partner%20NFX%20CTF%202026`}
+                class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-display font-bold text-xs bg-white/10 hover:bg-nx-cyan hover:text-slate-950 text-white border border-white/10 transition-colors text-center"
+              >
+                <Mail className="size-3.5" />
+                <span>Ajukan Kerjasama Media Partner via Email ↗</span>
+              </a>
             </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-2 pt-1 font-mono text-xs">
-            <button
-              id="copy-bank-donasi-btn"
-              type="button"
-              class="flex-1 py-2.5 px-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center"
-            >
-              <Copy className="size-3.5" />
-              <span id="copy-bank-donasi-text">Salin No. Rekening</span>
-            </button>
-            <a
-              href={BANK_INFO.donationFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex-1 py-2.5 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-display font-bold transition-all flex items-center justify-center gap-1.5 shadow-md shadow-emerald-500/20 text-center"
-            >
-              <span>Isi Form Donasi ↗</span>
-            </a>
+          <!-- Prosedur Pengajuan Media Partner (Bab 3.3) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-surface-elevated/70 border border-white/10 space-y-3">
+            <h3 class="font-display font-bold text-sm text-white flex items-center gap-2">
+              <FileCheck2 className="size-4 text-nx-cyan" />
+              <span>Prosedur Pengajuan Media Partner (Bab 3.3)</span>
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 font-mono text-xs">
+              <div class="p-3 rounded-xl bg-black/25 border border-white/5 space-y-1">
+                <span class="text-nx-cyan font-bold text-[0.68rem] block">01. PENGAJUAN</span>
+                <span class="text-white block font-display text-[0.72rem]">Hubungi Humas</span>
+                <p class="text-text-secondary text-[0.65rem] font-sans leading-relaxed">
+                  Hubungi WA resmi atau email nfcc@nurulfikri.ac.id dengan nama media / ormawa.
+                </p>
+              </div>
+              <div class="p-3 rounded-xl bg-black/25 border border-white/5 space-y-1">
+                <span class="text-nx-cyan font-bold text-[0.68rem] block">02. KETENTUAN</span>
+                <span class="text-white block font-display text-[0.72rem]">Penuhi Syarat</span>
+                <p class="text-text-secondary text-[0.65rem] font-sans leading-relaxed">
+                  Internal: kirim 3 delegasi mhs. Eksternal: share poster &amp; caption di media.
+                </p>
+              </div>
+              <div class="p-3 rounded-xl bg-black/25 border border-white/5 space-y-1">
+                <span class="text-nx-cyan font-bold text-[0.68rem] block">03. KIRIM ASSET</span>
+                <span class="text-white block font-display text-[0.72rem]">Kirim Logo Transparan</span>
+                <p class="text-text-secondary text-[0.65rem] font-sans leading-relaxed">
+                  Kirim file logo transparan (PNG atau SVG resolusi tinggi) ke kontak Humas.
+                </p>
+              </div>
+              <div class="p-3 rounded-xl bg-black/25 border border-white/5 space-y-1">
+                <span class="text-nx-cyan font-bold text-[0.68rem] block">04. PENAYANGAN</span>
+                <span class="text-white block font-display text-[0.72rem]">Logo &amp; Collab IG</span>
+                <p class="text-text-secondary text-[0.65rem] font-sans leading-relaxed">
+                  Medkref memasang logo di web &amp; poster serta menayangkan Collab Post Instagram.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- ---------------------------------------- -->
+        <!-- TAB 3: DONATUR (SUKARELA / NON-MoU)      -->
+        <!-- ---------------------------------------- -->
+        <div id="tab-donatur" class="tab-content hidden space-y-6" data-reveal>
+          <!-- Section Title Header -->
+          <div class="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[0.65rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 uppercase">
+                  DUKUNGAN SUKARELA (NON-MoU)
+                </span>
+                <span class="font-mono text-[0.65rem] text-text-muted">Proposal Donasi NFX CTF</span>
+              </div>
+              <h2 class="font-display font-bold text-xl sm:text-2xl text-white">
+                Jalur Donasi / Donatur
+              </h2>
+            </div>
+            <span class="font-mono text-[0.68rem] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full self-start sm:self-auto">
+              Sukarela • Mulai Rp 50.000
+            </span>
+          </div>
+
+          <!-- Info Box: Mekanisme Donasi (Beda dengan Sponsor) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-emerald-500/25 flex items-start gap-3 backdrop-blur-md">
+            <Info className="size-4 text-emerald-400 shrink-0 mt-0.5" />
+            <div class="text-xs text-text-secondary leading-relaxed font-sans space-y-1">
+              <strong class="text-white font-display block text-sm">
+                Mekanisme Donasi Sesuai Proposal Donasi NFX CTF 2026:
+              </strong>
+              <p>
+                Jalur donasi terbuka untuk perorangan maupun komunitas yang ingin mendukung kegiatan <strong>tanpa kerja sama formal</strong>. Donasi bersifat sukarela (dimulai dari Rp 50.000) dan <strong>TIDAK menggunakan Surat Perjanjian Kerja Sama (MoU)</strong>. Dana donasi dialokasikan untuk penambahan hadiah Track Umum dan kebutuhan operasional kegiatan.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+            <!-- Apresiasi Donatur Card -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-white/10 space-y-3 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
+                  <Star className="size-4 text-amber-400" />
+                  <span>Apresiasi untuk Donatur (Bab 3.1)</span>
+                </div>
+
+                <ul class="space-y-2.5 font-mono text-xs text-text-secondary">
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Pencantuman nama pada <strong>Daftar Donatur Resmi</strong> di Instagram @nfcc.id.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Mention apresiasi dan role khusus donatur di server Discord NFCC.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Fleksibilitas identitas: donatur dapat memilih tampil dengan <strong>Nama Sendiri</strong>, <strong>Nama Komunitas</strong>, atau <strong>Anonim</strong>.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="p-3 rounded-xl bg-black/30 border border-white/5 font-mono text-[0.68rem] text-text-muted">
+                💡 Nominal donasi bebas &amp; sukarela sesuai keikhlasan para pendukung talenta cyber Indonesia.
+              </div>
+            </div>
+
+            <!-- Cara Berdonasi Card (2 Langkah Mudah) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-surface/85 border border-emerald-500/30 space-y-3 flex flex-col justify-between">
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-2 font-display font-bold text-sm text-white">
+                  <Coins className="size-4 text-emerald-400" />
+                  <span>Cara Berdonasi (2 Langkah Mudah)</span>
+                </div>
+
+                <div class="space-y-2 font-mono text-xs">
+                  <div class="p-3 rounded-xl bg-surface-elevated/80 border border-white/5 space-y-1">
+                    <span class="text-emerald-400 font-bold block text-[0.68rem]">LANGKAH 1: TRANSFER DANA</span>
+                    <p class="text-text-secondary font-sans leading-relaxed text-[0.72rem]">
+                      Transfer dana sukarela ke rekening resmi SeaBank:
+                    </p>
+                    <div class="text-white pt-1">
+                      <div>Bank: <strong>{BANK_INFO.bankName}</strong></div>
+                      <div>No. Rek: <strong class="text-amber-300" id="bank-acc-donasi">{BANK_INFO.accountNumber}</strong></div>
+                      <div class="text-text-muted text-[0.65rem]">a.n. {BANK_INFO.accountName}</div>
+                    </div>
+                  </div>
+
+                  <div class="p-3 rounded-xl bg-surface-elevated/80 border border-white/5 space-y-1">
+                    <span class="text-emerald-400 font-bold block text-[0.68rem]">LANGKAH 2: ISI FORMULIR DONASI</span>
+                    <p class="text-text-secondary font-sans leading-relaxed text-[0.72rem]">
+                      Isi formulir untuk konfirmasi nama tampilan (atau mode Anonim):
+                    </p>
+                    <span class="text-nx-cyan break-all text-[0.68rem]">{BANK_INFO.donationFormUrl}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-2 pt-1 font-mono text-xs">
+                <button
+                  id="copy-bank-donasi-btn"
+                  type="button"
+                  class="flex-1 py-2 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center text-[0.72rem]"
+                >
+                  <Copy className="size-3.5" />
+                  <span id="copy-bank-donasi-text">Salin No. Rekening</span>
+                </button>
+                <a
+                  href={BANK_INFO.donationFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 py-2 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-display font-bold transition-all flex items-center justify-center gap-1.5 shadow-md shadow-emerald-500/20 text-center text-[0.72rem]"
+                >
+                  <span>Buka Form Donasi ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <!-- Quick Narahubung Footer Strip -->
-    <section class="p-5 rounded-xl bg-surface/60 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4" data-reveal>
-      <div class="text-center sm:text-left">
-        <span class="font-mono text-[0.68rem] text-text-muted uppercase block">NARAHUBUNG RESMI HUMAS</span>
-        <strong class="text-white text-sm font-display block">{CONTACTS.waTri.name} ({CONTACTS.waTri.phone})</strong>
-        <span class="text-xs text-text-secondary font-mono">{CONTACTS.email}</span>
-      </div>
-
-      <div class="flex items-center gap-2 font-mono text-xs">
-        <a
-          href={CONTACTS.waTri.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 font-bold transition-all"
-        >
-          <Phone className="size-3.5" />
-          <span>Chat WhatsApp ↗</span>
-        </a>
-        <a
-          href={`mailto:${CONTACTS.email}`}
-          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-text-secondary hover:text-white border border-white/10 transition-colors"
-        >
-          <Mail className="size-3.5" />
-          <span>Email Panitia ↗</span>
-        </a>
-      </div>
-    </section>
   </main>
 
   <Footer />
   <DiscordNfxModal client:idle />
   <RegisterModal client:idle />
 
-  <!-- 3-Tab Switching & Copy Account Script -->
+  <!-- 3-Tab Switching (Synchronized between Left Sidebar and Mobile Header) -->
   <script is:inline>
     (() => {
-      // 3-Tab switcher
       const tabBtns = Array.from(document.querySelectorAll(".tab-btn"));
       const tabContents = Array.from(document.querySelectorAll(".tab-content"));
 
       function switchTab(targetId) {
         tabBtns.forEach((btn) => {
           const isTarget = btn.getAttribute("data-tab-target") === targetId;
+          const isDesktop = btn.closest("#desktop-sidebar-tabs");
+
           if (isTarget) {
-            btn.classList.add("bg-amber-400", "text-slate-950", "shadow-sm");
-            btn.classList.remove("text-text-secondary", "hover:text-white");
+            if (isDesktop) {
+              btn.classList.add("bg-amber-400/15", "border-amber-400/50", "text-white", "shadow-md", "shadow-amber-400/5");
+              btn.classList.remove("border-white/10", "bg-surface/70", "text-text-secondary");
+            } else {
+              btn.classList.add("bg-amber-400", "text-slate-950", "shadow-sm");
+              btn.classList.remove("text-text-secondary", "hover:text-white");
+            }
           } else {
-            btn.classList.remove("bg-amber-400", "text-slate-950", "shadow-sm");
-            btn.classList.add("text-text-secondary", "hover:text-white");
+            if (isDesktop) {
+              btn.classList.remove("bg-amber-400/15", "border-amber-400/50", "text-white", "shadow-md", "shadow-amber-400/5");
+              btn.classList.add("border-white/10", "bg-surface/70", "text-text-secondary");
+            } else {
+              btn.classList.remove("bg-amber-400", "text-slate-950", "shadow-sm");
+              btn.classList.add("text-text-secondary", "hover:text-white");
+            }
           }
         });
 
@@ -808,7 +908,7 @@ const sponsorPackages = [
         });
       });
 
-      // Hash handler on page load
+      // Handle URL hashes on page load & hashchange
       function handleHash() {
         if (window.location.hash) {
           const hash = window.location.hash.replace("#", "");
@@ -825,7 +925,7 @@ const sponsorPackages = [
       handleHash();
       window.addEventListener("hashchange", handleHash);
 
-      // Copy bank account helper
+      // Clipboard helper for bank accounts
       function setupCopy(btnId, textId, targetText) {
         const btn = document.getElementById(btnId);
         const textElem = document.getElementById(textId);
