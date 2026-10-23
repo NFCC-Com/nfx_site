@@ -5,11 +5,6 @@ const path = require('path');
 async function generateOgImage() {
   const publicDir = path.join(__dirname, '../public');
 
-  // Read and process logos
-  const rawLinuxenicBuffer = fs.readFileSync(path.join(publicDir, 'linuxenic-logo.png'));
-  const trimmedLinuxenicBuffer = await sharp(rawLinuxenicBuffer).trim().png().toBuffer();
-  const trimmedLinuxenicBase64 = trimmedLinuxenicBuffer.toString('base64');
-
   const logo2Base64 = fs.readFileSync(path.join(publicDir, 'logo2.png')).toString('base64');
   const nfccBase64 = fs.readFileSync(path.join(publicDir, 'nfcc_black.png')).toString('base64');
   const nxctfBase64 = fs.readFileSync(path.join(publicDir, 'nxctf-logo.png')).toString('base64');
@@ -179,8 +174,7 @@ async function generateOgImage() {
         Kompetisi Cybersecurity Capture The Flag Kolaborasi Resmi UKM NFCC × NXCTF
       </text>
 
-      <!-- ==================== HIGHLIGHTED SPONSOR CARD ==================== -->
-      <!-- Sponsored by Linuxenic (User Request Highlight) -->
+      <!-- ==================== HIGHLIGHTED PARTNERSHIP / SPONSOR CARD ==================== -->
       <g transform="translate(0, 126)" filter="url(#cardGlow)">
         <!-- Card Container -->
         <rect width="778" height="124" rx="16" fill="url(#sponsorBgGrad)" stroke="url(#sponsorBorderGrad)" stroke-width="2" filter="url(#badgeShadow)"/>
@@ -188,39 +182,38 @@ async function generateOgImage() {
         <!-- Top Amber Accent Line -->
         <line x1="20" y1="0" x2="280" y2="0" stroke="#fde047" stroke-width="2.5" stroke-linecap="round"/>
 
-        <!-- Linuxenic Official Logo Display Box -->
+        <!-- Partnership Display Box -->
         <g transform="translate(18, 16)">
           <rect width="168" height="92" rx="12" fill="#000000" stroke="#f59e0b" stroke-width="1.4"/>
           <!-- Subtext inside box -->
-          <text x="84" y="24" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="font-mono">// SPONSOR // </text>
-          <!-- Trimmed Linuxenic Logo Image Centered -->
-          <image xlink:href="data:image/png;base64,${trimmedLinuxenicBase64}" x="12" y="36" width="144" height="22" preserveAspectRatio="xMidYMid meet"/>
-          <text x="84" y="76" fill="#94a3b8" font-size="9.5" font-weight="600" text-anchor="middle" class="font-mono">linuxenic.com</text>
+          <text x="84" y="24" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="font-mono">// SPONSORSHIP // </text>
+          <text x="84" y="52" fill="#ffffff" font-size="14" font-weight="900" text-anchor="middle" class="font-sans">OPEN SPONSOR</text>
+          <text x="84" y="76" fill="#94a3b8" font-size="9.5" font-weight="600" text-anchor="middle" class="font-mono">nfx.my.id/partnership</text>
         </g>
 
         <!-- Sponsor Details -->
         <g transform="translate(204, 22)">
           <!-- Tier Tag -->
           <rect width="255" height="22" rx="11" fill="#f59e0b" fill-opacity="0.16" stroke="#f59e0b" stroke-width="1"/>
-          <text x="12" y="15" fill="#fde047" font-size="10.5" font-weight="800" letter-spacing="1.2" class="font-mono">★ MAIN SPONSOR</text>
+          <text x="12" y="15" fill="#fde047" font-size="10.5" font-weight="800" letter-spacing="1.2" class="font-mono">★ OPEN FOR SPONSORSHIP</text>
 
           <!-- Main Sponsor Name -->
-          <text x="0" y="52" fill="#ffffff" font-size="27" font-weight="900" letter-spacing="1" class="font-sans">
-            LINUXENIC CORP.
+          <text x="0" y="52" fill="#ffffff" font-size="25" font-weight="900" letter-spacing="1" class="font-sans">
+            TERBUKA UNTUK SPONSOR
           </text>
 
           <!-- Sponsor Tagline -->
           <text x="0" y="74" fill="#cbd5e1" font-size="12.5" font-weight="500" class="font-sans">
-            Platform Hands-On Cybersecurity Lab Browser Pertama di Indonesia
+            Peluang Kemitraan Industri Cybersecurity &amp; Komunitas IT Nasional
           </text>
         </g>
 
         <!-- Sponsor Reward Support Box -->
         <g transform="translate(604, 18)">
           <rect width="156" height="88" rx="12" fill="#090e1a" stroke="#f59e0b" stroke-width="1.2" stroke-opacity="0.5"/>
-          <text x="78" y="24" fill="#fde047" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="1" class="font-mono">SUPPORT DANA &amp; LAB</text>
-          <text x="78" y="52" fill="#10b981" font-size="19" font-weight="900" text-anchor="middle" class="font-mono">Rp 300 RIBU</text>
-          <text x="78" y="72" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="middle" class="font-mono">+ Voucher Akses Lab</text>
+          <text x="78" y="24" fill="#fde047" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="1" class="font-mono">PORTAL PARTNERSHIP</text>
+          <text x="78" y="52" fill="#38bdf8" font-size="17" font-weight="900" text-anchor="middle" class="font-mono">PROPOSAL</text>
+          <text x="78" y="72" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="middle" class="font-mono">Paket Sponsor &amp; Donasi</text>
         </g>
       </g>
     </g>
@@ -237,11 +230,11 @@ async function generateOgImage() {
           <rect x="6" y="8" width="16" height="12" rx="2" fill="none" stroke="#10b981" stroke-width="1.5"/>
           <circle cx="14" cy="14" r="2.5" fill="#10b981"/>
         </g>
-        <text x="50" y="24" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">Dana Sponsor Umum</text>
-        <text x="50" y="42" fill="#34d399" font-size="13" font-weight="800" class="font-mono">Rp 300.000 Tunai</text>
+        <text x="50" y="24" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">Jalur Kompetisi</text>
+        <text x="50" y="42" fill="#34d399" font-size="12.5" font-weight="800" class="font-mono">Track Mahasiswa &amp; Umum</text>
       </g>
 
-      <!-- Pill 2: 1-Month Voucher Lab -->
+      <!-- Pill 2: E-Certificate Resmi -->
       <g transform="translate(276, 0)">
         <rect width="270" height="54" rx="12" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.5"/>
         <!-- Vector Trophy / Star Icon -->
@@ -250,8 +243,8 @@ async function generateOgImage() {
           <!-- Star/Trophy Vector -->
           <path d="M 14 7 L 16 11 L 21 11.5 L 17 15 L 18.5 20 L 14 17 L 9.5 20 L 11 15 L 7 11.5 L 12 11 Z" fill="#fbbf24"/>
         </g>
-        <text x="50" y="24" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">Voucher Lab Linuxenic</text>
-        <text x="50" y="42" fill="#fde047" font-size="13" font-weight="800" class="font-mono">1 Bulan Gratis Juara 1</text>
+        <text x="50" y="24" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">E-Certificate Resmi</text>
+        <text x="50" y="42" fill="#fde047" font-size="12.5" font-weight="800" class="font-mono">Sertifikat Juara &amp; Peserta</text>
       </g>
 
       <!-- Pill 3: Dynamic Decay & Categories -->

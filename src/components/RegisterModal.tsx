@@ -104,7 +104,7 @@ export default function RegisterModal() {
                 Track Umum
               </h4>
               <p className="text-[0.72rem] text-text-secondary leading-relaxed mb-3">
-                Terbuka publik/pelajar nasional. Hadiah murni didanai sponsor &amp; pihak penyelenggara (nominal TBA). Voucher Linuxenic untuk Juara 1.
+                Terbuka publik/pelajar nasional. Hadiah murni didanai pihak penyelenggara dan/atau sponsor resmi (nominal TBA). E-Certificate untuk peserta &amp; pemenang.
               </p>
             </div>
 

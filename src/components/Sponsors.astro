@@ -1,14 +1,23 @@
 ---
 // Sponsors.astro
-import { Star, Coins, Trophy, Handshake, Mail, Check } from "lucide-react";
+import { Star, Coins, Trophy, Handshake, Mail, Check, Heart } from "lucide-react";
 
-const officialSponsors = [
+const officialSponsors: Array<{
+  name: string;
+  tier: string;
+  tierColor: string;
+  desc: string;
+  note: string;
+}> = [];
+
+// Verified Community Donators
+const donators = [
   {
-    name: "LINUXENIC CORP.",
-    tier: "MAIN SPONSOR",
-    tierColor: "text-amber-300 bg-amber-400/10 border-amber-400/30",
-    desc: "LINUXENIC mendukung NFX CTF 2026 sebagai Main Sponsor penyokong pendanaan hadiah Track Umum (Rp XXX.XXX) serta voucher akses LMS selama 1 bulan untuk Juara 1 setiap track.",
-    note: "Sponsorship Dana Tunai Rp XXX.XXX + Voucher Akses LMS 1 Bulan Juara 1.",
+    name: "Alwi Putra Supendi",
+    type: "Perorangan",
+    amount: "Rp 100.000",
+    date: "23 Okt 2026",
+    status: "Terverifikasi",
   },
 ];
 
@@ -40,69 +49,55 @@ const mediaPartners = [
 
     <!-- 1. Official Sponsors Grid (Compact & Aligned) -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 w-full items-stretch" data-reveal-group data-reveal-stagger="80">
-      <!-- Active Sponsor: LINUXENIC -->
-      {officialSponsors.map((sponsor) => (
-        <div data-reveal-child class="p-4 sm:p-5 rounded-xl bg-surface/85 border border-amber-400/30 backdrop-blur-xl shadow-md flex flex-col justify-between motion-card">
-          <div>
-            <div class="flex items-center gap-3.5 mb-3 pb-2.5 border-b border-white/5">
-              <img
-                src="/linuxenic-logo.png"
-                alt={`${sponsor.name} Logo`}
-                class="size-14 sm:size-16 rounded-xl object-contain bg-black border border-amber-400/30 p-2 shadow-lg shrink-0"
-              />
-              <div class="min-w-0 flex-1">
-                <div class="flex items-center justify-between gap-2 mb-1">
-                  <span class={`font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded-full border flex items-center gap-1 ${sponsor.tierColor}`}>
-                    <Star className="size-3 text-amber-300 fill-amber-300/30 shrink-0" />
-                    <span>{sponsor.tier}</span>
-                  </span>
-                  <a
-                    href="https://linuxenic.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="font-mono text-[0.65rem] text-nx-cyan hover:underline shrink-0"
-                  >
-                    linuxenic.com ↗
-                  </a>
-                </div>
-                <h3 class="font-display font-bold text-lg sm:text-xl text-white leading-tight truncate">
-                  {sponsor.name}
-                </h3>
-              </div>
-            </div>
-
-            <p class="text-text-secondary text-xs leading-relaxed mb-3">
-              {sponsor.desc}
-            </p>
-
-            <!-- Reward Pill (Compact 2-item row) -->
-            <div class="space-y-1.5 mb-2.5">
-              <div class="p-2 rounded-lg bg-surface-elevated/80 border border-amber-400/25 flex items-center justify-between gap-2">
-                <div class="flex items-center gap-2 min-w-0">
-                  <Coins className="size-4 text-emerald-400 shrink-0" />
-                  <span class="font-display font-bold text-[0.72rem] text-white truncate">Sponsorship Cash Prize</span>
-                </div>
-                <span class="font-mono text-[0.65rem] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25 shrink-0">
-                  Rp XXX.XXX
-                </span>
-              </div>
-              <div class="p-2 rounded-lg bg-surface-elevated/80 border border-amber-400/20 flex items-center justify-between gap-2">
-                <div class="flex items-center gap-2 min-w-0">
-                  <Trophy className="size-4 text-amber-300 shrink-0" />
-                  <span class="font-display font-bold text-[0.72rem] text-white truncate">Voucher LMS Juara 1</span>
-                </div>
-                <span class="font-mono text-[0.65rem] font-bold text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25 shrink-0">
-                  Akses 1 Bulan
-                </span>
-              </div>
-            </div>
+      <!-- Slot Sponsor Utama (Tersedia / Placeholder) -->
+      <div data-reveal-child class="p-4 sm:p-5 rounded-xl bg-surface/85 border border-amber-400/30 backdrop-blur-xl shadow-md flex flex-col justify-between motion-card">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/5">
+            <span class="font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded-full border flex items-center gap-1 text-amber-300 bg-amber-400/10 border-amber-400/30">
+              <Star className="size-3 text-amber-300 fill-amber-300/30 shrink-0" />
+              <span>MAIN SPONSOR / TITLE SPONSOR</span>
+            </span>
+            <span class="font-mono text-[0.65rem] text-amber-400 font-bold bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25">
+              Slot Tersedia
+            </span>
           </div>
 
-          <div class="pt-2 border-t border-white/5 font-mono text-[0.62rem] text-text-muted">
-            <span>Voucher akses LMS 1 bulan diberikan khusus Juara 1 di masing-masing track.</span>
+          <h3 class="font-display font-bold text-lg sm:text-xl text-white leading-tight mb-2">
+            Terbuka untuk Mitra & Sponsor Utama
+          </h3>
+
+          <p class="text-text-secondary text-xs leading-relaxed mb-4">
+            Dukung kompetisi Capture The Flag nasional NFX CTF 2026. Raih hak penamaan event (co-branding), logo eksklusif di banner web, platform CTF, dan sertifikat resmi.
+          </p>
+
+          <!-- Reward & Benefit Highlights -->
+          <div class="space-y-1.5 mb-2.5">
+            <div class="p-2 rounded-lg bg-surface-elevated/80 border border-amber-400/25 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 min-w-0">
+                <Coins className="size-4 text-emerald-400 shrink-0" />
+                <span class="font-display font-bold text-[0.72rem] text-white truncate">Branding Platform & Website</span>
+              </div>
+              <span class="font-mono text-[0.65rem] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25 shrink-0">
+                Co-Host Level
+              </span>
+            </div>
+            <div class="p-2 rounded-lg bg-surface-elevated/80 border border-amber-400/20 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 min-w-0">
+                <Trophy className="size-4 text-amber-300 shrink-0" />
+                <span class="font-display font-bold text-[0.72rem] text-white truncate">Jangkauan Komunitas</span>
+              </div>
+              <span class="font-mono text-[0.65rem] font-bold text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25 shrink-0">
+                Nasional & Kampus
+              </span>
+            </div>
           </div>
         </div>
-      ))}
+
+        <div class="pt-2 border-t border-white/5 font-mono text-[0.62rem] text-text-muted flex items-center justify-between">
+          <span>Kerjasama formal MoU / Kemitraan industri</span>
+          <a href="/partnership" class="text-amber-300 hover:underline">Lihat Detail ↗</a>
+        </div>
+      </div>
 
       <!-- Open Sponsor Slot Card (Compact) -->
       <div data-reveal-child class="p-4 sm:p-5 rounded-xl bg-surface/40 border border-dashed border-white/15 backdrop-blur-xl flex flex-col justify-between motion-card">
@@ -283,6 +278,97 @@ const mediaPartners = [
             </div>
           );
         })}
+      </div>
+    </div>
+
+    <!-- 4. Community Donatur Scoreboard / Hall of Fame -->
+    <div class="w-full p-4 sm:p-5 rounded-xl bg-surface/60 border border-emerald-500/20 backdrop-blur-xl space-y-3.5" data-reveal>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2.5 border-b border-white/10">
+        <div>
+          <div class="font-mono text-[0.6rem] text-emerald-400 font-bold tracking-widest uppercase mb-0.5 flex items-center gap-1.5">
+            <Heart className="size-3 text-emerald-400 fill-emerald-400/30" />
+            <span>// DONATUR &amp; COMMUNITY SCOREBOARD //</span>
+          </div>
+          <h3 class="font-display font-bold text-sm sm:text-base text-white">
+            Hall of Fame Donatur Sukarela
+          </h3>
+          <p class="text-[0.72rem] text-text-secondary">
+            Apresiasi resmi untuk donatur sukarela penyokong hadiah dan operasional NFX CTF 2026.
+          </p>
+        </div>
+        <a
+          href="/partnership#tab-donatur"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono text-[0.68rem] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 transition-all shrink-0 self-start sm:self-auto shadow-sm"
+        >
+          <Coins className="size-3.5" />
+          <span>Berdonasi Mulai 50K (/partnership) ↗</span>
+        </a>
+      </div>
+
+      <!-- Donatur Leaderboard Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3" data-reveal-group data-reveal-stagger="50">
+        {donators.map((donator, idx) => (
+          <div
+            data-reveal-child
+            class="p-3.5 sm:p-4 rounded-xl bg-surface-elevated/90 border border-emerald-500/30 hover:border-emerald-400 transition-all shadow-md flex items-center justify-between gap-3"
+          >
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="size-10 sm:size-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-slate-950 font-display font-black text-sm sm:text-base flex items-center justify-center shadow-md shadow-emerald-500/20 shrink-0">
+                #{idx + 1}
+              </div>
+              <div class="min-w-0">
+                <div class="flex items-center gap-2 mb-0.5 flex-wrap">
+                  <h4 class="font-display font-bold text-xs sm:text-sm text-white truncate">
+                    {donator.name}
+                  </h4>
+                  <span class="font-mono text-[0.55rem] font-bold px-1.5 py-0.2 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
+                    {donator.type}
+                  </span>
+                </div>
+                <div class="flex items-center gap-2 font-mono text-[0.62rem] text-text-muted">
+                  <span>{donator.date}</span>
+                  <span>•</span>
+                  <span class="text-emerald-400 font-semibold flex items-center gap-0.5">
+                    <Check className="size-3 shrink-0" /> {donator.status}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-right shrink-0">
+              <span class="font-mono text-[0.58rem] text-text-muted block uppercase">Donasi Sukarela</span>
+              <strong class="font-mono text-xs sm:text-sm text-emerald-400 font-extrabold block">
+                {donator.amount}
+              </strong>
+            </div>
+          </div>
+        ))}
+
+        <!-- Open Donatur Slot Placeholder -->
+        <div
+          data-reveal-child
+          class="p-3.5 sm:p-4 rounded-xl bg-surface/30 border border-dashed border-white/15 hover:border-emerald-500/40 transition-all flex items-center justify-between gap-3 group"
+        >
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="size-10 sm:size-11 rounded-xl bg-white/5 border border-white/10 text-text-muted font-display font-bold text-xs flex items-center justify-center shrink-0 group-hover:border-emerald-500/30 group-hover:text-emerald-300 transition-colors">
+              +
+            </div>
+            <div class="min-w-0">
+              <span class="font-display font-bold text-xs sm:text-sm text-text-secondary block group-hover:text-white transition-colors truncate">
+                Slot Donatur Berikutnya
+              </span>
+              <span class="font-mono text-[0.62rem] text-text-muted block truncate">
+                Dukungan sukarela untuk hadiah peserta CTF
+              </span>
+            </div>
+          </div>
+          <a
+            href="/partnership#tab-donatur"
+            class="font-mono text-[0.65rem] font-bold text-emerald-400 hover:text-emerald-300 hover:underline shrink-0"
+          >
+            Form Donasi ↗
+          </a>
+        </div>
       </div>
     </div>
   </div>

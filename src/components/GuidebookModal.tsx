@@ -106,7 +106,7 @@ export default function GuidebookModal() {
                   </span>
                 </div>
                 <p className="text-xs text-text-secondary leading-relaxed">
-                  Bermula dari program kerja internal UKM NFCC bernama <strong>NFCTF Season 1</strong> sebagai wadah latihan praktis mahasiswa STT-NF, konsep ini kemudian dimekarkan menjadi <strong>NFX CTF 2026</strong> lewat kolaborasi bersama <strong>NXCTF Community</strong> serta dukungan Main Sponsor <strong>LINUXENIC CORP.</strong>
+                  Bermula dari program kerja internal UKM NFCC bernama <strong>NFCTF Season 1</strong> sebagai wadah latihan praktis mahasiswa STT-NF, konsep ini kemudian dimekarkan menjadi <strong>NFX CTF 2026</strong> lewat kolaborasi bersama <strong>NXCTF Community</strong>.
                 </p>
               </div>
 

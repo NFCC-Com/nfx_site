@@ -18,8 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const prizeGridContainer = document.getElementById('prize-grid-output');
 
   let currentScheme = 'option1'; // 'option1' or 'option2'
-  const AVG_HTM = 10000;
-  const BASE_SPONSOR = 300000; // Rp 300.000 Cash Sponsorship dari LINUXENIC CORP.
+  const BASE_SPONSOR = 0; // Dana sponsor resmi (placeholder)
 
   const formatRupiah = (num) => {
     return new Intl.NumberFormat('id-ID', {

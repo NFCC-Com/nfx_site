@@ -158,12 +158,10 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
   - Badge: `EARLY BIRD: 10K / 15K`
   - Benefit: Bersaing di tingkat nasional, E-Certificate of Participation (*wajib submit Writeup*).
   - Revenue Split: 90% Prize Pool, 10% Operasional & Server.
-- **Ringkasan hadiah di landing page:** Hadiah uang tunai Juara 1–5 setiap track dan voucher Linuxenic untuk Juara 1. Tanpa kalkulator atau simulasi nominal; tautkan ke rincian guidebook.
+- **Ringkasan hadiah di landing page:** Hadiah uang tunai Juara 1–5 setiap track. Tanpa kalkulator atau simulasi nominal; tautkan ke rincian guidebook.
 - **Rincian di guidebook:**
-  - **Skema Hadiah Umum Top 5:** Pool tiket (90% registrasi) dibagi 40% / 30% / 15% / 10% / 5%.
-  - **Sponsor Linuxenic Rp300.000:** Bonus tetap juara 1 Rp150.000, juara 2 Rp100.000, dan juara 3 Rp50.000. Juara 4–5 dari pool tiket saja.
-  - **Voucher Linuxenic:** Akses 1 bulan untuk juara 1 masing-masing track.
-  - Nominal dan persentase pembagian dijelaskan di guidebook.
+  - **Skema Hadiah Umum Top 5:** Murni didanai pihak penyelenggara dan/atau pihak sponsor resmi (TBA).
+  - Nominal dan alokasi dijelaskan di guidebook.
 
 ### Section 6: 7 Kategori Tantangan
 - Tampilan 7 Kartu Neon Interaktif:
@@ -200,8 +198,8 @@ Desain menggabungkan warna khas **NXCTF (Electric Cyan & Neon Purple)** dengan w
 - Ringkasan teknis platform CTFd, aturan koneksi VPN/Tunnel, dan tata cara submit flag.
 
 ### Section 10: Sponsorship & Partner Showcase
-- **Sponsor Utama:**
-  - **Linuxenic** (Dana tunai Rp300.000 untuk juara 1–3 umum + voucher akses lab 1 bulan untuk juara 1 masing-masing track)
+- **Sponsor Utama & Kemitraan:**
+  - **Open for Sponsorship** (Slot sponsor utama terbuka untuk industri / partner teknologi)
 - **Organized by (Penyelenggara):**
   - **UKM NFCC (Nurul Fikri Cyber Security Community)** — Penyelenggara & Pembina Workshop
   - **NXCTF Community** — CTF Platform & Ecosystem Partner
