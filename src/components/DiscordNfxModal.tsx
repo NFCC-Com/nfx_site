@@ -78,20 +78,19 @@ export default function DiscordNfxModal() {
 
         {/* Short & Crisp Info */}
         <p className="text-xs text-text-secondary leading-relaxed mb-5">
-          Server Discord NFX CTF 2026 dikhususkan untuk koordinasi teknis dan tiket bantuan peserta. Tautan invite server otomatis dikirimkan ke email setelah Anda menyelesaikan pendaftaran.
+          Server Discord NFX CTF 2026 digunakan selama kompetisi berlangsung untuk koordinasi teknis dan pembahasan writeup soal. Untuk diskusi komunitas publik cybersecurity, Anda dapat bergabung di Discord NFCC atau NXCTF di bawah.
         </p>
 
         {/* Primary Action Button */}
-        <button
-          onClick={() => {
-            setIsOpen(false);
-            window.dispatchEvent(new CustomEvent("open-register-modal"));
-          }}
-          className="w-full py-2.5 px-4 rounded-xl font-display font-bold text-xs bg-gradient-to-r from-nx-cyan to-nx-purple text-slate-950 shadow-md shadow-nx-cyan/20 hover:opacity-95 transition-all flex items-center justify-center gap-1.5 cursor-pointer mb-4"
+        <a
+          href="https://discord.gg/5etKks6aQQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full py-2.5 px-4 rounded-xl font-display font-bold text-xs bg-gradient-to-r from-nx-cyan to-nx-purple text-slate-950 shadow-md shadow-nx-cyan/20 hover:opacity-95 transition-all flex items-center justify-center gap-1.5 mb-4"
         >
-          <span>Daftar Kompetisi untuk Akses Link</span>
+          <span>Gabung Discord Komunitas NXCTF ↗</span>
           <ArrowRight className="size-3.5" />
-        </button>
+        </a>
 
         {/* Bottom Community Links */}
         <div className="pt-3 border-t border-white/5 flex items-center justify-between font-mono text-[0.68rem] text-text-muted">

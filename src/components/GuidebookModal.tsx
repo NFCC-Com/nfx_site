@@ -503,15 +503,14 @@ export default function GuidebookModal() {
 
         {/* Footer Actions */}
         <div className="p-4 sm:p-5 border-t border-white/10 bg-surface/95 flex items-center justify-between">
-          <button
-            onClick={() => {
-              setIsOpen(false);
-              window.dispatchEvent(new CustomEvent("open-register-modal"));
-            }}
-            className="px-5 py-2.5 rounded-xl font-display font-bold text-xs bg-gradient-to-r from-nx-cyan to-nf-orange text-slate-950 shadow-md shadow-nx-cyan/20 hover:scale-[1.02] transition-all"
+          <a
+            href="https://ctf.nfx.my.id/scoreboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-xl font-display font-bold text-xs bg-gradient-to-r from-emerald-500 via-teal-500 to-nx-cyan text-slate-950 shadow-md shadow-emerald-500/20 hover:scale-[1.02] transition-all"
           >
-            🚀 Lanjut ke Pendaftaran
-          </button>
+            🏆 Lihat Final Scoreboard ↗
+          </a>
 
           <button
             onClick={() => setIsOpen(false)}

@@ -2,16 +2,41 @@
 // Sponsors.astro
 import { Star, Coins, Trophy, Handshake, Mail, Check, Heart } from "lucide-react";
 
-const officialSponsors: Array<{
-  name: string;
-  tier: string;
-  tierColor: string;
-  desc: string;
-  note: string;
-}> = [];
+// Official Sponsors
+const officialSponsors = [
+  {
+    name: "NF ACADEMY",
+    subtitle: "Digital Training Solutions",
+    tier: "OFFICIAL SPONSOR",
+    tierBadge: "Training & Edu Partner",
+    tierColor: "text-amber-300 bg-amber-400/10 border-amber-400/30",
+    logo: "/sponsor/nf-academy.png",
+    logoClass: "max-h-12 max-w-[220px]",
+    desc: "Penyedia solusi pelatihan dan sertifikasi kompetensi digital profesional, mendukung akselerasi talenta IT & cybersecurity Indonesia.",
+    highlights: ["Digital Training Solutions", "Official Event Partner NFX CTF 2026"],
+  },
+  {
+    name: "JARVIS",
+    subtitle: "Cybersecurity & Technology",
+    tier: "OFFICIAL SPONSOR",
+    tierBadge: "Technology Partner",
+    tierColor: "text-rose-400 bg-rose-500/10 border-rose-500/30",
+    logo: "/sponsor/jarvis.png",
+    logoClass: "max-h-12 max-w-[170px]",
+    desc: "Mitra industri dan teknologi terkemuka yang mendukung ekosistem kompetisi keamanan siber dan infrastruktur NFX CTF 2026.",
+    highlights: ["Cybersecurity & Tech Supporter", "Official Event Partner NFX CTF 2026"],
+  },
+];
 
 // Verified Community Donators
 const donators = [
+  {
+    name: "Anggito Dirgantoro",
+    type: "Perorangan",
+    amount: "Rp 110.000",
+    date: "10 Nov 2026",
+    status: "Terverifikasi",
+  },
   {
     name: "Alwi Putra Supendi",
     type: "Perorangan",
@@ -23,12 +48,13 @@ const donators = [
 
 // Media Partners & Community Supporters
 const mediaPartners = [
-  { name: "KTCG Community", logo: "/ktcg.png", tag: "Media Partner", bgWhite: true },
-  { name: "NONE", logo: "/nxctf-logo.png", tag: "Slot Tersedia" },
-  { name: "NONE", logo: "/nxctf-logo.png", tag: "Slot Tersedia" },
-  { name: "NONE", logo: "/nxctf-logo.png", tag: "Slot Tersedia" },
-  { name: "NONE", logo: "/nxctf-logo.png", tag: "Slot Tersedia" },
-  { name: "NONE", logo: "/nxctf-logo.png", tag: "Slot Tersedia" },
+  { name: "KTCG Community", logo: "/medpart/ktcg.png", tag: "Medpart Eksternal", bgWhite: false },
+  { name: "Campusnet", logo: "/medpart/campusnet.png", tag: "Medpart Eksternal", bgWhite: true },
+  { name: "DPM STT-NF", logo: "/medpart/dpm.png", tag: "Medpart Internal", bgWhite: false },
+  { name: "HIMA TI STT-NF", logo: "/medpart/himati.png", tag: "Medpart Internal", bgWhite: false },
+  { name: "HIMASI STT-NF", logo: "/medpart/himasi.jpeg", tag: "Medpart Internal", bgWhite: true },
+  { name: "MUDENG", logo: "/medpart/mudeng.png", tag: "Medpart Internal", bgWhite: false },
+  { name: "Forum Perempuan", logo: "/medpart/forum-perempuan.jpeg", tag: "Medpart Internal", bgWhite: true },
 ];
 ---
 
@@ -47,120 +73,95 @@ const mediaPartners = [
       </p>
     </div>
 
-    <!-- 1. Official Sponsors Grid (Compact & Aligned) -->
+    <!-- 1. Official Sponsors Showcase Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 w-full items-stretch" data-reveal-group data-reveal-stagger="80">
-      <!-- Slot Sponsor Utama (Tersedia / Placeholder) -->
-      <div data-reveal-child class="p-4 sm:p-5 rounded-xl bg-surface/85 border border-amber-400/30 backdrop-blur-xl shadow-md flex flex-col justify-between motion-card">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/5">
-            <span class="font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded-full border flex items-center gap-1 text-amber-300 bg-amber-400/10 border-amber-400/30">
-              <Star className="size-3 text-amber-300 fill-amber-300/30 shrink-0" />
-              <span>MAIN SPONSOR / TITLE SPONSOR</span>
-            </span>
-            <span class="font-mono text-[0.65rem] text-amber-400 font-bold bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25">
-              Slot Tersedia
-            </span>
+      {officialSponsors.map((sponsor) => (
+        <div data-reveal-child class="p-4 sm:p-5 rounded-xl bg-surface/85 border border-white/15 hover:border-amber-400/40 backdrop-blur-xl shadow-lg flex flex-col justify-between motion-card transition-all">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/10">
+              <span class={`font-mono text-[0.6rem] font-bold px-2 py-0.5 rounded-full border flex items-center gap-1.5 ${sponsor.tierColor}`}>
+                <Star className="size-3 text-amber-300 fill-amber-300/30 shrink-0" />
+                <span>{sponsor.tier}</span>
+              </span>
+              <span class="font-mono text-[0.62rem] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25 flex items-center gap-1">
+                <Check className="size-2.5 text-emerald-400" />
+                <span>{sponsor.tierBadge}</span>
+              </span>
+            </div>
+
+            <!-- Sponsor Logo Container (High Contrast White Container) -->
+            <div class="w-full h-20 rounded-xl bg-white p-3 flex items-center justify-center shadow-md mb-3.5 border border-white/20">
+              <img
+                src={sponsor.logo}
+                alt={`${sponsor.name} Logo`}
+                class={`w-full h-full object-contain ${sponsor.logoClass}`}
+              />
+            </div>
+
+            <div class="flex items-baseline justify-between gap-2 mb-1.5">
+              <h3 class="font-display font-bold text-lg sm:text-xl text-white leading-tight">
+                {sponsor.name}
+              </h3>
+              <span class="font-mono text-[0.68rem] text-text-muted truncate">
+                {sponsor.subtitle}
+              </span>
+            </div>
+
+            <p class="text-text-secondary text-xs leading-relaxed mb-3.5">
+              {sponsor.desc}
+            </p>
+
+            <!-- Highlights -->
+            <div class="space-y-1.5 mb-2.5">
+              {sponsor.highlights.map((item) => (
+                <div class="p-2 rounded-lg bg-surface-elevated/80 border border-white/10 flex items-center gap-2 text-xs text-text-primary">
+                  <Check className="size-3.5 text-emerald-400 shrink-0" />
+                  <span class="font-display font-medium text-[0.72rem] text-white truncate">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h3 class="font-display font-bold text-lg sm:text-xl text-white leading-tight mb-2">
-            Terbuka untuk Mitra & Sponsor Utama
-          </h3>
-
-          <p class="text-text-secondary text-xs leading-relaxed mb-4">
-            Dukung kompetisi CTF nasional NFX CTF 2026. Raih co-branding utama, pembuatan konten review produk di medsos resmi, eksposur channel peserta, dan sertifikat resmi.
-          </p>
-
-          <!-- Reward & Benefit Highlights -->
-          <div class="space-y-1.5 mb-2.5">
-            <div class="p-2 rounded-lg bg-surface-elevated/80 border border-amber-400/25 flex items-center justify-between gap-2">
-              <div class="flex items-center gap-2 min-w-0">
-                <Coins className="size-4 text-emerald-400 shrink-0" />
-                <span class="font-display font-bold text-[0.72rem] text-white truncate">Branding Platform & Website</span>
-              </div>
-              <span class="font-mono text-[0.65rem] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25 shrink-0">
-                Co-Host Level
-              </span>
-            </div>
-            <div class="p-2 rounded-lg bg-surface-elevated/80 border border-amber-400/20 flex items-center justify-between gap-2">
-              <div class="flex items-center gap-2 min-w-0">
-                <Trophy className="size-4 text-amber-300 shrink-0" />
-                <span class="font-display font-bold text-[0.72rem] text-white truncate">Jangkauan Komunitas</span>
-              </div>
-              <span class="font-mono text-[0.65rem] font-bold text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25 shrink-0">
-                Nasional & Kampus
-              </span>
-            </div>
+          <div class="pt-2.5 border-t border-white/10 font-mono text-[0.62rem] text-text-muted flex items-center justify-between">
+            <span class="text-emerald-400 flex items-center gap-1">
+              <Check className="size-3" /> Mitra Resmi NFX CTF 2026
+            </span>
+            <a href="/partnership" class="text-amber-300 hover:underline">Portal Sponsorship ↗</a>
           </div>
         </div>
+      ))}
+    </div>
 
-        <div class="pt-2 border-t border-white/5 font-mono text-[0.62rem] text-text-muted flex items-center justify-between">
-          <span>Kerjasama formal MoU / Kemitraan industri</span>
-          <a href="/partnership" class="text-amber-300 hover:underline">Lihat Detail ↗</a>
+    <!-- Partnership & Community Appreciation Banner -->
+    <div data-reveal class="p-3.5 sm:p-4 rounded-xl bg-surface/50 border border-amber-400/30 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div class="flex items-center gap-3">
+        <div class="p-2 rounded-lg bg-amber-400/10 border border-amber-400/20 text-amber-300 shrink-0 hidden sm:flex">
+          <Handshake className="size-4" />
+        </div>
+        <div>
+          <span class="font-display font-bold text-xs sm:text-sm text-white block">
+            Apresiasi Kemitraan &amp; Kolaborasi Komunitas
+          </span>
+          <span class="font-mono text-[0.65rem] text-text-secondary block">
+            Terima kasih atas kontribusi luar biasa dari seluruh Sponsor Resmi, Media Partner, dan Donatur Komunitas NFX CTF 2026.
+          </span>
         </div>
       </div>
-
-      <!-- Open Sponsor Slot Card (Compact) -->
-      <div data-reveal-child class="p-4 sm:p-5 rounded-xl bg-surface/40 border border-dashed border-white/15 backdrop-blur-xl flex flex-col justify-between motion-card">
-        <div>
-          <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-white/5">
-            <span class="font-mono text-[0.58rem] font-bold px-2 py-0.5 rounded-full bg-nx-cyan/10 border border-nx-cyan/20 text-nx-cyan uppercase flex items-center gap-1">
-              <Handshake className="size-3 text-nx-cyan" />
-              <span>OPEN FOR SPONSORSHIP</span>
-            </span>
-            <span class="font-mono text-[0.6rem] text-text-muted">Slot Terbuka</span>
-          </div>
-
-          <h3 class="font-display font-bold text-base sm:text-lg text-white mb-1">
-            Ingin Menjadi Sponsor Resmi?
-          </h3>
-          <p class="text-text-secondary text-xs leading-relaxed mb-3">
-            Dukung kompetisi CTF nasional dan jangkau ratusan peserta mahasiswa serta praktisi cybersecurity se-Indonesia.
-          </p>
-
-          <div class="grid grid-cols-2 gap-1.5 p-2.5 rounded-lg bg-surface/80 border border-white/5 font-mono text-[0.62rem] text-text-muted mb-3">
-            <div class="flex items-center gap-1.5 text-text-secondary">
-              <Check className="size-3 text-emerald-400 font-bold shrink-0" />
-              <span class="truncate">Logo di Web NFX CTF</span>
-            </div>
-            <div class="flex items-center gap-1.5 text-text-secondary">
-              <Check className="size-3 text-emerald-400 font-bold shrink-0" />
-              <span class="truncate">Mention Live TM & Media</span>
-            </div>
-            <div class="flex items-center gap-1.5 text-text-secondary">
-              <Check className="size-3 text-emerald-400 font-bold shrink-0" />
-              <span class="truncate">Channel Discord NFX</span>
-            </div>
-            <div class="flex items-center gap-1.5 text-text-secondary">
-              <Check className="size-3 text-emerald-400 font-bold shrink-0" />
-              <span class="truncate">Kerjasama Formal MoU</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-2">
-          <a
-            href="/partnership"
-            class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg font-display font-bold text-xs bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-slate-950 hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all text-center"
-          >
-            <span>Lihat Paket &amp; Unduh Proposal (/partnership) →</span>
-          </a>
-          <div class="grid grid-cols-2 gap-2 font-mono text-[0.68rem]">
-            <a
-              href="https://drive.google.com/drive/folders/1cfvT3gtTWYBw_WcPdvZxbQ57VOailcU8?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-white/5 hover:bg-white/10 text-text-secondary hover:text-white border border-white/10 transition-colors text-center"
-            >
-              <span>Drive Proposal ↗</span>
-            </a>
-            <a
-              href="/partnership#tab-donatur"
-              class="inline-flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/25 transition-colors text-center"
-            >
-              <span>Jalur Donatur (Non-MoU) ↗</span>
-            </a>
-          </div>
-        </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <a
+          href="/partnership"
+          class="px-3.5 py-1.5 rounded-lg font-display font-bold text-xs bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 hover:brightness-110 shadow-sm transition-all whitespace-nowrap"
+        >
+          Portal Partnership (/partnership) →
+        </a>
+        <a
+          href="https://drive.google.com/drive/folders/1cfvT3gtTWYBw_WcPdvZxbQ57VOailcU8?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-2.5 py-1.5 rounded-lg font-mono text-[0.68rem] bg-white/5 border border-white/10 text-text-secondary hover:text-white transition-colors whitespace-nowrap"
+        >
+          Drive Proposal ↗
+        </a>
       </div>
     </div>
 
@@ -246,9 +247,9 @@ const mediaPartners = [
       </div>
 
       <!-- Media Partner Cards Grid (Compact) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5" data-reveal-group data-reveal-stagger="40">
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5" data-reveal-group data-reveal-stagger="40">
         {mediaPartners.map((partner) => {
-          const isNone = partner.name === "NONE";
+          const isNone = partner.name === "NONE" || partner.isSlot;
           return (
             <div
               data-reveal-child
